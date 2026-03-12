@@ -1,0 +1,135 @@
+---
+title: "Handout 3: Ukuran Pemusatan Data (Central Tendency)"
+format: pdf
+---
+
+# Pendahuluan
+
+Statistik merupakan alat penting dalam analisis data kesehatan.  
+Dalam bidang **Rekam Medis dan Informasi Kesehatan (RMIK)**, statistik digunakan
+untuk menganalisis data pasien, pelayanan kesehatan, dan kualitas pelayanan
+rumah sakit.
+
+Salah satu konsep dasar dalam statistik adalah **Central Tendency** 
+atau **ukuran pemusatan data**, yaitu **nilai yang mewakili sekumpulan data**.  
+Dengan ukuran ini, data yang banyak bisa diringkas menjadi **satu angka yang mewakili keseluruhan data**.
+
+---
+
+# Pengantar & Pengertian Central Tendency
+
+**Central tendency** adalah nilai “tengah” atau **pusat dari sekumpulan data**.  
+Ini memungkinkan kita memahami **kecenderungan umum data**.
+
+> Analogi: Jika ada 5 pasien dengan lama rawat: 2, 3, 4, 5, 6 hari,  
+> maka angka 4 hari bisa dijadikan **representasi rata-rata lama rawat**.
+
+### Tujuan Menggunakan Central Tendency
+
+1. **Menyederhanakan data**  
+   - Banyak angka bisa diringkas menjadi satu nilai pusat.  
+   - Contoh: Rumah sakit punya data 200 pasien; rata-rata lama rawat = 5 hari.
+
+2. **Membandingkan kelompok data**  
+   - Misal rata-rata lama rawat pasien di 2 poli berbeda.
+
+3. **Mengidentifikasi pola dan tren**  
+   - Data terlihat normal atau ada anomali (misal pasien dengan rawat sangat lama).
+
+4. **Mendukung keputusan klinis dan manajemen rumah sakit**  
+   - Contoh: Menentukan kapasitas ruang rawat inap berdasarkan rata-rata lama rawat.
+
+---
+
+### Pentingnya Central Tendency di RMIK
+
+Dalam **Rekam Medis dan Informasi Kesehatan**:
+
+- Banyak data pasien harus dianalisis cepat dan tepat.  
+- Central tendency membantu **menyampaikan informasi penting** kepada dokter, manajer rumah sakit, dan staf kesehatan.
+
+**Contoh penerapan:**
+
+| Analisis Data | Ukuran Pemusatan yang Digunakan |
+|---------------|--------------------------------|
+| Lama rawat inap pasien | Mean |
+| Tekanan darah pasien | Median |
+| Diagnosis atau obat paling sering | Mode |
+
+---
+
+### Contoh Ilustrasi
+
+Data **jumlah kunjungan pasien ke Poli Anak selama seminggu**:
+
+| Hari    | Jumlah Pasien |
+|---------|---------------|
+| Senin   | 20            |
+| Selasa  | 25            |
+| Rabu    | 22            |
+| Kamis   | 30            |
+| Jumat   | 23            |
+
+- **Mean** = (20 + 25 + 22 + 30 + 23)/5 = 24  
+- **Median** = Urutkan → 20, 22, 23, 25, 30 → median = 23  
+- **Mode** = Tidak ada nilai yang berulang → mode = tidak ada  
+
+Interpretasi: Manajer poli bisa mengetahui **rata-rata beban pasien** per hari dan merencanakan tenaga medis.
+
+---
+
+# Jenis Ukuran Central Tendency
+
+1. **Mean (Rata-rata)**  
+   Mean = jumlah seluruh nilai data dibagi jumlah data:
+
+   $$
+   \bar{x} = \frac{\sum x}{n}
+   $$
+
+2. **Median (Nilai Tengah)**  
+   Median = nilai tengah setelah data diurutkan.  
+   Jika jumlah data genap → rata-rata dua nilai tengah.
+
+3. **Mode (Modus)**  
+   Mode = nilai yang paling sering muncul dalam data.
+
+---
+
+# Latihan Soal
+
+## Soal 1
+Data lama rawat pasien (hari):
+
+4, 5, 6, 3, 2  
+
+Hitung: Mean, Median, Mode
+
+## Soal 2
+Data jumlah kunjungan pasien:
+
+15, 20, 20, 25, 30  
+
+Hitung: Mean, Median, Mode
+
+## Soal 3
+Usia pasien yang datang ke klinik:
+
+21, 25, 25, 30, 32, 25, 28  
+
+Hitung: Mean, Median, Mode
+
+---
+
+# Kesimpulan
+
+Central tendency adalah **ukuran statistik yang menunjukkan nilai pusat data**.  
+Tiga ukuran utama:
+
+- **Mean** → rata-rata seluruh data  
+- **Median** → nilai tengah  
+- **Mode** → nilai yang paling sering muncul  
+
+Dalam bidang **RMIK**, konsep ini penting untuk **menganalisis data pasien, evaluasi pelayanan, dan pengambilan keputusan rumah sakit**.
+
+---

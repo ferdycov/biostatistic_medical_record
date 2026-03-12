@@ -1,0 +1,258 @@
+---
+title: "Biostatistik"
+subtitle: "Jenis Data: Kualitatif dan Kuantitatif"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-07"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+
+Biostatistik merupakan cabang ilmu statistik yang digunakan untuk menganalisis data dalam bidang kesehatan dan biomedis. Dalam proses analisis statistik, pemahaman mengenai jenis data merupakan langkah awal yang sangat penting karena jenis data akan menentukan metode analisis statistik yang digunakan.
+
+Pemahaman mengenai jenis data sangat penting karena:
+
+- menentukan metode analisis statistik
+- menentukan teknik penyajian data
+- membantu interpretasi hasil penelitian
+- menghindari kesalahan analisis
+
+Dalam biostatistik khususnya penelitian kesehatan, data yang dikumpulkan dari pasien, rekam medis, survei kesehatan, maupun penelitian klinis dapat diklasifikasikan ke dalam dua kategori utama, yaitu **data kualitatif** dan **data kuantitatif**. 
+
+---
+
+# Konsep Data dalam Statistik
+
+Secara umum, data adalah sekumpulan fakta atau informasi yang dikumpulkan melalui proses pengamatan, pengukuran, atau pencatatan terhadap suatu variabel tertentu.
+
+Dalam konteks biostatistik (khususnya bidang kesehatan), data biasanya diperoleh dari berbagai sumber seperti:
+
+- Rekam medis pasien  
+- Survei kesehatan masyarakat  
+- Hasil pemeriksaan laboratorium  
+- Penelitian klinis  
+- Sistem informasi kesehatan  
+
+Data tersebut kemudian dianalisis menggunakan metode statistik untuk menghasilkan informasi yang dapat digunakan dalam pengambilan keputusan di bidang kesehatan.
+
+\begin{notebox}
+Data dapat diklasifikasikan ke dalam dua kategori utama, yaitu **data kualitatif** dan **data kuantitatif**.
+\end{notebox}
+
+---
+
+# Data Kualitatif
+
+## Pengertian Data Kualitatif
+
+Data kualitatif merupakan data yang berbentuk kategori atau atribut yang tidak dinyatakan dalam bentuk angka. Data ini biasanya digunakan untuk menggambarkan karakteristik atau sifat tertentu dari suatu objek atau individu.
+
+Data kualitatif sering juga disebut sebagai **data kategorik** karena nilai-nilainya berupa kategori tertentu.
+
+## Karakteristik Data Kualitatif
+
+Beberapa karakteristik utama data kualitatif adalah:
+
+- Tidak berbentuk angka numerik  
+- Menggambarkan kategori atau kelompok  
+- Tidak dapat dilakukan operasi matematika secara langsung  
+- Biasanya disajikan dalam bentuk frekuensi atau persentase  
+
+## Contoh Data Kualitatif dalam Bidang Kesehatan
+
+Contoh data kualitatif yang sering dijumpai dalam bidang kesehatan antara lain:
+
+- Jenis kelamin pasien (laki-laki, perempuan)  
+- Golongan darah (A, B, AB, O)  
+- Status merokok (perokok, bukan perokok)  
+- Status penyakit (positif atau negatif)  
+
+## Jenis Data Kualitatif
+
+Data kualitatif dapat dibedakan menjadi dua jenis utama:
+
+### Data Nominal
+
+Data nominal merupakan data kategorik yang tidak memiliki urutan atau tingkatan.
+
+Contoh:
+
+- Jenis kelamin  
+- Golongan darah  
+- Jenis penyakit  
+
+### Data Ordinal
+
+Data ordinal merupakan data kategorik yang memiliki urutan atau tingkatan tertentu.
+
+Contoh:
+
+- Tingkat pendidikan  
+- Skala kepuasan pasien  
+- Tingkat nyeri pasien (ringan, sedang, berat)
+
+---
+
+# Data Kuantitatif
+
+## Pengertian Data Kuantitatif
+
+Data kuantitatif merupakan data yang dinyatakan dalam bentuk angka dan dapat diukur secara numerik. Data ini memungkinkan dilakukan berbagai operasi matematika seperti penjumlahan, pengurangan, rata-rata, dan analisis statistik lainnya.
+
+Data kuantitatif sangat penting dalam penelitian kesehatan karena memungkinkan dilakukan analisis statistik secara lebih mendalam.
+
+## Karakteristik Data Kuantitatif
+
+Karakteristik utama data kuantitatif meliputi:
+
+- Berbentuk angka  
+- Diperoleh melalui proses pengukuran atau perhitungan  
+- Dapat dilakukan operasi matematika  
+- Dapat dianalisis menggunakan berbagai metode statistik  
+
+## Contoh Data Kuantitatif dalam Bidang Kesehatan
+
+Beberapa contoh data kuantitatif dalam bidang kesehatan antara lain:
+
+- Umur pasien  
+- Berat badan  
+- Tinggi badan  
+- Tekanan darah  
+- Kadar glukosa darah  
+
+## Jenis Data Kuantitatif
+
+Data kuantitatif dapat dibedakan menjadi dua jenis:
+
+### Data Diskrit
+
+Data diskrit merupakan data yang diperoleh dari hasil perhitungan dan biasanya berupa bilangan bulat.
+
+Contoh:
+
+- Jumlah pasien  
+- Jumlah kunjungan rumah sakit  
+- Jumlah kasus penyakit tertentu  
+
+### Data Kontinu
+
+Data kontinu merupakan data yang diperoleh melalui proses pengukuran dan dapat memiliki nilai dalam rentang tertentu.
+
+Contoh:
+
+- Berat badan  
+- Tinggi badan  
+- Tekanan darah  
+- Suhu tubuh  
+
+---
+
+# Perbedaan Data Kualitatif dan Kuantitatif
+
+Perbedaan antara data kualitatif dan kuantitatif dapat dilihat pada tabel berikut:
+
+| Aspek | Data Kualitatif | Data Kuantitatif |
+|------|----------------|----------------|
+| Bentuk data | Kategori | Angka |
+| Sifat data | Deskriptif | Numerik |
+| Operasi matematika | Tidak dapat dilakukan | Dapat dilakukan |
+| Contoh | Jenis kelamin, golongan darah | Umur, berat badan |
+
+## Dataset Contoh Rekam Medis
+
+Berikut contoh dataset sederhana dari data pasien.
+
+| ID | Jenis Kelamin | Umur | Berat Badan | Tekanan Darah | Status Diabetes |
+|----|--------------|------|-------------|---------------|----------------|
+| P1 | L | 45 | 70 | 130 | Ya |
+| P2 | P | 52 | 65 | 140 | Tidak |
+| P3 | L | 37 | 80 | 120 | Tidak |
+| P4 | P | 60 | 68 | 150 | Ya |
+| P5 | L | 49 | 75 | 135 | Tidak |
+
+Mahasiswa dapat mengidentifikasi jenis data sebagai berikut:
+
+| Variabel | Jenis Data |
+|---------|-----------|
+| Jenis Kelamin | Kualitatif Nominal |
+| Umur | Kuantitatif Kontinu |
+| Berat Badan | Kuantitatif Kontinu |
+| Tekanan Darah | Kuantitatif Kontinu |
+| Status Diabetes | Kualitatif Nominal |
+
+## Pentingnya Klasifikasi Data dalam Analisis Statistik
+
+Pemahaman mengenai jenis data sangat penting dalam analisis statistik karena:
+
+1. Menentukan metode analisis statistik yang digunakan  
+2. Menentukan teknik penyajian data yang tepat  
+3. Membantu interpretasi hasil penelitian secara akurat  
+4. Menghindari kesalahan dalam analisis data  
+
+Dalam bidang rekam medis dan informasi kesehatan, kemampuan mengidentifikasi jenis data merupakan keterampilan dasar yang diperlukan dalam pengolahan dan analisis data kesehatan.
+
+----
+
+# Latihan Mahasiswa
+
+## Latihan 1
+
+Tentukan jenis data berikut:
+
+| Variabel | Jenis Data |
+|--------|------------|
+| Golongan darah | ? |
+| Umur pasien | ? |
+| Tingkat nyeri | ? |
+| Jumlah pasien | ? |
+| Berat badan | ? |
+
+## Latihan 2
+
+Dari dataset berikut, klasifikasikan variabel menjadi data kualitatif atau kuantitatif.
+
+| Variabel |
+|---------|
+| Status merokok |
+| Tekanan darah |
+| Jumlah kunjungan |
+| Jenis penyakit |
+
+---
+
+# Kesimpulan
+Pemahaman mengenai jenis data merupakan langkah awal yang sangat penting dalam analisis statistik, khususnya dalam bidang kesehatan dan rekam medis. Data kualitatif dan data kuantitatif memiliki karakteristik yang berbeda dan memerlukan pendekatan analisis yang berbeda pula. Dengan memahami perbedaan antara kedua jenis data tersebut, peneliti dan tenaga kesehatan dapat melakukan analisis statistik yang lebih tepat dan menghasilkan informasi yang lebih akurat untuk pengambilan keputusan di bidang kesehatan
+
+Data merupakan komponen utama dalam analisis statistik. Berdasarkan bentuk dan karakteristiknya, data dapat diklasifikasikan menjadi dua jenis utama yaitu data kualitatif dan data kuantitatif.
+
+Data kualitatif berbentuk kategori atau atribut, sedangkan data kuantitatif berbentuk angka yang dapat diukur secara numerik. Pemahaman mengenai kedua jenis data ini sangat penting karena akan menentukan metode analisis statistik yang digunakan dalam penelitian kesehatan maupun pengolahan data rekam medis.
+
+
+---
+
+# Daftar Pustaka
+
+Daniel, W. W., & Cross, C. L. (2018). *Biostatistics: A Foundation for Analysis in the Health Sciences*. Wiley.
+
+Petrie, A., & Sabin, C. (2019). *Medical Statistics at a Glance*. Wiley-Blackwell.
+
+Weiss, N. A. (2016). *Introductory Statistics*. Pearson Education.
+
+Kirkwood, B. R., & Sterne, J. A. C. (2003). *Essential Medical Statistics*. Blackwell Science.

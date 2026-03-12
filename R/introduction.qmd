@@ -1,0 +1,222 @@
+---
+title: "Biostatistik"
+subtitle: "Konsep Dasar & Pengantar"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-07"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+
+Perkembangan ilmu kesehatan modern semakin menekankan penggunaan data dalam proses pengambilan keputusan klinis maupun manajerial. Pendekatan ini dikenal sebagai *evidence-based practice*, yaitu praktik pengambilan keputusan yang didasarkan pada bukti ilmiah yang diperoleh dari analisis data.
+
+Dalam konteks tersebut, **biostatistik** memiliki peran penting sebagai metode kuantitatif yang digunakan untuk mengumpulkan, mengolah, menganalisis, dan menginterpretasikan data kesehatan secara sistematis. Melalui biostatistik, data kesehatan yang berasal dari berbagai sumber, termasuk rekam medis pasien, dapat diubah menjadi informasi yang bermakna untuk mendukung penelitian, evaluasi pelayanan kesehatan, serta perumusan kebijakan kesehatan.
+
+---
+
+# Konsep Statistik
+
+Menurut Rosner (2015), statistik merupakan seperangkat metode kuantitatif yang digunakan untuk memahami variasi dalam data dan mengidentifikasi pola yang terdapat dalam fenomena yang diamati. Statistik memungkinkan peneliti memahami **pola, variasi, serta hubungan antar variabel** dalam suatu fenomena yang diamati.
+
+\begin{defbox}
+Statistik merupakan cabang ilmu yang mempelajari metode untuk mengumpulkan, mengorganisasi, menganalisis, menginterpretasikan, serta menyajikan data sehingga dapat digunakan dalam pengambilan keputusan.
+\end{defbox}
+
+Secara umum statistik dibagi menjadi dua jenis utama:
+
+## Statistik Deskriptif
+
+Statistik yang digunakan untuk **mendeskripsikan atau merangkum data**. Statistik yang digunakan untuk menggambarkan karakteristik suatu kumpulan data. Menggambarkan, meringkas, mendeskripsikan karakteristik dari data **(penting)**. Pada umumnya mencakup mean, median, modus, variansi, standar deviasi dan visualisasi data. Menganalisa pada satu variable penelitian (univariat) tanpa menarik kesimpulan atau prediksi
+
+Contoh:
+
+- rata-rata usia pasien
+
+- distribusi jenis kelamin pasien
+
+- jumlah kunjungan pasien
+
+## Statistik Inferensial
+
+Statistik yang digunakan untuk **menarik kesimpulan mengenai populasi berdasarkan data sampel**. Membuat penaksiran, peramalan atau
+generalisasi (penarikan kesimpulan) terhadap populasi penelitian bedasarkan sampel dari populasi tersebut
+
+Contoh:
+
+- uji hipotesis
+
+- interval kepercayaan
+
+- analisis hubungan antar variabel
+
+---
+
+# Konsep Biostatistik
+
+Menurut Pagano dan Gauvreau (2018), biostatistik adalah penerapan metode statistik untuk menganalisis data yang berasal dari penelitian biomedis, epidemiologi, serta pelayanan kesehatan.
+
+\begin{defbox}
+Biostatistik adalah cabang statistik yang menerapkan metode statistik dalam bidang biologi, kedokteran, kesehatan masyarakat, dan ilmu kesehatan lainnya. Cabang statistik yang secara khusus menerapkan metode statistik dalam bidang **kedokteran, kesehatan masyarakat, biologi, dan epidemiologi**
+\end{defbox}
+
+Biostatistik digunakan untuk menganalisis data yang berkaitan dengan:
+
+- penelitian kesehatan
+- epidemiologi termasuk memahami distribusi penyakit, mengidentifikasi faktor risiko kesehatan
+- pelayanan kesehatan
+- sistem informasi kesehatan
+- mengevaluasi efektivitas intervensi medis
+- mendukung pengambilan keputusan berbasis data
+
+## Diagram Konsep Biostatistik
+
+Berikut merupakan gambaran hubungan antara statistik dan biostatistik dalam ilmu kesehatan.
+
+```{mermaid}
+flowchart TD
+
+A(Statistik)
+
+A --> B(Statistik Deskriptif)
+B --> C(Penyajian & Ringkasan Data)
+
+A --> D(Statistik Inferensial)
+D --> E(Penarikan Kesimpulan dari Sampel)
+
+```
+
+---
+
+# Perbedaan Statistik dan Biostatistik
+
+| Aspek | Statistik | Biostatistik |
+|------|-----------|--------------|
+| Definisi | Ilmu yang mempelajari metode pengumpulan, analisis, dan interpretasi data | Cabang statistik yang diterapkan dalam bidang kesehatan dan biologi |
+| Ruang Lingkup | Semua bidang ilmu | Ilmu kesehatan dan biologi |
+| Objek Data | Data ekonomi, sosial, teknik, dll | Data kesehatan dan biologis |
+| Tujuan | Analisis data umum | Analisis fenomena kesehatan |
+| Contoh Penggunaan | Analisis ekonomi, survei sosial | Analisis data pasien, penelitian klinis |
+
+---
+
+# Tujuan Biostatistik
+
+Biostatistik memiliki beberapa tujuan utama dalam bidang kesehatan:
+
+1. **Mendeskripsikan fenomena kesehatan dalam populasi**, menggambarkan distribusi penyakit dan karakteristik pasien
+2. **Mendukung penelitian kesehatan**, digunakan dalam perancangan penelitian dan analisis data penelitian
+3. **Menguji hipotesis ilmiah**, Menilai hubungan antara variabel kesehatan
+4. **Mengidentifikasi faktor risiko penyakit**, membantu memahami penyebab dan determinan penyakit.
+5. **Mendukung pengambilan keputusan berbasis data**, digunakan dalam praktik klinis dan manajemen kesehatan.  
+
+---
+
+# Kegunaan Biostatistik
+
+## Dalam Penelitian Kesehatan
+
+Biostatistik digunakan untuk:
+
+- merancang penelitian
+- menentukan ukuran sampel
+- menganalisis data penelitian
+- menarik kesimpulan ilmiah
+
+## Dalam Epidemiologi
+
+Biostatistik membantu:
+
+- mengukur frekuensi penyakit
+- mempelajari distribusi penyakit
+- mengidentifikasi faktor risiko
+- mengevaluasi program kesehatan
+
+## Dalam Manajemen Rumah Sakit (Manajemen Pelayanan Kesehatan)
+
+Biostatistik digunakan untuk menganalisis indikator pelayanan kesehatan seperti:
+
+- Bed Occupancy Rate (BOR)
+- Average Length of Stay (LOS)
+- Bed Turn Over (BTO)
+- angka kematian rumah sakit dll
+
+---
+
+# Contoh Kasus Rekam Medis
+
+\begin{examplebox}
+Berikut contoh data sederhana pasien rawat inap.
+\end{examplebox}
+
+| Pasien | Usia | Jenis Kelamin | Diagnosis | Lama Rawat (hari) |
+|------|------|---------------|----------|-------------------|
+| P1 | 45 | L | Pneumonia | 5 |
+| P2 | 60 | P | Diabetes | 4 |
+| P3 | 50 | L | Stroke | 7 |
+| P4 | 35 | P | Demam Berdarah | 3 |
+| P5 | 55 | L | Pneumonia | 6 |
+
+Analisis statistik yang dapat dilakukan dari data tersebut antara lain:
+
+- menghitung **rata-rata lama rawat pasien**
+- menentukan **diagnosis yang paling sering muncul**
+- menganalisis **distribusi usia pasien**
+- melihat **perbandingan jenis kelamin pasien**
+
+Contoh ini menunjukkan bagaimana **data rekam medis dapat digunakan sebagai sumber analisis biostatistik**.
+
+\begin{notebox}
+Kualitas analisis statistik sangat bergantung pada kualitas data. Oleh karena itu, kelengkapan dan akurasi data rekam medis sangat penting dalam analisis biostatistik.
+\end{notebox}
+
+---
+
+# Latihan Mahasiswa
+
+1. Jelaskan perbedaan statistik dan biostatistik.
+2. Sebutkan tiga tujuan utama biostatistik.
+3. Berikan dua contoh penerapan biostatistik di rumah sakit.
+4. Jelaskan istilah dasar berikut
+    a. Data, Informasi, Knowledge, Wisdom
+    b. Variabel
+    c. BIAS
+    d. Statistik & Parameter
+    e. Statistik Deskriptif & Inferensial
+    f. Parametrik & Non Parametrik
+    g. Populasi & Sampel & Teknik sampling
+
+---
+
+# Kesimpulan
+
+Biostatistik merupakan cabang ilmu yang menerapkan metode statistik dalam bidang kesehatan dan ilmu biologi. Melalui biostatistik, data kesehatan dapat dianalisis secara sistematis sehingga menghasilkan informasi yang berguna untuk penelitian, evaluasi pelayanan kesehatan, serta pengambilan keputusan berbasis bukti.
+
+Pemahaman mengenai konsep dasar biostatistik sangat penting bagi tenaga kesehatan, khususnya tenaga rekam medis, karena data yang dihasilkan dari rekam medis merupakan salah satu sumber utama dalam analisis statistik kesehatan.
+
+
+---
+
+# Daftar Pustaka
+
+Pagano, M., & Gauvreau, K. (2018). *Principles of Biostatistics*. CRC Press.
+
+Rosner, B. (2015). *Fundamentals of Biostatistics*. Cengage Learning.
+
+Gordis, L. (2014). *Epidemiology*. Elsevier.

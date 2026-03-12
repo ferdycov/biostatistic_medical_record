@@ -1,30 +1,70 @@
 ---
-title: "Handout 3: Ukuran Pemusatan Data (Central Tendency)"
-format: pdf
+title: "Biostatistik"
+subtitle: "Central Tendency (Ukuran Pemusatan Data)"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-08"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
 ---
 
 # Pendahuluan
 
-Statistik merupakan alat penting dalam analisis data kesehatan.  
-Dalam bidang **Rekam Medis dan Informasi Kesehatan (RMIK)**, statistik digunakan
-untuk menganalisis data pasien, pelayanan kesehatan, dan kualitas pelayanan
-rumah sakit.
+Dalam penelitian kesehatan, data yang dikumpulkan dari pasien sering kali memiliki jumlah yang besar dan bervariasi sehingga sulit untuk dipahami secara langsung. Oleh karena itu, diperlukan metode statistik yang mampu merangkum data tersebut menjadi informasi yang lebih sederhana namun tetap representatif.
 
-Salah satu konsep dasar dalam statistik adalah **Central Tendency** 
-atau **ukuran pemusatan data**, yaitu **nilai yang mewakili sekumpulan data**.  
-Dengan ukuran ini, data yang banyak bisa diringkas menjadi **satu angka yang mewakili keseluruhan data**.
+Salah satu pendekatan yang digunakan dalam statistik deskriptif adalah **central tendency** atau ukuran pemusatan data. Ukuran ini bertujuan untuk menggambarkan **nilai pusat dari suatu distribusi data**, memberikan gambaran mengenai **nilai yang paling representatif dari suatu distribusi data** sehingga peneliti dapat memahami karakteristik umum dari suatu populasi atau sampel.
+
+Dalam bidang rekam medis dan manajemen informasi kesehatan, ukuran pemusatan sering digunakan untuk menggambarkan indikator kesehatan, seperti rata-rata usia pasien, rata-rata lama rawat inap, atau diagnosis yang paling sering terjadi pada suatu periode tertentu.
+
+Menurut Pagano dan Gauvreau (2018), ukuran pemusatan data membantu peneliti memahami **titik representatif dari distribusi data** yang dapat digunakan sebagai dasar dalam analisis statistik selanjutnya.
+
+Menurut Rosner (2015), ukuran pemusatan data merupakan salah satu komponen utama dalam **statistik deskriptif** yang bertujuan untuk merangkum data sehingga lebih mudah dipahami.
+
+Secara umum terdapat tiga ukuran pemusatan data yang paling sering digunakan dalam statistik, yaitu:
+
+- Mean (rata-rata)
+- Median (nilai tengah)
+- Modus (nilai yang paling sering muncul)
 
 ---
 
-# Pengantar & Pengertian Central Tendency
+# Central Tendency
 
-**Central tendency** adalah nilai “tengah” atau **pusat dari sekumpulan data**.  
-Ini memungkinkan kita memahami **kecenderungan umum data**.
+## Definisi Central Tendency
 
-> Analogi: Jika ada 5 pasien dengan lama rawat: 2, 3, 4, 5, 6 hari,  
-> maka angka 4 hari bisa dijadikan **representasi rata-rata lama rawat**.
+\begin{defbox}
+Central tendency adalah ukuran statistik yang digunakan untuk menggambarkan nilai pusat atau nilai representatif dari suatu kumpulan data.
+\end{defbox}
 
-### Tujuan Menggunakan Central Tendency
+Ukuran pemusatan data digunakan untuk:
+
+- merangkum data dalam satu nilai representatif
+- menggambarkan karakteristik umum suatu populasi atau sampel
+- memudahkan interpretasi data
+- menjadi dasar dalam analisis statistik lanjutan
+
+Dalam praktik biostatistik, ukuran pemusatan yang paling sering digunakan adalah:
+
+- **Mean (rata-rata)**
+- **Median (nilai tengah)**
+- **Modus (nilai yang paling sering muncul)**
+
+## Tujuan Menggunakan Central Tendency
 
 1. **Menyederhanakan data**  
    - Banyak angka bisa diringkas menjadi satu nilai pusat.  
@@ -41,95 +81,456 @@ Ini memungkinkan kita memahami **kecenderungan umum data**.
 
 ---
 
-### Pentingnya Central Tendency di RMIK
+# Mean (Rata-rata)
 
-Dalam **Rekam Medis dan Informasi Kesehatan**:
+## Definisi
 
-- Banyak data pasien harus dianalisis cepat dan tepat.  
-- Central tendency membantu **menyampaikan informasi penting** kepada dokter, manajer rumah sakit, dan staf kesehatan.
+\begin{defbox}
+Mean atau rata-rata adalah jumlah seluruh nilai data dibagi dengan banyaknya observasi dalam suatu kumpulan data.
+\end{defbox}
 
-**Contoh penerapan:**
+## Rumus Mean
 
-| Analisis Data | Ukuran Pemusatan yang Digunakan |
-|---------------|--------------------------------|
-| Lama rawat inap pasien | Mean |
-| Tekanan darah pasien | Median |
-| Diagnosis atau obat paling sering | Mode |
+### Untuk data tunggal:
+
+$$
+   \bar{x} = \frac{\sum x_i}{n}
+$$
+
+Keterangan:
+- $(\bar{x})$ = rata-rata (mean)
+- $(x_i)$ = nilai data ke-i
+- $(n)$ = jumlah data
+
+### Cara Menghitung Mean
+
+Langkah-langkah:
+
+1. Menjumlahkan seluruh nilai data
+2. Membagi jumlah tersebut dengan banyaknya data
+
+### Contoh dalam Rekam Medis
+
+\begin{examplebox}
+Data lama rawat inap pasien (hari): 3, 4, 5, 6, 7
+\end{examplebox}
+
+Langkah perhitungan:
+
+$$
+   \bar{x} = \frac{3 + 4 + 5 + 6 + 7}{5}
+$$
+
+$$
+   \bar{x} = \frac{25}{5} = 5
+$$
+
+Rata-rata lama rawat pasien adalah **5 hari**.
+
+### Untuk data berkelompok:
+$$
+   \bar{x} = \frac{\sum f_i x_i}{\sum f_i}
+$$
+
+Keterangan:
+
+- $\bar{x}$ = mean  
+- $f_i$ = frekuensi kelas ke-i  
+- $x_i$ = titik tengah kelas  
+- $\sum f_i$ = jumlah seluruh frekuensi 
+
+### Cara Menghitung Mean Data Berkelompok
+
+Langkah-langkah perhitungan:
+
+1. Menentukan **titik tengah kelas**
+
+$$
+   x_i = \frac{batas\ atas + batas\ bawah}{2}
+$$
+
+2. Mengalikan titik tengah kelas dengan frekuensi ($f_i x_i$)
+
+3. Menjumlahkan seluruh nilai $f_i x_i$
+
+4. Membagi dengan jumlah seluruh frekuensi
+
+### Contoh dalam Rekam Medis
+
+\begin{examplebox}
+Distribusi lama rawat inap pasien di suatu rumah sakit
+\end{examplebox}
+
+| Lama Rawat (hari) | Frekuensi |
+|---|---|
+| 1–3 | 4 |
+| 4–6 | 6 |
+| 7–9 | 3 |
+| 10–12 | 2 |
+
+Langkah pertama menentukan **titik tengah kelas**.
+
+| Interval | f | xi | fxi |
+|---|---|---|---|
+| 1–3 | 4 | 2 | 8 |
+| 4–6 | 6 | 5 | 30 |
+| 7–9 | 3 | 8 | 24 |
+| 10–12 | 2 | 11 | 22 |
+
+Jumlah frekuensi:
+
+$$
+\sum f = 15
+$$
+
+Jumlah hasil perkalian:
+
+$$
+\sum f_i x_i = 84
+$$
+
+Mean:
+
+$$
+\bar{x} = \frac{84}{15} = 5.6
+$$
+
+Rata-rata lama rawat pasien adalah **5.6 hari**.
 
 ---
 
-### Contoh Ilustrasi
+# Median
 
-Data **jumlah kunjungan pasien ke Poli Anak selama seminggu**:
+## Definisi
 
-| Hari    | Jumlah Pasien |
-|---------|---------------|
-| Senin   | 20            |
-| Selasa  | 25            |
-| Rabu    | 22            |
-| Kamis   | 30            |
-| Jumat   | 23            |
+\begin{defbox}
+Median adalah nilai tengah dari suatu kumpulan data yang telah diurutkan dari nilai terkecil hingga terbesar. Median membagi data menjadi dua bagian yang sama besar.
+\end{defbox}
 
-- **Mean** = (20 + 25 + 22 + 30 + 23)/5 = 24  
-- **Median** = Urutkan → 20, 22, 23, 25, 30 → median = 23  
-- **Mode** = Tidak ada nilai yang berulang → mode = tidak ada  
+## Rumus Median
 
-Interpretasi: Manajer poli bisa mengetahui **rata-rata beban pasien** per hari dan merencanakan tenaga medis.
+### Untuk data tunggal:
+
+Jika jumlah data ganjil:
+$$
+Median = \frac{n+1}{2}
+$$
+
+Jika jumlah data genap:
+Median = rata-rata dua nilai tengah.
+
+### Cara Menghitung Median
+
+Langkah-langkah:
+
+1. Mengurutkan data dari kecil ke besar
+2. Menentukan posisi nilai tengah
+
+### Contoh dalam Rekam Medis
+
+\begin{examplebox}
+Data usia pasien: 25, 30, 35, 40, 45
+\end{examplebox}
+
+Data sudah terurut sehingga nilai tengah adalah **35**.
+
+Maka median usia pasien adalah **35 tahun**.
+
+### Untuk data berkelompok:
+$$
+Median = L + \left( \frac{\frac{n}{2} - F}{
+f} \right) \times c
+$$
+
+Keterangan:
+
+- $L$ = batas bawah kelas median
+
+- $n$ = jumlah seluruh frekuensi
+
+- $F$ = jumlah frekuensi sebelum kelas median
+
+- $f$ = frekuensi kelas median
+
+- $c$ = panjang kelas
+
+### Langkah Menghitung Median
+
+1. Menghitung nilai $\frac{n}{2}$
+2. Menentukan **kelas median**
+3. Menggunakan rumus median untuk menghitung nilai median
+
+### Contoh dalam Rekam Medis
+\begin{examplebox}
+Distribusi usia pasien di suatu rumah sakit
+\end{examplebox}
+| Usia (tahun) | Frekuensi |
+|---|---|
+| 20–29 | 5 |
+| 30–39 | 10 |
+| 40–49 | 8 |
+| 50–59 | 2 |
+Jumlah frekuensi:
+$$
+n = 25
+$$
+
+Kelas median adalah kelas ke-2 (30–39) karena $n/2 = 12.5$.
+
+Batas bawah kelas median:
+$$
+L = 30
+$$
+
+Jumlah frekuensi sebelum kelas median:
+$$
+F = 5
+$$
+
+Frekuensi kelas median:
+$$
+f = 10
+$$
+
+Panjang kelas:
+$$
+c = 10
+$$
+
+Median:
+$$
+Median = 30 + \left( \frac{12.5 - 5}{10} \right) \times 10 = 30 + 7.5 = 37.5
+$$
+
+Median usia pasien adalah **37.5 tahun**.
+
+Median digunakan ketika distribusi data **tidak simetris atau memiliki nilai ekstrem (outlier)**.
 
 ---
 
-# Jenis Ukuran Central Tendency
+# Modus
 
-1. **Mean (Rata-rata)**  
-   Mean = jumlah seluruh nilai data dibagi jumlah data:
+## Definisi
 
-   $$
-   \bar{x} = \frac{\sum x}{n}
-   $$
+\begin{defbox}
+Modus adalah nilai yang paling sering muncul dalam suatu kumpulan data. Modus sangat berguna untuk data kategorik atau nominal.
+\end{defbox}
 
-2. **Median (Nilai Tengah)**  
-   Median = nilai tengah setelah data diurutkan.  
-   Jika jumlah data genap → rata-rata dua nilai tengah.
+## Rumus Modus
 
-3. **Mode (Modus)**  
-   Mode = nilai yang paling sering muncul dalam data.
+### Untuk data tunggal:
+Modus = nilai yang paling sering muncul
+
+### Cara Menghitung Modus
+Langkah-langkah:
+
+1. Mengamati frekuensi kemunculan setiap nilai
+
+2. Menentukan nilai yang paling sering muncul
+
+### Contoh dalam Rekam Medis
+\begin{examplebox}
+Data diagnosis pasien: Hipertensi, Diabetes, Hipertensi, Stroke, Hipertensi
+\end{examplebox}
+
+Frekuensi diagnosis:
+
+- Hipertensi = 3
+
+- Diabetes = 1
+
+- Stroke = 1
+
+Maka **modus diagnosis pasien adalah Hipertensi**.
+
+### Untuk data berkelompok:
+Jika data berkelompok memiliki satu modus:
+$$
+Mo = L + \left(\frac{d_1}{d_1 + d_2}\right) \times c
+$$
+
+Keterangan:
+
+- $L$ = batas bawah kelas modus  
+- $d_1$ = selisih frekuensi kelas modus dengan kelas sebelumnya  
+- $d_2$ = selisih frekuensi kelas modus dengan kelas sesudahnya  
+- $c$ = lebar kelas 
+
+Jika data berkelompok memiliki dua modus atau lebih, maka data tersebut disebut **multimodal**.
+
+### Contoh Perhitungan Modus Data Berkelompok
+
+\begin{examplebox}
+Distribusi lama rawat inap pasien di suatu rumah sakit selama satu bulan.
+\end{examplebox}
+
+| Lama Rawat (hari) | Frekuensi |
+|---|---|
+| 1–3 | 4 |
+| 4–6 | 7 |
+| 7–9 | 10 |
+| 10–12 | 6 |
+| 13–15 | 3 |
+
+#### Langkah 1: Menentukan Kelas Modus
+
+Kelas modus adalah **kelas dengan frekuensi terbesar**.
+
+Pada tabel di atas frekuensi terbesar adalah **10**, sehingga kelas modus adalah : **7–9**
+
+#### Langkah 2: Menentukan Komponen Rumus
+
+Rumus modus data berkelompok:
+
+$$
+Mo = L + \left(\frac{d_1}{d_1 + d_2}\right) \times c
+$$
+
+Keterangan:
+
+- $L$ = batas bawah kelas modus  
+- $d_1$ = selisih frekuensi kelas modus dengan kelas sebelumnya  
+- $d_2$ = selisih frekuensi kelas modus dengan kelas sesudahnya  
+- $c$ = panjang kelas
+
+#### Langkah 3: Menentukan Nilai yang Dibutuhkan
+
+Kelas modus = **7–9**
+
+Frekuensi:
+
+- kelas sebelumnya = 7  
+- kelas modus = 10  
+- kelas sesudahnya = 6  
+
+Maka:
+
+$d_1 = 10 - 7 = 3$
+
+$d_2 = 10 - 6 = 4$
+
+Batas bawah kelas modus = **6.5** (penyesuaian batas kelas)
+
+Lebar kelas: $c = 3$
+
+#### Langkah 4: Menghitung Modus
+
+$Mo = 6.5 + \left(\frac{3}{3 + 4}\right) \times 3$
+
+$Mo = 6.5 + \left(\frac{3}{7}\right) \times 3$
+
+$Mo = 6.5 + 1.29$
+
+$Mo \approx 7.79$
+
+#### Interpretasi
+
+Nilai modus lama rawat pasien adalah sekitar **7.79 hari**. Artinya, **lama rawat yang paling sering terjadi pada pasien berada di sekitar 7–8 hari**.
+
+---
+
+# Perbedaan Mean, Median, dan Modus
+
+| Ukuran | Definisi | Kelebihan | Kelemahan |
+|------|------|------|------|
+| Mean | Rata-rata semua nilai data | Menggunakan seluruh data | Sensitif terhadap nilai ekstrem |
+| Median | Nilai tengah data | Tidak terpengaruh outlier | Tidak menggunakan semua nilai |
+| Modus | Nilai yang paling sering muncul | Cocok untuk data kategorik | Tidak selalu unik |
+
+Hubungan ketiga ukuran pemusatan dapat digambarkan sebagai berikut:
+
+```{mermaid}
+flowchart TD
+
+A(Central Tendency)
+
+A --> B(Mean)
+A --> C(Median)
+A --> D(Modus)
+```
 
 ---
 
 # Latihan Soal
 
-## Soal 1
-Data lama rawat pasien (hari):
+1. Hitung mean dari data berikut: Lama rawat pasien (hari): 4, 5, 6, 6, 7, 8
 
-4, 5, 6, 3, 2  
+2. Tentukan median dari data berikut: Usia pasien: 22, 25, 30, 35, 40
 
-Hitung: Mean, Median, Mode
+3. Tentukan modus dari data berikut:
 
-## Soal 2
-Data jumlah kunjungan pasien:
+   Diagnosis pasien: Pneumonia, Pneumonia, Diabetes, Stroke, Pneumonia, Diabetes
 
-15, 20, 20, 25, 30  
+4. Seorang peneliti ingin mengetahui nilai tipikal dari lama rawat pasien yang memiliki beberapa nilai ekstrem (outlier).  
+Ukuran pemusatan apa yang paling tepat digunakan?
 
-Hitung: Mean, Median, Mode
+5. Berikan contoh variabel rekam medis yang cocok dianalisis menggunakan:
 
-## Soal 3
-Usia pasien yang datang ke klinik:
+   - Mean
+   - Median
+   - Modus
 
-21, 25, 25, 30, 32, 25, 28  
+6. Berikut distribusi usia pasien rawat jalan di suatu rumah sakit.
 
-Hitung: Mean, Median, Mode
+| Usia (tahun) | Frekuensi |
+|---|---|
+| 20–29 | 5 |
+| 30–39 | 8 |
+| 40–49 | 10 |
+| 50–59 | 7 |
+
+Hitung **mean usia pasien**.
+
+---
+
+7. Data lama rawat inap pasien berikut disajikan dalam tabel distribusi frekuensi.
+
+| Lama Rawat (hari) | Frekuensi |
+|---|---|
+| 1–3 | 3 |
+| 4–6 | 7 |
+| 7–9 | 5 |
+| 10–12 | 2 |
+
+Tentukan:
+
+- Mean
+- Kelas median
+- Kelas modus
+
+---
+
+8. Sebuah rumah sakit mencatat distribusi lama rawat pasien berikut.
+
+| Lama Rawat (hari) | Frekuensi |
+|---|---|
+| 1–5 | 6 |
+| 6–10 | 12 |
+| 11–15 | 8 |
+| 16–20 | 4 |
+
+Hitung **perkiraan rata-rata lama rawat pasien**.
+
+9. Jelaskan mengapa dalam perhitungan mean data berkelompok digunakan **titik tengah kelas**.
 
 ---
 
 # Kesimpulan
 
-Central tendency adalah **ukuran statistik yang menunjukkan nilai pusat data**.  
-Tiga ukuran utama:
+Central tendency atau ukuran pemusatan data merupakan konsep penting dalam statistik deskriptif yang digunakan untuk menggambarkan nilai representatif dari suatu kumpulan data. Tiga ukuran pemusatan yang paling umum digunakan adalah mean, median, dan modus.
 
-- **Mean** → rata-rata seluruh data  
-- **Median** → nilai tengah  
-- **Mode** → nilai yang paling sering muncul  
+Setiap ukuran pemusatan memiliki karakteristik yang berbeda serta digunakan dalam kondisi yang berbeda pula. Mean menggunakan seluruh data tetapi sensitif terhadap nilai ekstrem, median lebih stabil terhadap outlier, sedangkan modus berguna untuk data kategorik.
 
-Dalam bidang **RMIK**, konsep ini penting untuk **menganalisis data pasien, evaluasi pelayanan, dan pengambilan keputusan rumah sakit**.
+Dalam bidang rekam medis dan informasi kesehatan, ukuran pemusatan data sering digunakan untuk menganalisis berbagai indikator kesehatan seperti usia pasien, lama rawat inap, dan distribusi diagnosis penyakit.
 
 ---
+
+# Daftar Pustaka
+
+Daniel, W. W., & Cross, C. L. (2018). *Biostatistics: A Foundation for Analysis in the Health Sciences*. Wiley.
+
+Pagano, M., & Gauvreau, K. (2018). *Principles of Biostatistics*. CRC Press.
+
+Rosner, B. (2015). *Fundamentals of Biostatistics*. Cengage Learning.
+
+Gordis, L. (2014). *Epidemiology*. Elsevier.

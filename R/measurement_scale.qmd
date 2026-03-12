@@ -1,0 +1,236 @@
+---
+title: "Biostatistik"
+subtitle: "Skala Pengukuran Data"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-07"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+
+Dalam analisis statistik, data yang dikumpulkan dari suatu penelitian tidak hanya berbeda dalam bentuk nilai, tetapi juga berbeda dalam **tingkat pengukurannya**. Tingkat pengukuran ini dikenal sebagai **skala pengukuran data**. Pemahaman terhadap **skala pengukuran data** merupakan aspek fundamental yang menentukan metode analisis yang dapat digunakan. Skala pengukuran menggambarkan cara suatu variabel diukur dan jenis informasi yang terkandung dalam data tersebut.
+
+Menurut Rosner (2015), skala pengukuran data menentukan **tingkat informasi yang dapat diperoleh dari suatu variabel serta jenis analisis statistik yang dapat diterapkan**. Kesalahan dalam menentukan skala pengukuran dapat menyebabkan kesalahan dalam pemilihan metode analisis statistik. Misalnya, variabel yang hanya berupa kategori tidak dapat dianalisis dengan metode statistik yang memerlukan data numerik.
+
+Dalam bidang kesehatan, khususnya dalam **manajemen rekam medis dan informasi kesehatan**, berbagai variabel yang tercatat dalam rekam medis memiliki skala pengukuran yang berbeda (seperti **jenis kelamin pasien, usia, diagnosis, tingkat keparahan penyakit, hingga lama rawat inap**).  Variabel-variabel tersebut memiliki karakteristik pengukuran yang berbeda sehingga perlu diklasifikasikan berdasarkan skala pengukurannya. Oleh karena itu, tenaga rekam medis perlu memahami jenis skala pengukuran agar dapat melakukan analisis data kesehatan secara tepat.
+
+Menurut Stevens (1946), skala pengukuran data dalam statistik terdiri dari **empat jenis utama**, yaitu:
+
+- Skala nominal  
+- Skala ordinal  
+- Skala interval  
+- Skala rasio  
+
+Keempat skala ini membentuk suatu **hierarki tingkat informasi data**, mulai dari yang paling sederhana hingga yang paling kompleks.
+
+---
+
+# Jenis Skala Pengukuran Data
+
+## Skala Nominal
+
+\begin{defbox}
+Skala nominal merupakan skala pengukuran yang digunakan untuk mengelompokkan data ke dalam kategori tertentu tanpa adanya urutan atau tingkatan antar kategori.
+\end{defbox}
+
+Karakteristik skala nominal:
+
+- Data hanya berfungsi sebagai **label atau kategori** (Data berupa **kategori**)
+- Tidak memiliki **urutan atau ranking**
+- Tidak memiliki **jarak antar nilai**
+- Tidak dapat dilakukan operasi matematika
+
+\begin{examplebox}
+Contoh variabel dalam rekam medis yang menggunakan skala nominal:
+
+- Jenis kelamin pasien (Laki-laki / Perempuan)
+
+- Golongan darah (A, B, AB, O)
+
+- Status pernikahan pasien
+
+- Jenis diagnosis berdasarkan kategori penyakit
+\end{examplebox}
+
+---
+
+## Skala Ordinal
+
+\begin{defbox}
+Skala ordinal merupakan skala pengukuran yang mengelompokkan data ke dalam kategori yang memiliki **urutan atau tingkatan**, tetapi jarak antar kategori tidak dapat diukur secara pasti.
+\end{defbox}
+
+Karakteristik skala ordinal:
+
+- Memiliki **tingkatan atau ranking**
+- Jarak antar kategori **tidak diketahui secara pasti**
+- Tidak dapat dilakukan operasi matematika secara penuh
+
+\begin{examplebox}
+Contoh variabel dalam rekam medis:
+
+- Tingkat keparahan penyakit (ringan, sedang, berat)
+
+- Skala nyeri pasien (tidak nyeri, nyeri ringan, nyeri sedang, nyeri berat)
+
+- Tingkat kepuasan pasien terhadap pelayanan kesehatan
+
+- Stadium kanker (stadium I, II, III, IV)
+
+- Tingkat kepuasan pasien terhadap pelayanan rumah sakit
+\end{examplebox}
+
+
+Sebagai contoh, pasien dengan tingkat nyeri "berat" memiliki kondisi lebih buruk dibandingkan pasien dengan nyeri "sedang", tetapi **tidak diketahui secara pasti berapa besar perbedaannya**.
+
+---
+
+## Skala Interval
+
+\begin{defbox}
+Skala interval merupakan skala pengukuran yang memiliki urutan dan jarak antar nilai yang sama, tetapi tidak memiliki nilai nol absolut.
+\end{defbox}
+
+Karakteristik skala interval:
+
+- Memiliki **urutan**
+- Jarak antar nilai **sama**
+- Tidak memiliki **nol mutlak**
+- Operasi penjumlahan dan pengurangan dapat dilakukan
+
+\begin{examplebox}
+Contoh variabel dalam bidang kesehatan:
+
+- Suhu tubuh pasien (°C atau °F)
+
+- Skor hasil tes psikologis
+
+- Tahun kejadian suatu penyakit
+\end{examplebox}
+
+Sebagai contoh, suhu 40°C tidak berarti dua kali lebih panas dibandingkan 20°C karena **nol pada skala Celsius bukan nol absolut**.
+
+---
+
+## Skala Rasio
+
+\begin{defbox}
+Skala rasio merupakan skala pengukuran yang memiliki urutan, jarak antar nilai yang sama, serta memiliki nilai nol absolut yang menunjukkan ketiadaan suatu karakteristik.
+\end{defbox}
+
+Karakteristik skala rasio:
+
+- Memiliki **urutan**
+- Jarak antar nilai **sama**
+- Memiliki **nol absolut**
+- Semua operasi matematika dapat dilakukan
+
+\begin{examplebox}
+Contoh variabel dalam rekam medis:
+
+- Usia pasien
+
+- Berat badan pasien
+
+- Tinggi badan pasien
+
+- Lama rawat inap pasien (hari)
+
+- Jumlah kunjungan pasien
+\end{examplebox}
+
+Sebagai contoh, pasien dengan berat badan 80 kg memiliki berat dua kali lebih besar dibandingkan pasien dengan berat badan 40 kg.
+
+---
+
+# Perbedaan Skala Pengukuran Data
+
+| Skala | Karakteristik Utama | Contoh Rekam Medis |
+|------|--------------------|--------------------|
+| Nominal | Kategori tanpa urutan | Jenis kelamin, golongan darah |
+| Ordinal | Kategori dengan urutan | Tingkat keparahan penyakit |
+| Interval | Urutan dan jarak sama tetapi tanpa nol absolut | Suhu tubuh |
+| Rasio | Urutan, jarak sama, memiliki nol absolut | Usia pasien, lama rawat |
+
+Secara hierarkis, skala pengukuran data dapat digambarkan sebagai berikut:
+
+```{mermaid}
+flowchart TD
+
+A(Skala Pengukuran Data)
+
+A --> B(Nominal)
+A --> C(Ordinal)
+A --> D(Interval)
+A --> E(Rasio)
+```
+
+Semakin tinggi tingkat skala pengukuran, semakin banyak **operasi statistik** yang dapat dilakukan terhadap data tersebut.
+
+---
+
+# Latihan Soal
+
+1. Tentukan jenis skala pengukuran dari variabel berikut:
+
+    a. Jenis kelamin pasien  
+    b. Tingkat nyeri pasien  
+    c. Suhu tubuh pasien  
+    d. Lama rawat inap pasien  
+
+2. Berikan dua contoh variabel rekam medis untuk masing-masing skala pengukuran berikut:
+
+    - Skala nominal  
+    - Skala ordinal  
+    - Skala interval  
+    - Skala rasio  
+
+3. Mengapa penting memahami skala pengukuran data dalam analisis statistik?
+
+4. Seorang peneliti mengumpulkan data berikut dari rekam medis (*Tentukan skala pengukuran masing-masing variabel*) :
+
+| Variabel | Contoh Nilai |
+|------|------|
+| Jenis kelamin | L / P |
+| Usia | 45 tahun |
+| Lama rawat | 5 hari |
+| Tingkat nyeri | ringan / sedang / berat |
+
+5. Berikan dua contoh variabel rekam medis yang menggunakan skala rasio.
+
+---
+
+# Kesimpulan
+
+Skala pengukuran data merupakan konsep dasar dalam statistik yang menentukan cara suatu variabel diukur serta jenis analisis statistik yang dapat digunakan. Terdapat empat jenis skala pengukuran data, yaitu skala nominal, ordinal, interval, dan rasio.
+
+Dalam bidang rekam medis, berbagai variabel kesehatan memiliki skala pengukuran yang berbeda. Oleh karena itu, pemahaman mengenai skala pengukuran sangat penting bagi tenaga kesehatan agar dapat melakukan analisis data secara tepat dan menghasilkan informasi yang valid untuk mendukung pengambilan keputusan dalam pelayanan kesehatan.
+
+---
+
+# Daftar Pustaka
+
+Daniel, W. W., & Cross, C. L. (2018). *Biostatistics: A Foundation for Analysis in the Health Sciences*. Wiley.
+
+Pagano, M., & Gauvreau, K. (2018). *Principles of Biostatistics*. CRC Press.
+
+Rosner, B. (2015). *Fundamentals of Biostatistics*. Cengage Learning.
+
+Stevens, S. S. (1946). On the theory of scales of measurement. *Science*, 103(2684), 677–680.

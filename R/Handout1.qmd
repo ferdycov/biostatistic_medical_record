@@ -1,0 +1,26 @@
+---
+title: "Handout 1: Pengenalan Biostatistika"
+format: pdf
+---
+
+# Pendahuluan
+Biostatistika adalah cabang ilmu statistik yang diterapkan dalam bidang biologi dan kesehatan. Biostatistika digunakan untuk merancang penelitian, menganalisis data, dan menginterpretasikan hasil dalam konteks biologi dan kesehatan. Dalam handout ini, kita akan membahas beberapa konsep dasar dalam biostatistika yang penting untuk dipahami.
+
+# Desain Penelitian
+Desain penelitian adalah rencana atau strategi yang digunakan untuk mengumpulkan data dalam suatu studi. Beberapa jenis desain penelitian yang umum digunakan dalam biostatistika meliputi:
+- **Desain Eksperimental**: Peneliti mengontrol variabel independen dan meng
+amati efeknya pada variabel dependen. Contohnya adalah uji klinis acak.
+- **Desain Observasional**: Peneliti mengamati dan mencatat data tanpa mengontrol variabel. Contohnya adalah studi kohort dan studi kasus-kontrol. 
+- **Desain Cross-Sectional**: Peneliti mengumpulkan data pada satu titik waktu untuk menganalisis hubungan antara variabel. Contohnya adalah survei kesehatan.
+# Analisis Data
+Analisis data adalah proses mengolah dan menganalisis data untuk mendapatkan informasi yang berguna. Beberapa teknik analisis data yang umum digunakan dalam biostatistika meliputi:
+- **Statistik Deskriptif**: Digunakan untuk menggambarkan karakteristik data, seperti mean, median, modus, dan standar deviasi.
+- **Statistik Inferensial**: Digunakan untuk membuat kesimpulan tentang populasi berdasarkan sampel, seperti uji t, ANOVA, dan regresi.
+- **Analisis Survival**: Digunakan untuk menganalisis data waktu hingga kejadian, seperti analisis Kaplan-Meier dan model Cox proportional hazards.
+# Interpretasi Hasil
+Interpretasi hasil adalah proses memahami dan menjelaskan hasil analisis data dalam konteks penelitian. Beberapa hal yang perlu diperhatikan dalam interpretasi hasil meliputi:
+- **Signifikansi Statistik**: Menentukan apakah hasil yang diperoleh adalah hasil yang tidak mungkin terjadi secara kebetulan. Biasanya menggunakan nilai p untuk menilai signifikansi.
+- **Interval Kepercayaan**: Menyediakan rentang nilai yang mungkin mengandung parameter populasi yang sebenarnya.
+- **Kekuatan Studi**: Menilai kemampuan studi untuk mendeteksi efek yang sebenarnya ada, jika memang ada.
+# Kesimpulan
+Biostatistika adalah alat penting dalam penelitian biologi dan kesehatan. Dengan memahami desain penelitian, analisis data, dan interpretasi hasil, peneliti dapat membuat kesimpulan yang valid dan dapat diandalkan. Handout ini memberikan gambaran umum tentang konsep dasar dalam biostatistika yang akan membantu Anda dalam memahami dan menerapkan biostatistika dalam penelitian Anda.

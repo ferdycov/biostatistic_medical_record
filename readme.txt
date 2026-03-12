@@ -1,0 +1,1 @@
+Repository ini berisi handout praktis biostatistik khususnya pada bidang rekam medis dan informasi kesehatan

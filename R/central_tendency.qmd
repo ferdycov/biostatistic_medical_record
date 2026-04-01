@@ -431,9 +431,9 @@ $$
 
 Keterangan:
 
-- $L$ = batas bawah kelas modus (yaitu: kelas dimana MODUS akan terletak)
-- $d_1$ = selisih frekuensi kelas modus dengan kelas sebelumnya/ frekuensi kelas Modus DIKURANGI frekuensi kelas interval yang mempunyai tanda kelas lebih kecil (**SEBELUM**) kelas Modus  
-- $d_2$ = selisih frekuensi kelas modus dengan kelas sesudahnya/ frekuensi kelas Modus DIKURANGI frekuensi kelas interval yang mempunyai tanda kelas lebih besar (**SESUDAH**) kelas Modus  
+- $L$ = batas bawah kelas modus (yaitu: kelas dimana MODUS akan terletak) 
+- $d_1$ = selisih frekuensi kelas modus dengan kelas sebelumnya/ frekuensi kelas Modus DIKURANGI frekuensi kelas interval yang mempunyai tanda kelas lebih kecil (**SEBELUM**) kelas Modus 
+- $d_2$ = selisih frekuensi kelas modus dengan kelas sesudahnya/ frekuensi kelas Modus DIKURANGI frekuensi kelas interval yang mempunyai tanda kelas lebih besar (**SESUDAH**) kelas Modus 
 - $c$ = panjang kelas 
 
 Jika data berkelompok memiliki dua modus atau lebih, maka data tersebut disebut **multimodal**.

@@ -1,0 +1,76 @@
+---
+title: "Biostatistik"
+subtitle: "Ukuran Letak Data"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-08"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+Ukuran letak data adalah ukuran statistik yang digunakan untuk menggambarkan posisi atau letak suatu nilai dalam distribusi data. Ukuran letak data memberikan informasi tentang seberapa jauh suatu nilai berada dari nilai tengah atau nilai yang paling sering muncul dalam suatu distribusi data. Ukuran letak data yang umum digunakan antara lain:
+- Kuartil (Quartiles)
+- Desil (Deciles)
+- Persentil (Percentiles)
+Ukuran letak data sangat penting dalam analisis statistik karena dapat memberikan informasi tentang seberapa jauh suatu nilai berada dari nilai tengah atau nilai yang paling sering muncul dalam suatu distribusi data. Ukuran letak data juga dapat digunakan untuk membandingkan posisi suatu nilai dengan nilai lain dalam distribusi data, serta untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya.
+
+# Kuartil (Quartiles)
+Kuartil adalah ukuran letak data yang membagi distribusi data menjadi empat bagian yang sama besar. Kuartil pertama (Q1) adalah nilai yang membagi 25% data terkecil, kuartil kedua (Q2) adalah nilai yang membagi 50% data (nilai tengah atau median), dan kuartil ketiga (Q3) adalah nilai yang membagi 75% data terkecil. Kuartil dapat dihitung dengan rumus:
+$$Q_k = \frac{k(n+1)}{4}$$
+di mana $k$ adalah nomor kuartil (1, 2, atau 3) dan $n$ adalah jumlah data.
+Kuartil memberikan informasi tentang seberapa jauh suatu nilai berada dari nilai tengah atau nilai yang paling sering muncul dalam suatu distribusi data. Kuartil juga dapat digunakan untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya, terutama jika terdapat nilai yang berada di luar rentang antara kuartil pertama dan kuartil ketiga (interquartile range).
+## Contoh Kuartil
+Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Jumlah data adalah 7, sehingga kuartil pertama (Q1) dapat dihitung sebagai berikut:
+$$Q_1 = \frac{1(7+1)}{4} = 2$$
+Jadi, kuartil pertama (Q1) adalah nilai ke-2 dalam data, yaitu 7. Kuartil kedua (Q2) dapat dihitung sebagai berikut:
+$$Q_2 = \frac{2(7+1)}{4} = 4$$
+Jadi, kuartil kedua (Q2) adalah nilai ke-4 dalam data, yaitu 10 (nilai tengah atau median). Kuartil ketiga (Q3) dapat dihitung sebagai berikut:
+$$Q_3 = \frac{3(7+1)}{4} = 6$$
+Jadi, kuartil ketiga (Q3) adalah nilai ke-6 dalam data, yaitu 15. Dengan demikian, kuartil pertama (Q1) adalah 7, kuartil kedua (Q2) adalah 10, dan kuartil ketiga (Q3) adalah 15, yang memberikan informasi tentang seberapa jauh nilai-nilai dalam data tersebar dari nilai tengahnya.
+
+# Desil (Deciles)
+Desil adalah ukuran letak data yang membagi distribusi data menjadi sepuluh bagian yang sama besar. Desil pertama (D1) adalah nilai yang membagi 10% data terkecil, desil kedua (D2) adalah nilai yang membagi 20% data terkecil, dan seterusnya hingga desil kesepuluh (D10) yang membagi 100% data terkecil. Desil dapat dihitung dengan rumus:
+$$D_k = \frac{k(n+1)}{10}$$
+di mana $k$ adalah nomor desil (1, 2, ..., 10) dan $n$ adalah jumlah data.
+Desil memberikan informasi tentang seberapa jauh suatu nilai berada dari nilai tengah atau nilai yang paling sering muncul dalam suatu distribusi data. Desil juga dapat digunakan untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya, terutama jika terdapat nilai yang berada di luar rentang antara desil pertama dan desil kesepuluh (interdecile range).
+
+## Contoh Desil
+Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Jumlah data adalah 7, sehingga desil pertama (D1) dapat dihitung sebagai berikut:
+$$D_1 = \frac{1(7+1)}{10} = 0.8$$
+Jadi, desil pertama (D1) adalah nilai ke-0.8 dalam data, yang dapat diinterpolasi antara nilai ke-0 (5) dan nilai ke-1 (7), sehingga D1 adalah 5 + 0.8(7 - 5) = 6.6. Desil kedua (D2) dapat dihitung sebagai berikut:
+$$D_2 = \frac{2(7+1)}{10} = 1.6$$
+Jadi, desil kedua (D2) adalah nilai ke-1.6 dalam data, yang dapat diinterpolasi antara nilai ke-1 (7) dan nilai ke-2 (8), sehingga D2 adalah 7 + 0.6(8 - 7) = 7.6. Desil ketiga (D3) dapat dihitung sebagai berikut:
+$$D_3 = \frac{3(7+1)}{10} = 2.4$$
+Jadi, desil ketiga (D3) adalah nilai ke-2.4 dalam data, yang dapat diinterpolasi antara nilai ke-2 (8) dan nilai ke-3 (10), sehingga D3 adalah 8 + 0.4(10 - 8) = 8.8. Dengan demikian, desil pertama (D1) adalah 6.6, desil kedua (D2) adalah 7.6, dan desil ketiga (D3) adalah 8.8, yang memberikan informasi tentang seberapa jauh nilai-nilai dalam data tersebar dari nilai tengahnya.
+
+# Persentil (Percentiles)
+Persentil adalah ukuran letak data yang membagi distribusi data menjadi seratus bagian yang sama besar. Persentil pertama (P1) adalah nilai yang membagi 1% data terkecil, persentil kedua (P2) adalah nilai yang membagi 2% data terkecil, dan seterusnya hingga persentil keseratus (P100) yang membagi 100% data terkecil. Persentil dapat dihitung dengan rumus:
+$$P_k = \frac{k(n+1)}{100}$$
+di mana $k$ adalah nomor persentil (1, 2, ..., 100) dan $n$ adalah jumlah data.
+Persentil memberikan informasi tentang seberapa jauh suatu nilai berada dari nilai tengah atau nilai yang paling sering muncul dalam suatu distribusi data. Persentil juga dapat digunakan untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya, terutama jika terdapat nilai yang berada di luar rentang antara persentil pertama dan persentil keseratus (interpercentile range).
+
+## Contoh Persentil
+Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Jumlah data adalah 7, sehingga persentil pertama (P1) dapat dihitung sebagai berikut:
+$$P_1 = \frac{1(7+1)}{100} = 0.08$$
+Jadi, persentil pertama (P1) adalah nilai ke-0.08 dalam data, yang dapat diinterpolasi antara nilai ke-0 (5) dan nilai ke-1 (7), sehingga P1 adalah 5 + 0.08(7 - 5) = 5.16. Persentil kedua (P2) dapat dihitung sebagai berikut:
+$$P_2 = \frac{2(7+1)}{100} = 0.16$$
+Jadi, persentil kedua (P2) adalah nilai ke-0.16 dalam data, yang dapat diinterpolasi antara nilai ke-0 (5) dan nilai ke-1 (7), sehingga P2 adalah 5 + 0.16(7 - 5) = 5.32. Persentil ketiga (P3) dapat dihitung sebagai berikut:
+$$P_3 = \frac{3(7+1)}{100} = 0.24$$
+Jadi, persentil ketiga (P3) adalah nilai ke-0.24 dalam data, yang dapat diinterpolasi antara nilai ke-0 (5) dan nilai ke-1 (7), sehingga P3 adalah 5 + 0.24(7 - 5) = 5.48. Dengan demikian, persentil pertama (P1) adalah 5.16, persentil kedua (P2) adalah 5.32, dan persentil ketiga (P3) adalah 5.48, yang memberikan informasi tentang seberapa jauh nilai-nilai dalam data tersebar dari nilai tengahnya.
+

@@ -1,0 +1,117 @@
+---
+title: "Biostatistik"
+subtitle: "Dispersion (Ukuran Persebaran Data)"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-08"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+Ukuran pemusatan data seperti mean, median, dan modus memberikan informasi tentang nilai tengah atau nilai yang paling sering muncul dalam suatu distribusi data. Namun, ukuran pemusatan saja tidak memberikan gambaran lengkap tentang bagaimana data tersebar di sekitar nilai tengah tersebut. Oleh karena itu, diperlukan ukuran lain yang dapat memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya, yaitu **ukuran dispersi**.
+Ukuran dispersi memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya. Ukuran dispersi yang umum digunakan antara lain:
+
+- Rentang (Range)
+
+- Varians (Variance)
+
+- Simpangan Baku (Standard Deviation)
+
+- Koefisien Variasi (Coefficient of Variation)
+
+- Jangkauan Interkuartil (Interquartile Range)
+
+Ukuran dispersi sangat penting dalam analisis statistik karena dapat memberikan informasi tentang variasi atau keragaman data. Ukuran dispersi juga dapat digunakan untuk membandingkan variasi antara dua atau lebih kelompok data, serta untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya.
+
+# Rentang (Range)
+Rentang adalah selisih antara nilai maksimum dan nilai minimum dalam suatu distribusi data. Rentang memberikan informasi tentang seberapa jauh data tersebar dari nilai minimum hingga nilai maksimum. Rentang dapat dihitung dengan rumus:
+$$\text{Rentang} = \text{Nilai Maksimum} - \text{Nilai Minimum}$$
+
+Rentang sangat mudah dihitung dan memberikan gambaran tentang seberapa jauh data tersebar, tetapi rentang sangat sensitif terhadap outlier atau nilai yang jauh dari nilai tengahnya. Oleh karena itu, rentang tidak selalu memberikan gambaran yang akurat tentang variasi data, terutama jika terdapat outlier dalam distribusi data.
+
+## Contoh Rentang
+Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Nilai maksimum adalah 20 dan nilai minimum adalah 5, sehingga rentang dapat dihitung sebagai berikut:
+$$\text{Rentang} = 20 - 5 = 15$$
+Jadi, rentang dari data tersebut adalah 15, yang menunjukkan bahwa data tersebar sejauh 15 unit dari nilai minimum hingga nilai maksimum.
+
+# Varians (Variance)
+Varians adalah ukuran dispersi yang mengukur seberapa jauh data tersebar dari nilai tengahnya dengan menghitung rata-rata kuadrat selisih antara setiap nilai data dengan nilai tengahnya. Varians dapat dihitung dengan rumus:
+$$\text{Varians} = \frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2$$
+
+di mana $n$ adalah jumlah data, $x_i$ adalah setiap nilai data, dan $\bar{x}$ adalah nilai tengah (mean) dari data.
+Varians memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya, tetapi varians memiliki satuan yang berbeda dengan data asli karena dihitung dalam kuadrat. Oleh karena itu, varians tidak selalu memberikan gambaran yang mudah dipahami tentang variasi data.
+
+## Contoh Varians
+Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Nilai tengah (mean) dari data tersebut adalah:
+$$\bar{x} = \frac{5 + 7 + 8 + 10 + 12 + 15 + 20}{7} = \frac{77}{7} = 11$$
+Selanjutnya, kita dapat menghitung varians dengan rumus:
+$$\text{Varians} = \frac{1}{7} [(5 - 11)^2 + (7 - 11)^2 + (8 - 11)^2 + (10 - 11)^2 + (12 - 11)^2 + (15 - 11)^2 + (20 - 11)^2]$$
+$$= \frac{1}{7} [36 + 16 + 9 + 1 + 1 + 16 + 81] = \frac{1}{7} [160] = 22.86$$
+Jadi, varians dari data tersebut adalah 22.86, yang menunjukkan bahwa data tersebar sejauh 22.86 unit kuadrat dari nilai tengahnya.
+
+# Simpangan Baku (Standard Deviation)
+Simpangan baku adalah akar kuadrat dari varians dan memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya dalam satuan yang sama dengan data asli. Simpangan baku dapat dihitung dengan rumus:
+$$\text{Simpangan Baku} = \sqrt{\text{Varians}}$$
+
+Simpangan baku memberikan informasi yang lebih mudah dipahami tentang variasi data dibandingkan dengan varians karena memiliki satuan yang sama dengan data asli. Simpangan baku juga dapat digunakan untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya, karena nilai yang jauh dari nilai tengahnya akan memiliki simpangan baku yang lebih besar.
+
+## Contoh Simpangan Baku
+Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Varians dari data tersebut adalah 22.86, sehingga simpangan baku dapat dihitung sebagai berikut:
+$$\text{Simpangan Baku} = \sqrt{22.86} \approx 4.78$$
+Jadi, simpangan baku dari data tersebut adalah sekitar 4.78, yang menunjukkan bahwa data tersebar sejauh 4.78 unit dari nilai tengahnya dalam satuan yang sama dengan data asli.
+
+# Koefisien Variasi (Coefficient of Variation)
+Koefisien variasi adalah ukuran dispersi yang mengukur seberapa besar variasi data relatif terhadap nilai tengahnya. Koefisien variasi dapat dihitung dengan rumus:
+$$\text{Koefisien Variasi} = \frac{\text{Simpangan Baku}}{\text{Nilai Tengah}} \times 100\%$$
+
+Koefisien variasi memberikan informasi tentang seberapa besar variasi data relatif terhadap nilai tengahnya, sehingga dapat digunakan untuk membandingkan variasi antara dua atau lebih kelompok data yang memiliki nilai tengah yang berbeda. Koefisien variasi juga dapat digunakan untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya, karena nilai yang jauh dari nilai tengahnya akan memiliki koefisien variasi yang lebih besar.
+
+## Contoh Koefisien Variasi
+Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Nilai tengah (mean) dari data tersebut adalah 11 dan simpangan baku adalah sekitar 4.78, sehingga koefisien variasi dapat dihitung sebagai berikut:
+$$\text{Koefisien Variasi} = \frac{4.78}{11} \times 100\% \approx 43.45\%$$
+Jadi, koefisien variasi dari data tersebut adalah sekitar 43.45%, yang menunjukkan bahwa variasi data relatif terhadap nilai tengahnya adalah sekitar 43.45%. Semakin besar koefisien variasi, semakin besar variasi data relatif terhadap nilai tengahnya.
+
+# Jangkauan Interkuartil (Interquartile Range)
+Jangkauan interkuartil adalah selisih antara kuartil ketiga (Q3) dan kuartil pertama (Q1) dalam suatu distribusi data. Jangkauan interkuartil memberikan informasi tentang seberapa jauh data tersebar di antara kuartil pertama dan kuartil ketiga, sehingga dapat digunakan untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya. Jangkauan interkuartil dapat dihitung dengan rumus:
+$$\text{Jangkauan Interkuartil} = Q3 - Q1$$
+
+Jangkauan interkuartil memberikan informasi tentang seberapa jauh data tersebar di antara kuartil pertama dan kuartil ketiga, sehingga dapat digunakan untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya. Jangkauan interkuartil juga dapat digunakan untuk membandingkan variasi antara dua atau lebih kelompok data yang memiliki nilai tengah yang berbeda, karena jangkauan interkuartil tidak dipengaruhi oleh outlier atau nilai yang jauh dari nilai tengahnya.
+
+## Contoh Jangkauan Interkuartil
+Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Kuartil pertama (Q1) dari data tersebut adalah 7 dan kuartil ketiga (Q3) adalah 15, sehingga jangkauan interkuartil dapat dihitung sebagai berikut:
+$$\text{Jangkauan Interkuartil} = 15 - 7 = 8$$
+Jadi, jangkauan interkuartil dari data tersebut adalah 8, yang menunjukkan bahwa data tersebar sejauh 8 unit di antara kuartil pertama dan kuartil ketiga. Semakin besar jangkauan interkuartil, semakin besar variasi data di antara kuartil pertama dan kuartil ketiga.
+
+# Latihan Soal
+Tentukan ukuran dispersi berikut ini:
+- Rentang
+- Varians
+- Simpangan Baku
+- Koefisien Variasi
+- Jangkauan Interkuartil
+Untuk data berikut: 5, 7, 8, 10, 12, 15, 20.
+
+---
+
+# Kesimpulan
+Ukuran dispersi memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya. Ukuran dispersi yang umum digunakan antara lain rentang, varians, simpangan baku, koefisien variasi, dan jangkauan interkuartil. Ukuran dispersi sangat penting dalam analisis statistik karena dapat memberikan informasi tentang variasi atau keragaman data, serta dapat digunakan untuk membandingkan variasi antara dua atau lebih kelompok data, serta untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya. Oleh karena itu, pemahaman tentang ukuran dispersi sangat penting dalam analisis statistik dan interpretasi data.
+
+
+
+

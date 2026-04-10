@@ -100,7 +100,7 @@ Sehingga varians dapat dihitung sebagai berikut:
 
 $$\text{Varians} = \frac{1}{n-1}\sum_{i=1}^{n} (x_i - \bar{x})^2$$
 $$\text{Varians} = \frac{1}{9} \times 2062.5 = 229.16$$
-Maka nilai varians dari data waktu tunggu pasien tersebut adalah 229.16, yang menunjukkan bahwa data tersebar sejauh 206.25 unit kuadrat dari nilai meannya. Varians yang tinggi menunjukkan bahwa data memiliki variasi yang besar, sedangkan varians yang rendah menunjukkan bahwa data memiliki variasi yang kecil. 
+Maka nilai varians dari data waktu tunggu pasien tersebut adalah 229.16, yang menunjukkan bahwa data tersebar sejauh 229.16 unit kuadrat dari nilai meannya. Varians yang tinggi menunjukkan bahwa data memiliki variasi yang besar, sedangkan varians yang rendah menunjukkan bahwa data memiliki variasi yang kecil. 
 
 Dalam contoh ini, varians yang tinggi menunjukkan bahwa **waktu tunggu pasien memiliki variasi yang besar, sehingga beberapa pasien mungkin harus menunggu lebih lama daripada yang lain**.
 

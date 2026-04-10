@@ -33,8 +33,6 @@ Ukuran dispersi memberikan informasi tentang seberapa jauh data tersebar dari ni
 
 - Simpangan Baku (Standard Deviation)
 
-- Koefisien Variasi (Coefficient of Variation)
-
 - Jangkauan Interkuartil (Interquartile Range)
 
 Ukuran dispersi sangat penting dalam analisis statistik karena dapat memberikan informasi tentang variasi atau keragaman data. Ukuran dispersi juga dapat digunakan untuk membandingkan variasi antara dua atau lebih kelompok data, serta untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya.
@@ -51,22 +49,117 @@ $$\text{Rentang} = 20 - 5 = 15$$
 Jadi, rentang dari data tersebut adalah 15, yang menunjukkan bahwa data tersebar sejauh 15 unit dari nilai minimum hingga nilai maksimum.
 
 # Varians (Variance)
-Varians adalah ukuran dispersi yang mengukur seberapa jauh data tersebar dari nilai tengahnya dengan menghitung rata-rata kuadrat selisih antara setiap nilai data dengan nilai tengahnya. Varians dapat dihitung dengan rumus:
-$$\text{Varians} = \frac{1}{n} \sum_{i=1}^{n} (x_i - \bar{x})^2$$
+Varians adalah ukuran dispersi yang mengukur seberapa jauh data tersebar dari nilai tengahnya dengan menghitung rata-rata kuadrat selisih antara setiap nilai data dengan nilai tengahnya. Variansi pada level populasi disimbolkan dengan $\sigma^2$, sedangkan variansi pada level sampel disimbolkan dengan $s^2$.
 
-di mana $n$ adalah jumlah data, $x_i$ adalah setiap nilai data, dan $\bar{x}$ adalah nilai tengah (mean) dari data.
+Varians dapat dihitung dengan rumus:
+
+**Variansi pada populasi (data tunggal):**
+$$\text{Varians} = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2$$
+
+**Variansi pada sampel (data tunggal):** 
+$$\text{Varians} = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2$$
+
+
+di mana $N$, $n$ adalah jumlah data dalam populasi, $x_i$ adalah setiap nilai data, dan $\mu$, $\bar{x}$ adalah nilai tengah (mean) dari populasi.
+
+**Variansi pada populasi (data kelompok):**
+$$\text{Varians} = \frac{1}{N} \sum_{i=1}^{N} f_i (x_i - \mu)^2$$
+
+**Variansi pada sampel (data kelompok):**
+$$\text{Varians} = \frac{1}{n-1} \sum_{i=1}^{n} f_i (x_i - \bar{x})^2$$
+
+di mana $N$, $n$ adalah jumlah data, $f_i$ adalah frekuensi dari setiap kelas, $x_i$ adalah nilai tengah dari setiap kelas, dan $\mu$, $\bar{x}$ adalah nilai tengah (mean) dari data.
+
 Varians memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya, tetapi varians memiliki satuan yang berbeda dengan data asli karena dihitung dalam kuadrat. Oleh karena itu, varians tidak selalu memberikan gambaran yang mudah dipahami tentang variasi data.
 
-## Contoh Varians
-Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Nilai tengah (mean) dari data tersebut adalah:
-$$\bar{x} = \frac{5 + 7 + 8 + 10 + 12 + 15 + 20}{7} = \frac{77}{7} = 11$$
+## Contoh Varians dengan data tunggal
+\begin{examplebox}
+Suatu rumah sakit mencatat waktu tunggu pasien dalam menit sebagai berikut: 10, 15, 20, 25, 30, 35, 40, 45, 50, 55.
+\end{examplebox} 
+
+Diketahui nilai mean data tersebut adalah:
+$$\bar{x} = \frac{10 + 15 + 20 + 25 + 30 + 35 + 40 + 45 + 50 + 55}{10} = \frac{325}{10} = 32.5$$
 Selanjutnya, kita dapat menghitung varians dengan rumus:
-$$\text{Varians} = \frac{1}{7} [(5 - 11)^2 + (7 - 11)^2 + (8 - 11)^2 + (10 - 11)^2 + (12 - 11)^2 + (15 - 11)^2 + (20 - 11)^2]$$
-$$= \frac{1}{7} [36 + 16 + 9 + 1 + 1 + 16 + 81] = \frac{1}{7} [160] = 22.86$$
-Jadi, varians dari data tersebut adalah 22.86, yang menunjukkan bahwa data tersebar sejauh 22.86 unit kuadrat dari nilai tengahnya.
+
+| Waktu tunggu | $x-\bar{x}$ | $(x-\bar{x})^2$ |
+|---|---|---|
+| 10| 10-32.5 | 506.25 |
+| 15 | 15-32.5 | 306.25 |
+| 20 | 20-32.5 | 156.25 |
+| 25 | 25-32.5 | 56.25 |
+| 30 | 30-32.5 | 6.25 |
+| 35 | 35-32.5 | 6.25 |
+| 40 | 40-32.5 | 56.25 |
+| 45 | 45-32.5 | 156.25 |
+| 50 | 45-32.5 | 306.25 |
+| 55 | 55-32.5 | 506.25 |
+
+Nilai $\sum_{i=1}^{n} (x_i - \bar{x})^2$ dapat dihitung dengan menjumlahkan kolom $(x-\bar{x})^2$: 2062.5. 
+
+Sehingga varians dapat dihitung sebagai berikut: 
+
+$$\text{Varians} = \frac{1}{n-1}\sum_{i=1}^{n} (x_i - \bar{x})^2$$
+$$\text{Varians} = \frac{1}{9} \times 2062.5 = 229.16$$
+Maka nilai varians dari data waktu tunggu pasien tersebut adalah 229.16, yang menunjukkan bahwa data tersebar sejauh 206.25 unit kuadrat dari nilai meannya. Varians yang tinggi menunjukkan bahwa data memiliki variasi yang besar, sedangkan varians yang rendah menunjukkan bahwa data memiliki variasi yang kecil. 
+
+Dalam contoh ini, varians yang tinggi menunjukkan bahwa **waktu tunggu pasien memiliki variasi yang besar, sehingga beberapa pasien mungkin harus menunggu lebih lama daripada yang lain**.
+
+## Contoh Varians dengan data kelompok
+
+\begin{examplebox}
+Distribusi lama rawat inap pasien di suatu rumah sakit selama satu bulan.
+\end{examplebox} 
+
+Rumus varians untuk data kelompok adalah:
+$$\text{Varians} = \frac{1}{n-1} \sum_{i=1}^{N} f_i (x_i - \bar{x})^2$$
+
+| Lama Rawat (hari) | Frekuensi |
+|---|---|
+| 1–3 | 4 |
+| 4–6 | 7 |
+| 7–9 | 10 |
+| 10–12 | 6 |
+| 13–15 | 3 |
+
+Maka :
+
+| Lama Rawat (hari) | f | xi |
+|---|---|---|
+| 1–3 | 4 | 2 | 8 |
+| 4–6 | 7 | 5 | 35 |
+| 7–9 | 10 | 8 | 80 |
+| 10–12 | 6 | 11 | 66 |
+| 13–15 | 3 | 14 | 42 |
+
+1. Hitung nilai mean (nilai tengah) dari data tersebut:
+$$\bar{x} = \frac{\sum f_i x_i}{\sum f_i} = \frac{8 + 35 + 80 + 66 + 42}{4 + 7 + 10 + 6 + 3} = \frac{231}{30} = 7.7$$
+2. Hitung nilai $(x_i - \bar{x})^2$ dan $f_i (x_i - \bar{x})^2$. Dimana, perhitungan nilai $(x_i - \bar{x})^2$ dan $f_i (x_i - \bar{x})^2$ sbb : 
+$$(x_i - \bar{x})^2 = (2 - 7.7)^2 = 32.49$$
+$$f_i (x_i - \bar{x})^2 = 4((2 - 7.7)^2) = 129.96$$
+Maka nilai $f_i (x_i - \bar{x})^2$ untuk kelas 1–3 adalah 129.96, dan seterusnya untuk kelas lainnya. Sehingga dapat disusun dalam tabel berikut:
+
+| Lama Rawat (hari) | f | xi | $(x_i - \bar{x})^2$ | $f_i (x_i - \bar{x})^2$ |
+|---|---|---|---|---|---| 
+| 1–3 | 4 | 2 | 32.49 | 129.96
+| 4–6 | 7 | 5 | 7.29 | 51.03
+| 7–9 | 10 | 8 | 0.09 | 0.9
+| 10–12 | 6 | 11 | 10.89 | 65.34 
+| 13–15 | 3 | 14 | 36.69 | 110.07
+
+Maka nilai $\sum_{i=1}^{N} f_i (x_i - \bar{x})^2$ dapat dihitung dengan menjumlahkan kolom $f_i (x_i - \bar{x})^2$ = 357.36.
+
+3. Hitung nilai varians dengan rumus:
+$$\text{Varians} = \frac{1}{n-1} \sum_{i=1}^{N} f_i (x_i - \bar{x})^2 $$
+$$\text{Varians} = \frac{1}{29} \times 357.36 = 12.34$$
+
+Maka nilai varians dari data lama rawat inap pasien tersebut adalah 12.34, yang menunjukkan bahwa data tersebar sejauh 12.34 unit kuadrat dari nilai meannya. Varians yang tinggi menunjukkan bahwa data memiliki variasi yang besar, sedangkan varians yang rendah menunjukkan bahwa data memiliki variasi yang kecil.
+Dalam contoh ini, varians yang rendah menunjukkan bahwa **lama rawat inap pasien memiliki variasi yang kecil, sehingga sebagian besar pasien mungkin memiliki lama rawat inap yang serupa**.
+
 
 # Simpangan Baku (Standard Deviation)
-Simpangan baku adalah akar kuadrat dari varians dan memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya dalam satuan yang sama dengan data asli. Simpangan baku dapat dihitung dengan rumus:
+Simpangan baku adalah akar kuadrat dari varians dan memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya dalam satuan yang sama dengan data asli. Simpangan baku pada level populasi disimbolkan dengan $\sigma$, sedangkan simpangan baku pada level sampel disimbolkan dengan $s$.
+
+Simpangan baku dapat dihitung dengan rumus:
 $$\text{Simpangan Baku} = \sqrt{\text{Varians}}$$
 
 Simpangan baku memberikan informasi yang lebih mudah dipahami tentang variasi data dibandingkan dengan varians karena memiliki satuan yang sama dengan data asli. Simpangan baku juga dapat digunakan untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya, karena nilai yang jauh dari nilai tengahnya akan memiliki simpangan baku yang lebih besar.
@@ -75,17 +168,6 @@ Simpangan baku memberikan informasi yang lebih mudah dipahami tentang variasi da
 Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Varians dari data tersebut adalah 22.86, sehingga simpangan baku dapat dihitung sebagai berikut:
 $$\text{Simpangan Baku} = \sqrt{22.86} \approx 4.78$$
 Jadi, simpangan baku dari data tersebut adalah sekitar 4.78, yang menunjukkan bahwa data tersebar sejauh 4.78 unit dari nilai tengahnya dalam satuan yang sama dengan data asli.
-
-# Koefisien Variasi (Coefficient of Variation)
-Koefisien variasi adalah ukuran dispersi yang mengukur seberapa besar variasi data relatif terhadap nilai tengahnya. Koefisien variasi dapat dihitung dengan rumus:
-$$\text{Koefisien Variasi} = \frac{\text{Simpangan Baku}}{\text{Nilai Tengah}} \times 100\%$$
-
-Koefisien variasi memberikan informasi tentang seberapa besar variasi data relatif terhadap nilai tengahnya, sehingga dapat digunakan untuk membandingkan variasi antara dua atau lebih kelompok data yang memiliki nilai tengah yang berbeda. Koefisien variasi juga dapat digunakan untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya, karena nilai yang jauh dari nilai tengahnya akan memiliki koefisien variasi yang lebih besar.
-
-## Contoh Koefisien Variasi
-Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Nilai tengah (mean) dari data tersebut adalah 11 dan simpangan baku adalah sekitar 4.78, sehingga koefisien variasi dapat dihitung sebagai berikut:
-$$\text{Koefisien Variasi} = \frac{4.78}{11} \times 100\% \approx 43.45\%$$
-Jadi, koefisien variasi dari data tersebut adalah sekitar 43.45%, yang menunjukkan bahwa variasi data relatif terhadap nilai tengahnya adalah sekitar 43.45%. Semakin besar koefisien variasi, semakin besar variasi data relatif terhadap nilai tengahnya.
 
 # Jangkauan Interkuartil (Interquartile Range)
 Jangkauan interkuartil adalah selisih antara kuartil ketiga (Q3) dan kuartil pertama (Q1) dalam suatu distribusi data. Jangkauan interkuartil memberikan informasi tentang seberapa jauh data tersebar di antara kuartil pertama dan kuartil ketiga, sehingga dapat digunakan untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya. Jangkauan interkuartil dapat dihitung dengan rumus:
@@ -99,19 +181,35 @@ $$\text{Jangkauan Interkuartil} = 15 - 7 = 8$$
 Jadi, jangkauan interkuartil dari data tersebut adalah 8, yang menunjukkan bahwa data tersebar sejauh 8 unit di antara kuartil pertama dan kuartil ketiga. Semakin besar jangkauan interkuartil, semakin besar variasi data di antara kuartil pertama dan kuartil ketiga.
 
 # Latihan Soal
-Tentukan ukuran dispersi berikut ini:
+1. Tentukan ukuran dispersi (data :  5, 7, 8, 10, 12, 15, 20) berikut ini:
+
 - Rentang
-- Varians
-- Simpangan Baku
-- Koefisien Variasi
+
+- Varians dan Simpangan Baku
+
 - Jangkauan Interkuartil
-Untuk data berikut: 5, 7, 8, 10, 12, 15, 20.
+
+2. Berikut ini merupakan tabel distribusi waktu tunggu pasien di suatu rumah sakit selama satu bulan. Hitunglah ukuran dispersi (varians, simpangan baku, dan jangkauan interkuartil) dari data tersebut. 
+
+| Waktu tunggu (menit) | Frekuensi |
+|---|---|
+| 0–10 | 5 |
+| 11–20 | 10 |
+| 21–30 | 15 |
+| 31–40 | 8 |
+| 41–50 | 2 |
+
+3. Berikut ini merupakan tabel distribusi lama rawat inap pasien di suatu rumah sakit selama satu bulan. Hitunglah ukuran dispersi (varians, simpangan baku, dan jangkauan interkuartil) dari data tersebut.
+
+| Lama Rawat (hari) | Frekuensi |
+|---|---|
+| 1–3 | 4 |
+| 4–6 | 7 |
+| 7–9 | 10 |
+| 10–12 | 6 |
+| 13–15 | 3 |
 
 ---
 
 # Kesimpulan
 Ukuran dispersi memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya. Ukuran dispersi yang umum digunakan antara lain rentang, varians, simpangan baku, koefisien variasi, dan jangkauan interkuartil. Ukuran dispersi sangat penting dalam analisis statistik karena dapat memberikan informasi tentang variasi atau keragaman data, serta dapat digunakan untuk membandingkan variasi antara dua atau lebih kelompok data, serta untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya. Oleh karena itu, pemahaman tentang ukuran dispersi sangat penting dalam analisis statistik dan interpretasi data.
-
-
-
-

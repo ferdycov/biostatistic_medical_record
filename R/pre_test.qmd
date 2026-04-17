@@ -126,5 +126,93 @@ Data waktu pelayanan (menit):
 
 4. Apakah pelayanan benar “cepat”?. Bandingkan hasil dengan dan tanpa outlier (opsional diskusi)
 
+---
+
+**Key Answer**
+
+**KASUS 1 – Lama Rawat Inap (LOS)**
+
+| Hasil Pethitungan | Nilai |
+|---|---|
+| Mean| 5.7 |
+| Med | 4 |
+| Mod | 3 |
+| Range | 25-2 = 23 |
+| Variansi |  |
+| SD | tinggi (karena outlier 25) |
+
+**Jebakan**. Mahasiswa yang hanya pakai mean → akan bilang LOS tinggi
+
+**Padahal**. Sebagian besar data ada di 2–6 hari
+
+---
+
+**KASUS 2 – Waktu Tunggu Poli**
+
+| Hasil Pethitungan | Nilai |
+|---|---|
+| Mean| 35.8 menit |
+| Med | 27.5 menit |
+| Mod | 20 menit |
+| Range | 120 - 15 = 105 |
+| Variansi |  |
+| SD |  |
+
+**Jebakan**. Mean terlihat “cukup tinggi”. Narasi: “masih wajar”
+
+Mayoritas pasien: 20–30 menit. Nilai 120 → menarik mean ke atas. Secara umum waktu tunggu cukup wajar. Tapi ada kasus ekstrem → perlu investigasi operasional
+
+---
+
+**KASUS 3 – Usia Pasien**
+
+| Hasil Pethitungan | Nilai |
+|---|---|
+| Mean| 37.8 tahun |
+| Med | 35 tahun |
+| Mod | tidak dominan kuat (multimodal ringan) |
+| Range | 85 - 18 = 67 |
+| Variansi |  |
+| SD |  |
+
+**Jabakan** . Ada usia 85 → terlihat “banyak lansia”
+
+Mayoritas data: usia 20–40. Median (35) → usia produktif. Pernyataan BENAR. Outlier tidak mengubah pola dominan
+
+---
+
+**KASUS 4 – Jumlah Kunjungan**
+
+| Hasil Pethitungan | Nilai |
+|---|---|
+| Mean| 71.8 |
+| Med | 65 |
+| Mod | 60 |
+| Range | 150 - 50 = 100 |
+| Variansi |  |
+| SD |  |
+
+**Jebakan**. Mean terlihat tinggi → seolah kunjungan besar. Narasi: “stabil”
+
+Sebagian besar data: 55–75 pasien. Nilai 150 → lonjakan ekstrem. SD besar → variasi tinggi. Tidak sepenuhnya stabil. Ada fluktuasi signifikan pada hari tertentu
+
+---
+
+**KASUS 5 – Lama Pelayanan**
+
+| Hasil Pethitungan | Nilai |
+|---|---|
+| Mean| 10.5 menit |
+| Med | 8 menit |
+| Mod | 7 menit |
+| Range | 45 - 5 = 40 |
+| Variansi |  |
+| SD |  |
+
+**Jebakan**. Mean terlihat lebih besar → seolah pelayanan lama
+
+Mayoritas pelayanan: 5–10 menit (cepat). Nilai 45 → kemungkinan gangguan sistem. Secara umum pelayanan cepat, Tapi ada insiden ekstrem → penting untuk evaluasi kualitas layanan
+
+---
 
 

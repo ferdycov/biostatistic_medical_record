@@ -24,254 +24,192 @@ header-includes:
 ---
 
 # Pendahuluan
+Ukuran pemusatan data seperti mean, median, dan modus memberikan informasi tentang nilai tengah atau nilai yang paling sering muncul dalam suatu distribusi data. Namun, ukuran pemusatan saja tidak memberikan gambaran lengkap tentang bagaimana data tersebar di sekitar nilai tengah tersebut. Oleh karena itu, diperlukan ukuran lain yang dapat memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya, yaitu **ukuran dispersi**.
+Ukuran dispersi memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya. Ukuran dispersi yang umum digunakan antara lain:
 
-Dalam analisis statistik, data yang dikumpulkan dari suatu populasi atau sampel perlu diringkas agar lebih mudah dipahami dan diinterpretasikan. Salah satu cara untuk merangkum data adalah dengan menggunakan statistik deskriptif, yang terdiri dari ukuran pemusatan (central tendency) dan ukuran penyebaran (dispersion).
+- Rentang (Range)
 
-Jika ukuran pemusatan menggambarkan nilai pusat suatu distribusi data, maka ukuran penyebaran digunakan untuk mengetahui **seberapa jauh nilai-nilai dalam suatu dataset menyebar dari nilai pusat tersebut**. Dua kumpulan data dapat memiliki nilai rata-rata yang sama, tetapi memiliki variasi yang sangat berbeda.
+- Varians (Variance)
 
-Dalam bidang kesehatan dan rekam medis, ukuran penyebaran sangat penting untuk memahami variasi karakteristik pasien, seperti variasi usia pasien, variasi lama rawat inap, atau variasi nilai laboratorium pasien.
+- Simpangan Baku (Standard Deviation)
 
-Menurut Rosner (2015), ukuran penyebaran merupakan komponen penting dalam statistik deskriptif karena memberikan informasi mengenai **tingkat variabilitas data dalam suatu populasi atau sampel**.
+- Jangkauan Interkuartil (Interquartile Range)
 
----
+Ukuran dispersi sangat penting dalam analisis statistik karena dapat memberikan informasi tentang variasi atau keragaman data. Ukuran dispersi juga dapat digunakan untuk membandingkan variasi antara dua atau lebih kelompok data, serta untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya.
 
-# Definisi Dispersion
+# Rentang (Range)
+Rentang adalah selisih antara nilai maksimum dan nilai minimum dalam suatu distribusi data. Rentang memberikan informasi tentang seberapa jauh data tersebar dari nilai minimum hingga nilai maksimum. Rentang dapat dihitung dengan rumus:
+$$\text{Rentang} = \text{Nilai Maksimum} - \text{Nilai Minimum}$$
 
-Dispersion adalah ukuran statistik yang digunakan untuk menggambarkan **tingkat penyebaran atau variasi nilai data terhadap nilai pusat distribusi**.
+Rentang sangat mudah dihitung dan memberikan gambaran tentang seberapa jauh data tersebar, tetapi rentang sangat sensitif terhadap outlier atau nilai yang jauh dari nilai tengahnya. Oleh karena itu, rentang tidak selalu memberikan gambaran yang akurat tentang variasi data, terutama jika terdapat outlier dalam distribusi data.
 
-Dengan mengetahui ukuran penyebaran, peneliti dapat memahami:
+## Contoh Rentang
+Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Nilai maksimum adalah 20 dan nilai minimum adalah 5, sehingga rentang dapat dihitung sebagai berikut:
+$$\text{Rentang} = 20 - 5 = 15$$
+Jadi, rentang dari data tersebut adalah 15, yang menunjukkan bahwa data tersebar sejauh 15 unit dari nilai minimum hingga nilai maksimum.
 
-- tingkat homogenitas data
-- tingkat variasi data
-- adanya nilai ekstrem (outlier)
+# Varians (Variance)
+Varians adalah ukuran dispersi yang mengukur seberapa jauh data tersebar dari nilai tengahnya dengan menghitung rata-rata kuadrat selisih antara setiap nilai data dengan nilai tengahnya. Variansi pada level populasi disimbolkan dengan $\sigma^2$, sedangkan variansi pada level sampel disimbolkan dengan $s^2$.
 
-Ukuran penyebaran yang paling umum digunakan dalam biostatistik adalah:
+Varians dapat dihitung dengan rumus:
 
-- Range  
-- Varians  
-- Standar Deviasi  
-- Interquartile Range (IQR)
+**Variansi pada populasi (data tunggal):**
+$$\text{Varians} = \frac{1}{N} \sum_{i=1}^{N} (x_i - \mu)^2$$
 
----
+**Variansi pada sampel (data tunggal):** 
+$$\text{Varians} = \frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2$$
 
-# Jenis dan Kegunaan Ukuran Dispersion
 
-## Range
+di mana $N$, $n$ adalah jumlah data dalam populasi, $x_i$ adalah setiap nilai data, dan $\mu$, $\bar{x}$ adalah nilai tengah (mean) dari populasi.
 
-Range adalah ukuran penyebaran yang menunjukkan **selisih antara nilai maksimum dan nilai minimum dalam suatu dataset**.
+**Variansi pada populasi (data kelompok):**
+$$\text{Varians} = \frac{1}{N} \sum_{i=1}^{N} f_i (x_i - \mu)^2$$
 
-### Kegunaan
+**Variansi pada sampel (data kelompok):**
+$$\text{Varians} = \frac{1}{n-1} \sum_{i=1}^{n} f_i (x_i - \bar{x})^2$$
 
-- Memberikan gambaran awal tentang rentang data
-- Mudah dihitung dan dipahami
-- Digunakan untuk melihat variasi data secara sederhana
+di mana $N$, $n$ adalah jumlah data, $f_i$ adalah frekuensi dari setiap kelas, $x_i$ adalah nilai tengah dari setiap kelas, dan $\mu$, $\bar{x}$ adalah nilai tengah (mean) dari data.
 
-### Rumus
+Varians memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya, tetapi varians memiliki satuan yang berbeda dengan data asli karena dihitung dalam kuadrat. Oleh karena itu, varians tidak selalu memberikan gambaran yang mudah dipahami tentang variasi data.
 
-$$
-Range = X_{max} - X_{min}
-$$
+## Contoh Varians dengan data tunggal
+\begin{examplebox}
+Suatu rumah sakit mencatat waktu tunggu pasien dalam menit sebagai berikut: 10, 15, 20, 25, 30, 35, 40, 45, 50, 55.
+\end{examplebox} 
 
-### Contoh Rekam Medis
+Diketahui nilai mean data tersebut adalah:
+$$\bar{x} = \frac{10 + 15 + 20 + 25 + 30 + 35 + 40 + 45 + 50 + 55}{10} = \frac{325}{10} = 32.5$$
+Selanjutnya, kita dapat menghitung varians dengan rumus:
 
-Data lama rawat pasien:
+| Waktu tunggu | $x-\bar{x}$ | $(x-\bar{x})^2$ |
+|---|---|---|
+| 10| 10-32.5 | 506.25 |
+| 15 | 15-32.5 | 306.25 |
+| 20 | 20-32.5 | 156.25 |
+| 25 | 25-32.5 | 56.25 |
+| 30 | 30-32.5 | 6.25 |
+| 35 | 35-32.5 | 6.25 |
+| 40 | 40-32.5 | 56.25 |
+| 45 | 45-32.5 | 156.25 |
+| 50 | 45-32.5 | 306.25 |
+| 55 | 55-32.5 | 506.25 |
 
-3, 4, 5, 7, 9
+Nilai $\sum_{i=1}^{n} (x_i - \bar{x})^2$ dapat dihitung dengan menjumlahkan kolom $(x-\bar{x})^2$: 2062.5. 
 
-$$
-Range = 9 - 3 = 6
-$$
+Sehingga varians dapat dihitung sebagai berikut: 
 
----
+$$\text{Varians} = \frac{1}{n-1}\sum_{i=1}^{n} (x_i - \bar{x})^2$$
+$$\text{Varians} = \frac{1}{9} \times 2062.5 = 229.16$$
+Maka nilai varians dari data waktu tunggu pasien tersebut adalah 229.16, yang menunjukkan bahwa data tersebar sejauh 229.16 unit kuadrat dari nilai meannya. Varians yang tinggi menunjukkan bahwa data memiliki variasi yang besar, sedangkan varians yang rendah menunjukkan bahwa data memiliki variasi yang kecil. 
 
-## Varians
+Dalam contoh ini, varians yang tinggi menunjukkan bahwa **waktu tunggu pasien memiliki variasi yang besar, sehingga beberapa pasien mungkin harus menunggu lebih lama daripada yang lain**.
 
-Varians adalah ukuran penyebaran yang menunjukkan **rata-rata kuadrat penyimpangan nilai data terhadap rata-ratanya**.
+## Contoh Varians dengan data kelompok
 
-### Kegunaan
+\begin{examplebox}
+Distribusi lama rawat inap pasien di suatu rumah sakit selama satu bulan.
+\end{examplebox} 
 
-- Mengukur tingkat variasi data secara matematis
-- Digunakan dalam analisis statistik lanjutan seperti regresi dan ANOVA
-
-### Rumus Varians (Data Tunggal)
-
-$$
-s^2 = \frac{\sum (x_i - \bar{x})^2}{n-1}
-$$
-
----
-
-## Standar Deviasi
-
-Standar deviasi merupakan **akar kuadrat dari varians** yang menunjukkan jarak rata-rata data terhadap nilai mean.
-
-### Kegunaan
-
-- Mengukur tingkat variasi data secara lebih mudah diinterpretasikan
-- Banyak digunakan dalam analisis data kesehatan
-
-### Rumus
-
-$$
-s = \sqrt{s^2}
-$$
-
----
-
-## Interquartile Range (IQR)
-
-Interquartile Range adalah ukuran penyebaran yang menunjukkan **rentang antara kuartil pertama (Q1) dan kuartil ketiga (Q3)**.
-
-### Kegunaan
-
-- Menggambarkan penyebaran 50% data tengah
-- Tidak sensitif terhadap outlier
-- Digunakan dalam boxplot
-
-### Rumus
-
-$$
-IQR = Q3 - Q1
-$$
-
----
-
-# Perbedaan Ukuran Dispersion
-
-| Ukuran | Definisi | Kelebihan | Kelemahan |
-|------|------|------|------|
-| Range | Selisih nilai maksimum dan minimum | Mudah dihitung | Dipengaruhi outlier |
-| Varians | Rata-rata kuadrat penyimpangan dari mean | Menggunakan seluruh data | Sulit diinterpretasi |
-| Standar Deviasi | Akar dari varians | Mudah dipahami | Sensitif terhadap outlier |
-| IQR | Rentang kuartil | Stabil terhadap outlier | Tidak menggunakan seluruh data |
-
----
-
-# Formula Perhitungan Dispersion
-
-## Data Tunggal
-
-### Range
-
-$$
-Range = X_{max} - X_{min}
-$$
-
-### Varians
-
-$$
-s^2 = \frac{\sum (x_i - \bar{x})^2}{n-1}
-$$
-
-### Standar Deviasi
-
-$$
-s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}}
-$$
-
----
-
-## Data Berkelompok
-
-Pada data berkelompok, perhitungan menggunakan **titik tengah kelas ($x_i$)** dan frekuensi ($f_i$).
-
-### Varians Data Berkelompok
-
-$$
-s^2 = \frac{\sum f_i (x_i - \bar{x})^2}{n-1}
-$$
-
-### Standar Deviasi Data Berkelompok
-
-$$
-s = \sqrt{\frac{\sum f_i (x_i - \bar{x})^2}{n-1}}
-$$
-
-Dimana:
-
-- $x_i$ = titik tengah kelas
-- $f_i$ = frekuensi
-- $n$ = jumlah data
-
----
-
-# Contoh Data Berkelompok
-
-Distribusi lama rawat pasien.
+Rumus varians untuk data kelompok adalah:
+$$\text{Varians} = \frac{1}{n-1} \sum_{i=1}^{N} f_i (x_i - \bar{x})^2$$
 
 | Lama Rawat (hari) | Frekuensi |
 |---|---|
 | 1–3 | 4 |
-| 4–6 | 6 |
-| 7–9 | 3 |
-| 10–12 | 2 |
+| 4–6 | 7 |
+| 7–9 | 10 |
+| 10–12 | 6 |
+| 13–15 | 3 |
 
-Langkah analisis:
+Maka :
 
-1. Menentukan titik tengah kelas
-2. Menghitung mean
-3. Menghitung varians
-4. Menghitung standar deviasi
+| Lama Rawat (hari) | f | xi |
+|---|---|---|
+| 1–3 | 4 | 2 | 8 |
+| 4–6 | 7 | 5 | 35 |
+| 7–9 | 10 | 8 | 80 |
+| 10–12 | 6 | 11 | 66 |
+| 13–15 | 3 | 14 | 42 |
 
----
+1. Hitung nilai mean (nilai tengah) dari data tersebut:
+$$\bar{x} = \frac{\sum f_i x_i}{\sum f_i} = \frac{8 + 35 + 80 + 66 + 42}{4 + 7 + 10 + 6 + 3} = \frac{231}{30} = 7.7$$
+2. Hitung nilai $(x_i - \bar{x})^2$ dan $f_i (x_i - \bar{x})^2$. Dimana, perhitungan nilai $(x_i - \bar{x})^2$ dan $f_i (x_i - \bar{x})^2$ sbb : 
+$$(x_i - \bar{x})^2 = (2 - 7.7)^2 = 32.49$$
+$$f_i (x_i - \bar{x})^2 = 4((2 - 7.7)^2) = 129.96$$
+Maka nilai $f_i (x_i - \bar{x})^2$ untuk kelas 1–3 adalah 129.96, dan seterusnya untuk kelas lainnya. Sehingga dapat disusun dalam tabel berikut:
+
+| Lama Rawat (hari) | f | xi | $(x_i - \bar{x})^2$ | $f_i (x_i - \bar{x})^2$ |
+|---|---|---|---|---|---| 
+| 1–3 | 4 | 2 | 32.49 | 129.96
+| 4–6 | 7 | 5 | 7.29 | 51.03
+| 7–9 | 10 | 8 | 0.09 | 0.9
+| 10–12 | 6 | 11 | 10.89 | 65.34 
+| 13–15 | 3 | 14 | 36.69 | 110.07
+
+Maka nilai $\sum_{i=1}^{N} f_i (x_i - \bar{x})^2$ dapat dihitung dengan menjumlahkan kolom $f_i (x_i - \bar{x})^2$ = 357.36.
+
+3. Hitung nilai varians dengan rumus:
+$$\text{Varians} = \frac{1}{n-1} \sum_{i=1}^{N} f_i (x_i - \bar{x})^2 $$
+$$\text{Varians} = \frac{1}{29} \times 357.36 = 12.34$$
+
+Maka nilai varians dari data lama rawat inap pasien tersebut adalah 12.34, yang menunjukkan bahwa data tersebar sejauh 12.34 unit kuadrat dari nilai meannya. Varians yang tinggi menunjukkan bahwa data memiliki variasi yang besar, sedangkan varians yang rendah menunjukkan bahwa data memiliki variasi yang kecil.
+Dalam contoh ini, varians yang rendah menunjukkan bahwa **lama rawat inap pasien memiliki variasi yang kecil, sehingga sebagian besar pasien mungkin memiliki lama rawat inap yang serupa**.
+
+
+# Simpangan Baku (Standard Deviation)
+Simpangan baku adalah akar kuadrat dari varians dan memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya dalam satuan yang sama dengan data asli. Simpangan baku pada level populasi disimbolkan dengan $\sigma$, sedangkan simpangan baku pada level sampel disimbolkan dengan $s$.
+
+Simpangan baku dapat dihitung dengan rumus:
+$$\text{Simpangan Baku} = \sqrt{\text{Varians}}$$
+
+Simpangan baku memberikan informasi yang lebih mudah dipahami tentang variasi data dibandingkan dengan varians karena memiliki satuan yang sama dengan data asli. Simpangan baku juga dapat digunakan untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya, karena nilai yang jauh dari nilai tengahnya akan memiliki simpangan baku yang lebih besar.
+
+## Contoh Simpangan Baku
+Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Varians dari data tersebut adalah 22.86, sehingga simpangan baku dapat dihitung sebagai berikut:
+$$\text{Simpangan Baku} = \sqrt{22.86} \approx 4.78$$
+Jadi, simpangan baku dari data tersebut adalah sekitar 4.78, yang menunjukkan bahwa data tersebar sejauh 4.78 unit dari nilai tengahnya dalam satuan yang sama dengan data asli.
+
+# Jangkauan Interkuartil (Interquartile Range)
+Jangkauan interkuartil adalah selisih antara kuartil ketiga (Q3) dan kuartil pertama (Q1) dalam suatu distribusi data. Jangkauan interkuartil memberikan informasi tentang seberapa jauh data tersebar di antara kuartil pertama dan kuartil ketiga, sehingga dapat digunakan untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya. Jangkauan interkuartil dapat dihitung dengan rumus:
+$$\text{Jangkauan Interkuartil} = Q3 - Q1$$
+
+Jangkauan interkuartil memberikan informasi tentang seberapa jauh data tersebar di antara kuartil pertama dan kuartil ketiga, sehingga dapat digunakan untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya. Jangkauan interkuartil juga dapat digunakan untuk membandingkan variasi antara dua atau lebih kelompok data yang memiliki nilai tengah yang berbeda, karena jangkauan interkuartil tidak dipengaruhi oleh outlier atau nilai yang jauh dari nilai tengahnya.
+
+## Contoh Jangkauan Interkuartil
+Misalkan kita memiliki data berikut: 5, 7, 8, 10, 12, 15, 20. Kuartil pertama (Q1) dari data tersebut adalah 7 dan kuartil ketiga (Q3) adalah 15, sehingga jangkauan interkuartil dapat dihitung sebagai berikut:
+$$\text{Jangkauan Interkuartil} = 15 - 7 = 8$$
+Jadi, jangkauan interkuartil dari data tersebut adalah 8, yang menunjukkan bahwa data tersebar sejauh 8 unit di antara kuartil pertama dan kuartil ketiga. Semakin besar jangkauan interkuartil, semakin besar variasi data di antara kuartil pertama dan kuartil ketiga.
 
 # Latihan Soal
+1. Tentukan ukuran dispersi (data :  5, 7, 8, 10, 12, 15, 20) berikut ini:
 
-1. Hitung **range** dari data berikut:
+- Rentang
 
-   5, 6, 7, 8, 10
+- Varians dan Simpangan Baku
 
----
+- Jangkauan Interkuartil
 
-2. Hitung **varians dan standar deviasi** dari data berikut:
+2. Berikut ini merupakan tabel distribusi waktu tunggu pasien di suatu rumah sakit selama satu bulan. Hitunglah ukuran dispersi (varians, simpangan baku, dan jangkauan interkuartil) dari data tersebut. 
 
-   4, 6, 8, 10, 12
-
----
-
-3. Tentukan **IQR** dari data berikut:
-
-   15, 18, 20, 22, 25, 28, 30
-
----
-
-4. Berikut distribusi lama rawat pasien.
-
-| Lama Rawat | Frekuensi |
+| Waktu tunggu (menit) | Frekuensi |
 |---|---|
-| 1–3 | 5 |
+| 0–10 | 5 |
+| 11–20 | 10 |
+| 21–30 | 15 |
+| 31–40 | 8 |
+| 41–50 | 2 |
+
+3. Berikut ini merupakan tabel distribusi lama rawat inap pasien di suatu rumah sakit selama satu bulan. Hitunglah ukuran dispersi (varians, simpangan baku, dan jangkauan interkuartil) dari data tersebut.
+
+| Lama Rawat (hari) | Frekuensi |
+|---|---|
+| 1–3 | 4 |
 | 4–6 | 7 |
-| 7–9 | 4 |
-| 10–12 | 2 |
-
-Hitung:
-
-- mean
-- varians
-- standar deviasi
-
----
-
-5. Mengapa ukuran penyebaran penting dalam analisis data kesehatan?
+| 7–9 | 10 |
+| 10–12 | 6 |
+| 13–15 | 3 |
 
 ---
 
 # Kesimpulan
-
-Ukuran penyebaran data merupakan komponen penting dalam statistik deskriptif yang digunakan untuk memahami tingkat variasi dalam suatu dataset. Beberapa ukuran penyebaran yang umum digunakan adalah range, varians, standar deviasi, dan interquartile range.
-
-Setiap ukuran penyebaran memiliki karakteristik dan kegunaan yang berbeda. Range memberikan gambaran rentang data secara sederhana, varians dan standar deviasi menggambarkan variasi data secara matematis, sedangkan IQR memberikan gambaran penyebaran data yang lebih stabil terhadap outlier.
-
-Dalam bidang rekam medis dan informasi kesehatan, ukuran penyebaran membantu peneliti dan praktisi kesehatan memahami variasi karakteristik pasien sehingga dapat mendukung pengambilan keputusan berbasis data.
-
----
-
-# Daftar Pustaka
-
-Daniel, W. W., & Cross, C. L. (2018). *Biostatistics: A Foundation for Analysis in the Health Sciences*. Wiley.
-
-Pagano, M., & Gauvreau, K. (2018). *Principles of Biostatistics*. CRC Press.
-
-Rosner, B. (2015). *Fundamentals of Biostatistics*. Cengage Learning.
-
-Altman, D. G. (1991). *Practical Statistics for Medical Research*. Chapman & Hall.
+Ukuran dispersi memberikan informasi tentang seberapa jauh data tersebar dari nilai tengahnya. Ukuran dispersi yang umum digunakan antara lain rentang, varians, simpangan baku, koefisien variasi, dan jangkauan interkuartil. Ukuran dispersi sangat penting dalam analisis statistik karena dapat memberikan informasi tentang variasi atau keragaman data, serta dapat digunakan untuk membandingkan variasi antara dua atau lebih kelompok data, serta untuk mengidentifikasi outlier atau nilai yang jauh dari nilai tengahnya. Oleh karena itu, pemahaman tentang ukuran dispersi sangat penting dalam analisis statistik dan interpretasi data.

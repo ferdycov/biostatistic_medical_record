@@ -1,0 +1,261 @@
+---
+title: "Biostatistik"
+subtitle: "Hipotesis"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-08"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+Hipotesis adalah pernyataan yang dapat diuji secara empiris untuk menentukan kebenarannya. Dalam konteks biostatistik, hipotesis digunakan untuk menguji hubungan antara variabel, perbedaan antara kelompok, atau efek dari suatu intervensi. Hipotesis biasanya terdiri dari dua jenis: hipotesis nol (H0) dan hipotesis alternatif (H1). Hipotesis nol menyatakan bahwa tidak ada hubungan atau perbedaan, sedangkan hipotesis alternatif menyatakan bahwa ada hubungan atau perbedaan.
+
+# Jenis-jenis Hipotesis
+## Hipotesis Nol (H0)
+Hipotesis nol menyatakan bahwa tidak ada hubungan atau perbedaan antara variabel yang diuji. Contohnya, jika kita ingin menguji apakah ada perbedaan rata-rata tekanan darah antara dua kelompok, hipotesis nol akan menyatakan bahwa rata-rata tekanan darah kedua kelompok adalah sama.
+
+## Hipotesis Alternatif (H1)
+Hipotesis alternatif menyatakan bahwa ada hubungan atau perbedaan antara variabel yang diuji. Dalam contoh sebelumnya, hipotesis alternatif akan menyatakan bahwa rata-rata tekanan darah kedua kelompok berbeda.
+
+```{r, echo=FALSE,fig.width=7, fig.height=3, warning=FALSE, message=FALSE}
+library(ggplot2)
+
+# Parameter
+mu <- 13
+sd <- 1
+alpha <- 0.05
+
+# Nilai kritis (Z)
+z_crit <- qnorm(1 - alpha/2)
+
+# Range x
+x <- seq(9, 17, length = 500)
+
+df <- data.frame(
+  x = x,
+  y = dnorm(x, mu, sd)
+)
+
+# Batas kritis
+left_crit  <- mu - z_crit * sd
+right_crit <- mu + z_crit * sd
+
+# Plot
+ggplot(df, aes(x, y)) +
+  
+  geom_line(size = 1.2) +
+  
+  # Area penolakan kiri
+  geom_area(data = subset(df, x < left_crit),
+            fill = "red", alpha = 0.3) +
+  
+  # Area penolakan kanan
+  geom_area(data = subset(df, x > right_crit),
+            fill = "red", alpha = 0.3) +
+  
+  # Area penerimaan
+  geom_area(data = subset(df, x >= left_crit & x <= right_crit),
+            fill = "green", alpha = 0.3) +
+  
+  # Garis kritis
+  geom_vline(xintercept = left_crit, linetype = "dashed") +
+  geom_vline(xintercept = right_crit, linetype = "dashed") +
+  
+  labs(
+    title = "Daerah Penolakan dan Penerimaan H0 (Uji Dua Sisi)",
+    x = "Nilai (misal Hb)",
+    y = "Density"
+  ) +
+  
+  theme_minimal()
+```
+
+## Hipotesis Satu Arah dan Dua Arah
+Hipotesis satu arah menyatakan bahwa hubungan atau perbedaan hanya terjadi dalam satu arah. Misalnya, hipotesis alternatif menyatakan bahwa rata-rata tekanan darah kelompok A lebih tinggi daripada kelompok B. Sedangkan hipotesis dua arah menyatakan bahwa hubungan atau perbedaan dapat terjadi dalam kedua arah. Misalnya, hipotesis alternatif menyatakan bahwa rata-rata tekanan darah kelompok A berbeda dari kelompok B, tanpa menyatakan arah perbedaannya.
+
+### Contoh Hipotesis
+Misalkan kita ingin menguji apakah obat baru lebih efektif daripada obat lama dalam menurunkan tekanan darah. Hipotesis nol (H0) akan menyatakan bahwa tidak ada perbedaan efektivitas antara obat baru dan obat lama, sedangkan hipotesis alternatif (H1) akan menyatakan bahwa obat baru lebih efektif daripada obat lama.
+
+# Proses Pengujian Hipotesis
+Pengujian hipotesis adalah proses untuk menentukan apakah data yang dikumpulkan mendukung hipotesis alternatif atau tidak. Dalam pengujian hipotesis, kita menggunakan statistik uji untuk membandingkan data yang diperoleh dengan apa yang diharapkan berdasarkan hipotesis nol. Hasil dari pengujian ini akan membantu kita memutuskan apakah kita dapat menolak hipotesis nol atau tidak. 
+
+Ada 2 jenis kesalahan yang dapat terjadi dalam pengujian hipotesis:
+
+1. Kesalahan Tipe I (False Positive): Menolak hipotesis nol yang sebenarnya benar. Tingkat kesalahan ini biasanya ditetapkan pada 5% (alpha = 0.05). **Type I Error (α): menolak H0 padahal benar**
+
+\begin{examplebox}
+Contohnya, jika kita menetapkan tingkat signifikansi pada 0.05, maka kita memiliki peluang 5% untuk menolak hipotesis nol yang sebenarnya benar, yang berarti kita mungkin menyimpulkan bahwa ada efek atau perbedaan ketika sebenarnya tidak ada.
+\end{examplebox}
+
+2. Kesalahan Tipe II (False Negative): Gagal menolak hipotesis nol yang sebenarnya salah. Tingkat kesalahan ini biasanya ditetapkan pada 20% (beta = 0.20), yang berarti bahwa kekuatan uji (power) adalah 80%. **Type II Error (β): gagal menolak H0 padahal salah**
+
+\begin{examplebox}
+Contohnya, jika kita menetapkan tingkat kesalahan tipe II pada 0.20, maka kita memiliki peluang 20% untuk gagal menolak hipotesis nol yang sebenarnya salah, yang berarti kita mungkin menyimpulkan bahwa tidak ada efek atau perbedaan ketika sebenarnya ada.
+\end{examplebox}
+
+### Contoh Proses Pengujian Hipotesis
+$$H0: \mu = 13 (Hb normal); H1: \mu = 15 (Hb meningkat); SD = 1$$
+
+```{r, echo=FALSE, fig.width=7, fig.height=3, warning=FALSE, message=FALSE}
+# Parameter
+mu0 <- 13   # mean H0
+mu1 <- 15   # mean H1
+sd <- 1
+
+# Buat range x
+x <- seq(9, 19, length = 1000)
+
+# Kurva distribusi
+y0 <- dnorm(x, mean = mu0, sd = sd)  # H0
+y1 <- dnorm(x, mean = mu1, sd = sd)  # H1
+
+# Plot kurva
+plot(x, y0, type = "l", lwd = 2,
+     main = "Kesalahan Tipe I dan II",
+     xlab = "Nilai Hb",
+     ylab = "Density")
+
+lines(x, y1, col = "blue", lwd = 2)
+
+# Titik kritis (misal alpha = 0.05)
+critical <- 14.64
+abline(v = critical, col = "red", lwd = 2, lty = 2)
+
+# Area Type I Error (alpha)
+x_alpha <- seq(critical, 19, length = 100)
+y_alpha <- dnorm(x_alpha, mu0, sd)
+polygon(c(x_alpha, rev(x_alpha)),
+        c(y_alpha, rep(0, length(y_alpha))),
+        col = rgb(1, 0, 0, 0.3), border = NA)
+
+# Area Type II Error (beta)
+x_beta <- seq(9, critical, length = 100)
+y_beta <- dnorm(x_beta, mu1, sd)
+polygon(c(x_beta, rev(x_beta)),
+        c(y_beta, rep(0, length(y_beta))),
+        col = rgb(0, 0, 1, 0.3), border = NA)
+
+# Legend
+legend("topright",
+       legend = c("H0 (μ=13)", "H1 (μ=15)", "Alpha (Type I)", "Beta (Type II)"),
+       col = c("black", "blue", "red", "blue"),
+       lwd = 2)
+
+```
+
+
+```{r, echo=FALSE,fig.width=7, fig.height=3,warning=FALSE, message=FALSE}
+library(ggplot2)
+library(dplyr)
+
+# Parameter
+mu0 <- 13
+mu1 <- 15
+sd  <- 1
+
+x <- seq(9, 19, length = 500)
+
+critical_values <- c(13.5, 14.5, 15.5)
+
+# Dataset utama
+df <- expand.grid(x = x, critical = critical_values) %>%
+  mutate(
+    y0 = dnorm(x, mu0, sd),
+    y1 = dnorm(x, mu1, sd),
+    kondisi = paste("Cut-off =", critical)
+  )
+
+# Data untuk label
+label_df <- data.frame(
+  critical = critical_values,
+  kondisi = paste("Cut-off =", critical_values),
+  x_alpha = critical_values + 0.8,
+  x_beta  = critical_values - 0.8,
+  y_alpha = 0.15,
+  y_beta  = 0.15
+)
+
+# Plot
+ggplot(df, aes(x = x)) +
+  
+  # Kurva
+  geom_line(aes(y = y0), color = "black", size = 1) +
+  geom_line(aes(y = y1), color = "blue", size = 1) +
+  
+  # Area Alpha
+  geom_area(data = df %>% filter(x > critical),
+            aes(y = y0),
+            fill = "red", alpha = 0.3) +
+  
+  # Area Beta
+  geom_area(data = df %>% filter(x < critical),
+            aes(y = y1),
+            fill = "blue", alpha = 0.3) +
+  
+  # Garis cut-off
+  geom_vline(aes(xintercept = critical),
+             linetype = "dashed") +
+  
+  # Label Alpha
+  geom_text(data = label_df,
+            aes(x = x_alpha, y = y_alpha, label = "α"),
+            color = "red", size = 6) +
+  
+  # Label Beta
+  geom_text(data = label_df,
+            aes(x = x_beta, y = y_beta, label = "β"),
+            color = "blue", size = 6) +
+  
+  facet_wrap(~ kondisi, ncol = 3) +
+  
+  labs(
+    title = "Trade-off Alpha (α) dan Beta (β)",
+    x = "Nilai Hb",
+    y = "Density"
+  ) +
+  
+  theme_minimal()
+```
+
+Intepretasi dari grafik di atas adalah sebagai berikut:
+
+- Kurva hitam mewakili distribusi di bawah hipotesis nol (H0), dengan rata-rata 13.
+
+- Kurva biru mewakili distribusi di bawah hipotesis alternatif (H1), dengan rata-rata 15.
+
+- Garis merah putus-putus menunjukkan titik kritis (misalnya, 14.64) yang digunakan untuk menentukan apakah kita menolak H0 atau tidak.
+
+- Area merah di sebelah kanan garis kritis mewakili kesalahan tipe I (alpha), yaitu peluang menolak H0 yang sebenarnya benar.
+
+- Area biru di sebelah kiri garis kritis mewakili kesalahan tipe II (beta), yaitu peluang gagal menolak H0 yang sebenarnya salah.
+
+Proses pengujian hipotesis melibatkan beberapa langkah, termasuk:
+
+1. Menentukan hipotesis nol dan hipotesis alternatif.
+
+2. Memilih tingkat signifikansi (alpha), biasanya 0.05.
+
+3. Mengumpulkan data dan menghitung statistik uji.
+
+4. Membandingkan statistik uji dengan nilai kritis untuk menentukan apakah hipotesis nol dapat ditolak atau tidak.
+
+5. Menarik kesimpulan berdasarkan hasil pengujian.
+
+# Kesimpulan
+Hipotesis adalah alat penting dalam biostatistik untuk menguji hubungan dan perbedaan antara variabel. Memahami jenis-jenis hipotesis dan proses pengujian hipotesis adalah kunci untuk melakukan analisis statistik yang valid dan dapat diandalkan dalam penelitian biomedis.

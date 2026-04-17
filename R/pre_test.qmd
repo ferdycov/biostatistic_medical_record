@@ -1,0 +1,131 @@
+---
+title: "Biostatistik"
+subtitle: "Pre Test I - Team Groups"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-04-18"
+format:
+  pdf:
+    toc: false
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=2cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+**KASUS 1 – Lama Rawat Inap (LOS) |** *Team 1,Team 6*
+
+Dalam rapat evaluasi, kepala ruang menyatakan bahwa “rata-rata lama rawat pasien meningkat tajam, kemungkinan efisiensi menurun. Namun, salah satu dokter menyanggah bahwa ada beberapa pasien dengan komplikasi berat yang dirawat jauh lebih lama dari biasanya.
+
+\begin{notebox}
+Data lama rawat inap (hari):
+2, 3, 4, 3, 5, 6, 2, 3, 4, 5, 7, 8, 3, 4, 6, 2, 3, 5, 9, 9
+\end{notebox}
+
+**Tugas Anda !**
+
+1. Susunlah Tabel distribusi frekuensi berdasarkan data diatas
+
+2. Hitunglah nilai Mean, median, modus (berdasarkan tabel distribusi frekuensi)
+
+3. Range, varians, standar deviasi (berdasarkan tabel distribusi frekuensi)
+
+4. Apakah benar rata-rata meningkat?. Bandingkan mean vs median, Mana yang lebih representatif?
+
+---
+
+**KASUS 2 – Waktu Tunggu Poli |** *Team 2,Team 7*
+
+Kepala instalasi menyatakan bahwa “rata-rata waktu tunggu masih dalam batas wajar”. Namun, beberapa pasien VIP mengeluhkan waktu tunggu yang sangat lama pada hari tertentu.
+
+\begin{notebox}
+Data waktu tunggu (menit):
+15, 20, 25, 30, 20, 25, 35, 40, 20, 30, 25, 20, 45, 50, 30, 25, 20, 60, 35, 35
+\end{notebox}
+
+**Tugas Anda !**
+
+1. Susunlah Tabel distribusi frekuensi berdasarkan data diatas
+
+2. Hitunglah nilai Mean, median, modus (berdasarkan tabel distribusi frekuensi)
+
+3. Range, varians, standar deviasi (berdasarkan tabel distribusi frekuensi)
+
+4. Apakah “rata-rata wajar” benar?. 
+
+---
+
+**KASUS 3 – Usia Pasien |** *Team 3,Team 8*
+
+Manajemen menyatakan bahwa “pasien mayoritas usia produktif” . Namun, terdapat beberapa pasien lansia dengan penyakit kronis yang rutin kontrol.
+
+\begin{notebox}
+Data usia (tahun):
+18, 22, 25, 30, 35, 40, 45, 50, 22, 25, 30, 35, 40, 28, 33, 37, 42, 47, 52, 52
+\end{notebox}
+
+**Tugas Anda !**
+
+1. Susunlah Tabel distribusi frekuensi berdasarkan data diatas
+
+2. Hitunglah nilai Mean, median, modus (berdasarkan tabel distribusi frekuensi)
+
+3. Range, varians, standar deviasi (berdasarkan tabel distribusi frekuensi)
+
+4. Apakah benar dominan usia produktif?. Gunakan pendekatan statistik, bukan asumsi
+
+---
+
+**KASUS 4 – Jumlah Kunjungan |** *Team 4,Team 9*
+
+Manajemen menyebutkan bahwa jumlah kunjungan relatif stabil. Namun, staf operasional merasa ada lonjakan kunjungan pada hari tertentu, misalnya saat program BPJS atau hari tertentu.
+
+\begin{notebox}
+Data kunjungan:
+50, 55, 60, 65, 70, 55, 60, 75, 80, 65, 70, 60, 55, 50, 85, 90, 75, 65, 70, 70
+\end{notebox}
+
+**Tugas Anda !**
+
+1. Susunlah Tabel distribusi frekuensi berdasarkan data diatas
+
+2. Hitunglah nilai Mean, median, modus (berdasarkan tabel distribusi frekuensi)
+
+3. Range, varians, standar deviasi (berdasarkan tabel distribusi frekuensi)
+
+4. Stabil atau fluktuatif?. Jelaskan dengan ukuran dispersi
+
+---
+
+**KASUS 5 – Lama Pelayanan |** *Team 5,Team 10*
+
+Petugas loket merasa pelayanan sudah cepat dan efisien. Namun, terdapat laporan bahwa pada kondisi tertentu (misalnya sistem error), waktu pelayanan bisa sangat lama.
+
+\begin{notebox}
+Data waktu pelayanan (menit):
+5, 7, 10, 8, 6, 7, 9, 12, 15, 10, 8, 7, 6, 5, 20, 25, 10, 8, 7, 7
+\end{notebox}
+
+**Tugas Anda !**
+
+1. Susunlah Tabel distribusi frekuensi berdasarkan data diatas
+
+2. Hitunglah nilai Mean, median, modus (berdasarkan tabel distribusi frekuensi)
+
+3. Range, varians, standar deviasi (berdasarkan tabel distribusi frekuensi)
+
+4. Apakah pelayanan benar “cepat”?. 
+
+---
+
+

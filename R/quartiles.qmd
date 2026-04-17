@@ -1,0 +1,242 @@
+---
+title: "Biostatistik"
+subtitle: "Kuartil"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-08"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+
+Kuartil adalah ukuran statistik yang digunakan untuk membagi data menjadi empat bagian yang sama besar. Kuartil memberikan informasi tentang distribusi data dan dapat digunakan untuk mengidentifikasi nilai-nilai ekstrem atau outlier dalam dataset. Kuartil terdiri dari tiga nilai utama, yaitu kuartil pertama (Q1), kuartil kedua (Q2), dan kuartil ketiga (Q3).
+
+# Kuartil Pertama (Q1)
+Kuartil pertama (Q1) adalah nilai yang membagi data menjadi 25% bagian bawah dan 75% bagian atas. Q1 dapat dihitung dengan menggunakan rumus:
+$$ Q1 = \frac{(n+1)}{4}$$
+di mana n adalah jumlah data dalam dataset. Q1 memberikan informasi tentang nilai yang berada di bawah 25% dari data.
+
+## Contoh perhitungan kuartil pertama (Q1) untuk data tidak berkelompok:
+Misalkan kita memiliki data berikut: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50. Jumlah data (n) = 10. Untuk menghitung Q1, kita dapat menggunakan rumus:
+$$ Q1 = \frac{(10+1)}{4} = \frac{11}{4} = 2.75$$
+Karena Q1 berada di antara data ke-2 dan ke-3, kita dapat menghitung Q1 dengan interpolasi:
+$$ Q1 = 10 + (15 - 10) \times (2.75 - 2) = 10 + 5 \times 0.75 = 10 + 3.75 = 13.75$$
+Jadi, kuartil pertama (Q1) untuk data ini adalah 13.75.
+
+Formula **Kuartil Pertama (Q1)** untuk data berkelompok dapat dihitung dengan menggunakan rumus:
+$$ Q1 = L + \left( \frac{\frac{n}{4} - F}{f} \right) \times c$$
+di mana:
+
+- L adalah batas bawah kelas kuartil pertama
+
+- n adalah jumlah data dalam dataset
+
+- F adalah frekuensi kumulatif sebelum kelas kuartil pertama
+
+- f adalah frekuensi kelas kuartil pertama
+
+- c adalah lebar kelas
+
+## Contoh perhitungan kuartil pertama (Q1) untuk data berkelompok:
+Misalkan kita memiliki data berkelompok dengan kelas interval, frekuensi, dan frekuensi kumulatif sebagai berikut:
+
+| Kelas Interval | Frekuensi (f) | Frekuensi Kumulatif (F) |
+|----------------|---------------|-------------------------|
+| 0-10           | 5             | 5                       |
+| 10-20          | 10            | 15                      |
+| 20-30          | 15            | 30                      |
+| 30-40          | 20            | 50                      |
+| 40-50          | 10            | 60                      |
+
+Jumlah data (n) = 60
+Untuk menghitung Q1, kita perlu menentukan kelas kuartil pertama. Kelas kuartil pertama adalah kelas yang memiliki frekuensi kumulatif lebih besar dari $\frac{n}{4} = (\frac{60}{4} = 15)$. Dalam hal ini, kelas kuartil pertama adalah 20-30.
+
+- L = 20 (batas bawah kelas kuartil pertama)
+
+- F = 15 (frekuensi kumulatif sebelum kelas kuartil pertama)
+
+- f = 15 (frekuensi kelas kuartil pertama)
+
+- c = 10 (lebar kelas)
+
+Dengan menggunakan rumus, kita dapat menghitung Q1:
+$$ Q1 = 20 + \left( \frac{15 - 15}{15} \right) \times 10 = 20$$
+Jadi, kuartil pertama (Q1) untuk data berkelompok ini adalah 20.
+
+# Kuartil Kedua (Q2)
+Kuartil kedua (Q2) adalah nilai yang membagi data menjadi dua bagian yang sama besar, yaitu 50% bagian bawah dan 50% bagian atas. Q2 juga dikenal sebagai median. Q2 dapat dihitung dengan menggunakan rumus:
+$$ Q2 = \frac{(n+1)}{4}$$
+di mana n adalah jumlah data dalam dataset. Q2 memberikan informasi tentang nilai tengah dari data.
+
+## Contoh perhitungan kuartil kedua (Q2) untuk data tidak berkelompok:
+Misalkan kita memiliki data berikut: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50. Jumlah data (n) = 10. Untuk menghitung Q2, kita dapat menggunakan rumus:
+$$ Q2 = \frac{(10+1)}{2} = \frac{11}{2} = 5.5$$
+Karena Q2 berada di antara data ke-5 dan ke-6, kita dapat menghitung Q2 dengan interpolasi:
+$$ Q2 = 25 + (30 - 25) \times (5.5 - 5) = 25 + 5 \times 0.5 = 25 + 2.5 = 27.5$$
+Jadi, kuartil kedua (Q2) untuk data ini adalah 27.5.
+
+Formula **Kuartil Kedua (Q2)** untuk data berkelompok dapat dihitung dengan menggunakan rumus:
+$$ Q2 = L + \left( \frac{\frac{n}{2} - F}{f} \right) \times c$$
+di mana:
+
+- L adalah batas bawah kelas kuartil kedua
+
+- n adalah jumlah data dalam dataset
+
+- F adalah frekuensi kumulatif sebelum kelas kuartil kedua
+
+- f adalah frekuensi kelas kuartil kedua
+
+- c adalah lebar kelas
+
+## Contoh perhitungan kuartil kedua (Q2) untuk data berkelompok:
+Misalkan kita memiliki data berkelompok dengan kelas interval, frekuensi, dan frekuensi kumulatif sebagai berikut:
+
+| Kelas Interval | Frekuensi (f) | Frekuensi Kumulatif (F) |
+|----------------|---------------|-------------------------|   
+| 0-10           | 5             | 5                       |
+| 10-20          | 10            | 15                      |
+| 20-30          | 15            | 30                      |
+| 30-40          | 20            | 50                      |
+| 40-50          | 10            | 60                      |
+Jumlah data (n) = 60
+Untuk menghitung Q2, kita perlu menentukan kelas kuartil kedua. Kelas kuartil kedua adalah kelas yang memiliki frekuensi kumulatif lebih besar dari $\frac{n}{2} = (\frac{60}{2} = 30)$. Dalam hal ini, kelas kuartil kedua adalah 30-40.
+
+- L = 30 (batas bawah kelas kuartil kedua)
+
+- F = 30 (frekuensi kumulatif sebelum kelas kuartil kedua)
+
+- f = 20 (frekuensi kelas kuartil kedua)
+
+- c = 10 (lebar kelas)
+
+Dengan menggunakan rumus, kita dapat menghitung Q2:
+$$ Q2 = 30 + \left( \frac{30 - 30}{20} \right) \times 10 = 30$$
+Jadi, kuartil kedua (Q2) untuk data berkelompok ini adalah 30.
+
+# Kuartil Ketiga (Q3)
+Kuartil ketiga (Q3) adalah nilai yang membagi data menjadi 75% bagian bawah dan 25% bagian atas. Q3 dapat dihitung dengan menggunakan rumus:
+$$ Q3 = \frac{3(n+1)}{4}$$
+di mana n adalah jumlah data dalam dataset. Q3 memberikan informasi tentang nilai yang berada di bawah 75% dari data.
+
+## Contoh perhitungan kuartil ketiga (Q3) untuk data tidak berkelompok:
+Misalkan kita memiliki data berikut: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50. Jumlah data (n) = 10. Untuk menghitung Q3, kita dapat menggunakan rumus:
+$$ Q3 = \frac{3(10+1)}{4} = \frac{33}{4} = 8.25$$
+Karena Q3 berada di antara data ke-8 dan ke-9, kita dapat menghitung Q3 dengan interpolasi:
+$$ Q3 = 40 + (45 - 40) \times (8.25 - 8) = 40 + 5 \times 0.25 = 40 + 1.25 = 41.25$$
+Jadi, kuartil ketiga (Q3) untuk data ini adalah 41.25.
+
+Formula **Kuartil Ketiga (Q3)** untuk data berkelompok dapat dihitung dengan menggunakan rumus:
+$$ Q3 = L + \left( \frac{\frac{3n}{4} - F}{f} \right) \times c$$
+di mana:
+
+- L adalah batas bawah kelas kuartil ketiga
+
+- n adalah jumlah data dalam dataset
+
+- F adalah frekuensi kumulatif sebelum kelas kuartil ketiga
+
+- f adalah frekuensi kelas kuartil ketiga
+
+- c adalah lebar kelas
+
+## Contoh perhitungan kuartil ketiga (Q3) untuk data berkelompok:
+Misalkan kita memiliki data berkelompok dengan kelas interval, frekuensi, dan frekuensi kumulatif sebagai berikut:
+
+| Kelas Interval | Frekuensi (f) | Frekuensi Kumulatif (F) |
+|----------------|---------------|-------------------------|
+| 0-10           | 5             | 5                       |
+| 10-20          | 10            | 15                      |
+| 20-30          | 15            | 30                      |
+| 30-40          | 20            | 50                      |
+| 40-50          | 10            | 60                      |
+Jumlah data (n) = 60
+Untuk menghitung Q3, kita perlu menentukan kelas kuartil ketiga. Kelas kuartil ketiga adalah kelas yang memiliki frekuensi kumulatif lebih besar dari $\frac{3n}{4} = (\frac{3 \times 60}{4} = 45)$. Dalam hal ini, kelas kuartil ketiga adalah 40-50.
+
+- L = 40 (batas bawah kelas kuartil ketiga)
+
+- F = 50 (frekuensi kumulatif sebelum kelas kuartil ketiga)
+
+- f = 10 (frekuensi kelas kuartil ketiga)
+
+- c = 10 (lebar kelas)
+
+Dengan menggunakan rumus, kita dapat menghitung Q3:
+$$ Q3 = 40 + \left( \frac{45 - 50}{10} \right) \times 10 = 40 - 5 = 35$$
+Jadi, kuartil ketiga (Q3) untuk data berkelompok ini adalah 35.
+
+# Jangkauan Interkuartil (IQR)
+Jangkauan interkuartil (IQR) adalah selisih antara kuartil ketiga (Q3) dan kuartil pertama (Q1). IQR digunakan untuk mengukur sebaran data dan mengidentifikasi outlier. IQR dapat dihitung dengan menggunakan rumus:
+$$ IQR = Q3 - Q1$$
+Outlier dapat diidentifikasi dengan menggunakan rumus:
+$$ \text{Outlier} = Q1 - 1.5 \times IQR \quad \text{atau} \quad Q3 + 1.5 \times IQR$$
+Data yang berada di bawah nilai outlier pertama atau di atas nilai outlier kedua dianggap sebagai outlier.
+
+## Contoh perhitungan jangkauan interkuartil (IQR) dan identifikasi outlier:
+Misalkan kita memiliki data berikut: 5, 10, 15, 20, 25, 30, 35, 40, 45, 50. Dari perhitungan sebelumnya, kita telah mengetahui bahwa Q1 = 13.75 dan Q3 = 41.25. Dengan menggunakan rumus IQR, kita dapat menghitung IQR:
+$$ IQR = 41.25 - 13.75 = 27.5$$
+Selanjutnya, kita dapat menghitung nilai outlier:
+$$ \text{Outlier} = 13.75 - 1.5 \times 27.5 = 13.75 - 41.25 = -27.5$$
+$$ \text{Outlier} = 41.25 + 1.5 \times 27.5 = 41.25 + 41.25 = 82.5$$
+Dalam hal ini, tidak ada data yang berada di bawah -27.5 atau di atas 82.5, sehingga tidak ada outlier dalam dataset ini.
+
+## Contoh perhitungan jangkauan interkuartil (IQR) dan identifikasi outlier untuk data tidak berkelompok:
+Misalkan kita memiliki data berikut: 3, 4, 5, 6, 4, 5, 3, 7, 4, 5 ,6, 4, 5, 3, 6, 4, 5, 7, 12, 18 . Dari perhitungan sebelumnya, kita telah mengetahui bahwa Q1 = 4 dan Q3 = 6. Dengan menggunakan rumus IQR, kita dapat menghitung IQR:
+$$ IQR = 6 - 4 = 2$$
+Selanjutnya, kita dapat menghitung nilai outlier:
+$$ \text{Outlier} = 4 - 1.5 \times 2 = 4 - 3 = 1$$
+$$ \text{Outlier} = 6 + 1.5 \times 2 = 6 + 3 = 9$$
+Dalam hal ini, data yang berada di bawah 1 atau di atas 9 dianggap sebagai outlier. Dalam dataset ini, nilai 12 dan 18 dianggap sebagai outlier karena berada di atas 9.
+
+## Contoh perhitungan jangkauan interkuartil (IQR) dan identifikasi outlier untuk data berkelompok:
+Misalkan kita memiliki data berkelompok dengan kelas interval, frekuensi, dan frekuensi kumulatif sebagai berikut:
+
+| Kelas Interval | Frekuensi (f) | Frekuensi Kumulatif (F) |
+|----------------|---------------|-------------------------|
+| 0-10           | 5             | 5                       |
+| 10-20          | 10            | 15                      |
+| 20-30          | 15            | 30                      |
+| 30-40          | 20            | 50                      |
+| 40-50          | 10            | 60                      |
+Dari perhitungan sebelumnya, kita telah mengetahui bahwa Q1 = 20 dan Q3 = 35. Dengan menggunakan rumus IQR, kita dapat menghitung IQR:
+$$ IQR = 35 - 20 = 15$$
+Selanjutnya, kita dapat menghitung nilai outlier:
+$$ \text{Outlier} = 20 - 1.5 \times 15 = 20 - 22.5 = -2.5$$
+$$ \text{Outlier} = 35 + 1.5 \times 15 = 35 + 22.5 = 57.5$$
+Dalam hal ini, tidak ada data yang berada di bawah -2.5 atau di atas 57.5, sehingga tidak ada outlier dalam dataset ini.
+
+# Latihan Soal
+1. Diberikan data berikut: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20. Hitunglah kuartil pertama (Q1), kuartil kedua (Q2), kuartil ketiga (Q3), dan jangkauan interkuartil (IQR) untuk data tersebut.
+
+2. Diberikan data berkelompok dengan kelas interval, frekuensi, dan frekuensi kumulatif sebagai berikut:
+
+| Kelas Interval | Frekuensi (f) | Frekuensi Kumulatif (F) |
+|----------------|---------------|-------------------------|
+| 0-10           | 4             | 4                       |
+| 10-20          | 8             | 12                      |
+| 20-30          | 12            | 24                      |
+| 30-40          | 16            | 40                      |
+| 40-50          | 10            | 50                      |
+Hitunglah kuartil pertama (Q1), kuartil kedua (Q2), kuartil ketiga (Q3), dan jangkauan interkuartil (IQR) untuk data tersebut.
+
+3. Diberikan data berikut: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20. Hitunglah kuartil pertama (Q1), kuartil kedua (Q2), kuartil ketiga (Q3), dan jangkauan interkuartil (IQR) untuk data tersebut. Identifikasi juga nilai outlier dalam dataset ini.
+
+# Kesimpulan
+Kuartil adalah ukuran statistik yang penting untuk memahami distribusi data. Dengan mengetahui kuartil, kita dapat mengidentifikasi nilai-nilai ekstrem dan memahami sebaran data dengan lebih baik. Kuartil juga dapat digunakan untuk membandingkan distribusi antara dua atau lebih kelompok data.
+

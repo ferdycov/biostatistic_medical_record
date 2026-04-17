@@ -1,0 +1,260 @@
+---
+title: "Biostatistik"
+subtitle: "Distribusi Frekuensi"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-08"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+Distribusi frekuensi adalah suatu cara untuk menyajikan data dalam bentuk tabel yang menunjukkan frekuensi atau jumlah kejadian dari setiap nilai atau kelompok nilai dalam suatu dataset. Tabel distribusi frekuensi membantu kita memahami bagaimana data tersebar dan memberikan gambaran tentang pola atau tren dalam data tersebut. Dalam biostatistik, distribusi frekuensi sering digunakan untuk menganalisis data kesehatan, seperti data pasien, hasil tes laboratorium, atau data epidemiologi.
+
+Beberapa hal yang perlu diperhatikan dalam Tabel Distribusi frekuensi adalah:
+
+- Tabel distribusi frekuensi mempunyai beberapa kelas yang jumlahnya disesuaikan dengan banyaknya data.
+- Setiap kelas pada tabel distribusi frekuensi mempunyai kelas interval. Setiap kelas interval mempunya panjang kelas yaitu interval kelas bawah sampai dengan interval kelas atas. Jadi panjang kelas interval merupakan jarak antara nilai batas bawah dengan batas atas pada setiap kelas.
+- Setiap kelas interval mempunyai jumlah atau yang sering disebut frekuensi
+
+\begin{notebox}
+*Frekuensi* adalah banyaknya data yang masuk ke dalam kelas interval tertentu. Frekuensi dapat berupa frekuensi absolut (jumlah data dalam setiap kelas) atau frekuensi relatif (persentase data dalam setiap kelas).
+\end{notebox}
+
+Manfaat dari penyajian data dalam bentuk Distribusi Frekuensi ini adalah untuk menyederhanakan teknik penyajian data sehingga menjadi lebih mudah untuk dibaca dan dipahami sebagai bahan informasi
+
+# Pedoman Umum Penyusunan Tabel Distribusi Frekuensi
+Membuat tabel distribusi frekuensi yang baik dan benar memerlukan beberapa langkah yang harus diikuti. Berikut adalah pedoman umum untuk menyusun tabel distribusi frekuensi :
+
+1. Tentukan rentang data: Hitung rentang data dengan mengurangi nilai maksimum dengan nilai minimum dalam dataset.
+
+2. Tentukan jumlah kelas: Tentukan jumlah kelas yang diinginkan untuk tabel distribusi frekuensi. Jumlah kelas yang umum digunakan adalah antara 5 hingga 20, tergantung pada ukuran dataset dan rentang data.
+
+3. Hitung panjang kelas: Hitung panjang kelas dengan membagi rentang data dengan jumlah kelas yang telah ditentukan. Panjang kelas harus cukup besar untuk mencakup semua nilai dalam dataset.
+
+4. Tentukan batas kelas: Tentukan batas bawah dan batas atas untuk setiap kelas. 
+
+5. Hitung frekuensi: Hitung frekuensi absolut untuk setiap kelas dengan menghitung jumlah data yang masuk ke dalam setiap kelas. Kemudian, hitung frekuensi relatif dengan membagi frekuensi absolut dengan total jumlah data.
+
+6. Susun tabel: Susun tabel distribusi frekuensi dengan mencantumkan kelas, batas kelas, frekuensi absolut, dan frekuensi relatif.
+
+Berikut ini adalah bagianbagian yang harus dibuat terlebih dahulu dalam sebuah tabel distribusi frekuensi.
+
+## Kelas interval
+Kelas interval merupakan kelompok-kelompok nilai atau variabel Jumlah kelas menunjukkan jumlah kelompok nilai/variabel dari data yang diobservasi. Kelas interval biasanya ditentukan berdasarkan rentang data dan jumlah kelas yang diinginkan. Kelas interval dapat berupa kelas tunggal (misalnya, 0-10, 10-20, dll.) atau kelas ganda (misalnya, 0-9, 10-19, dll.). Kelas interval harus disusun secara berurutan dan tidak tumpang tindih untuk memastikan bahwa setiap nilai dalam dataset hanya masuk ke dalam satu kelas interval.
+
+Secara matematis cara menentukan kelas interval dapat dilakukan dengan menggunakan rumus berikut:
+$$K = 1 + 3.322 \log_{10} n$$
+Keterangan:
+
+- $K$ = jumlah kelas interval yang diinginkan
+
+- $n$ = jumlah data dalam dataset
+
+Misal kita memiliki dataset dengan 100 data, maka jumlah kelas interval yang diinginkan dapat dihitung sebagai berikut:
+$$K = 1 + 3.322 \log_{10} 100$$
+$$K = 1 + 3.322 \times 2$$
+$$K = 1 + 6.644$$
+$$K \approx 7.644$$
+Jadi, jumlah kelas interval yang diinginkan untuk dataset dengan 100 data adalah sekitar 8 kelas interval. Berikut ini adalah contoh kelas interval dengan kelas interval = 8 dan n = 100:
+
+| Lama Rawat (hari) | Frekuensi (Pasien) |
+|-------------------|-----------|
+|20-30| 5 |
+|31-40| 5 |
+|41-50| 10 |
+|51-60| 10 |
+|61-70| 10 |
+|71-80| 20 |
+|81-90| 20 |
+|91-100| 20 |
+
+Kategori lama rawat berjumlah 8, artinya kelas interval yang diinginkan adalah 8 kelas interval.
+
+## Batas kelas
+Batas Kelas merupakan nilai-nilai yang membatasi antara kelas yang satu dengan kelas berikutnya
+
+| Lama Rawat (hari) | Frekuensi (Pasien) |
+|-------------------|-----------|
+|20-30| 5 |
+|31-40| 5 |
+|41-50| 10 |
+|51-60| 10 |
+|61-70| 10 |
+|71-80| 20 |
+|81-90| 20 |
+|91-100| 20 |
+
+- Batas Kelas Bawah (Lower Class Limits) adalah nilai terkecil dalam kelas interval, nilai atau angka yang terdapat pada bagian sebelah kiri dari setiap kelas. Nilai 20,31,41,51,61,71,81,91 merupakan batas kelas bawah dari setiap kelas interval pada tabel di atas.
+
+- Batas Kelas Atas (Upper Class Limits) adalah nilai terbesar dalam kelas interval, nilai atau angka yang berada pada bagian sebelah
+kanan dari setiap kelas. Nilai 30,40,50,60,70,80,90,100 merupakan batas kelas atas dari setiap kelas interval pada tabel di atas.
+
+## Rentang kelas
+Rentang kelas adalah selisih antara batas atas dan batas bawah dari suatu kelas interval, selisih antara data tertinggi dengan data terendah (**Data terbesar dikurangi Data terkecil**). Rentang kelas digunakan untuk menentukan panjang kelas interval.
+
+| Lama Rawat (hari) | Frekuensi (Pasien) |
+|-------------------|-----------|
+|20-30| 5 |
+|31-40| 5 |
+|41-50| 10 |
+|51-60| 10 |
+|61-70| 10 |
+|71-80| 20 |
+|81-90| 20 |
+|91-100| 20 |
+
+Pada Contoh Tabel di atas, dimana data terendah adalah 20 dan data tertinggi adalah 100. Sehingga untuk menentukan Rentang Data (Range) adalah 100-20 = 80. Jadi rentang data pada tabel tersebut
+adalah 80 hari. Rentang data digunakan untuk menentukan panjang kelas interval dengan membagi rentang data dengan jumlah kelas interval yang diinginkan.
+
+## Panjang interval kelas\
+Panjang interval kelas adalah jarak antara batas bawah dan batas atas dari suatu kelas interval. Panjang interval kelas digunakan untuk menentukan seberapa besar rentang nilai yang termasuk dalam setiap kelas interval. Panjang interval kelas dapat dihitung dengan menggunakan rumus berikut:
+$$Panjang\ Interval\ Kelas = \frac{Rentang\ Data}{Jumlah\ Kelas\ Interval}$$
+Keterangan:
+- Rentang Data adalah selisih antara data tertinggi dengan data terendah dalam dataset.
+- Jumlah Kelas Interval adalah jumlah kelas interval yang diinginkan untuk tabel distribusi frekuensi.
+Misal kita memiliki dataset dengan data terendah 20 dan data tertinggi 100, serta jumlah kelas interval yang diinginkan adalah 8, maka panjang interval kelas dapat dihitung sebagai berikut:
+$$Panjang\ Interval\ Kelas = \frac{100 - 20}{8}$$
+$$Panjang\ Interval\ Kelas = \frac{80}{8}$$
+$$Panjang\ Interval\ Kelas = 10$$
+Jadi, panjang interval kelas untuk dataset tersebut adalah 10. Artinya, setiap kelas interval akan mencakup rentang nilai sebesar 10, seperti 20-30, 31-40, 41-50, dan seterusnya.
+
+## Frekuensi kelas
+frekuensi kelas adalah jumlah data yang masuk ke dalam setiap kelas interval. Frekuensi kelas dapat dihitung dengan menghitung jumlah data yang termasuk dalam setiap kelas interval.
+
+| Lama Rawat (hari) | Frekuensi (Pasien) |
+|-------------------|-----------|
+|20-30| 5 |
+|31-40| 5 |
+|41-50| 10 |
+|51-60| 10 |
+|61-70| 10 |
+|71-80| 20 |
+|81-90| 20 |
+|91-100| 20 |
+
+Frekuensi pada kelas interval 20-30 adalah 5; frekuensi pada kelas interval 31-40 adalah 5 dan seterusnya.
+
+# Macam-Macam Tabel Distribusi Frekuensi
+1. Tabel Distribusi Frekuensi Tunggal: Tabel yang menyajikan frekuensi untuk setiap nilai atau kategori dalam dataset. Contohnya adalah tabel yang menunjukkan jumlah pasien berdasarkan jenis kelamin (laki-laki dan perempuan).
+
+| Jenis Kelamin | Frekuensi |
+|-------------------|-----------|
+|Laki-laki| 5 |
+|Perempuan| 5 |
+
+2. Tabel Distribusi Frekuensi Berkelompok : Tabel yang menyajikan frekuensi untuk setiap kelas interval dalam dataset. Contohnya adalah tabel yang menunjukkan jumlah pasien berdasarkan rentang usia (0-10 tahun, 11-20 tahun, dll.).
+
+| Umur (tahun) | Frekuensi |
+|--------------|-----------|
+|0-10| 5 |
+|11-20| 5 |
+|21-30| 5 |
+
+3. Tabel Distribusi Frekuensi Kumulatif: Tabel yang menyajikan frekuensi kumulatif, yaitu jumlah frekuensi yang terkumpul hingga nilai atau kategori tertentu. Contohnya adalah tabel yang menunjukkan jumlah pasien yang memiliki lama rawat hingga 30 hari, 60 hari, dan seterusnya.
+
+| Lama Rawat (hari) | Frekuensi | Frekuensi Kumulatif |
+|-------------------|-----------|---------------------|
+|20-30| 5 | 5 |
+|31-40| 5 | 10 |
+|41-50| 10 | 20 |
+|51-60| 10 | 30 |
+|61-70| 10 | 40 |
+|71-80| 20 | 60 |
+|81-90| 20 | 80 |
+|91-100| 20 | 100 |
+
+4. Tabel Distribusi Frekuensi Relatif: Tabel yang menyajikan frekuensi relatif, yaitu persentase frekuensi untuk setiap nilai atau kategori dalam dataset. Contohnya adalah tabel yang menunjukkan persentase pasien berdasarkan jenis kelamin.
+
+| Jenis Kelamin | Frekuensi | Frekuensi Relatif (%) |
+|-------------------|-----------|-----------------------|
+|Laki-laki| 5 | 50% |
+|Perempuan| 5 | 50% |
+
+Distribusi frekuensi kumulatif dibedakan menjadi 2, yaitu
+
+- Frekuensi Kumulatif Atas ($fk_a$) yaitu: Frekuensi yang angka-angkanya ditambahkan dari Bawah ke Atas.
+
+- Frekuensi Kumulatif Bawah ($fk_b$) yaitu: Frekuensi yang angka-angkanya ditambahkan dari Atas ke Bawah
+
+| Nilai | f | $fk_b$ | $fk_a$ |
+|-------|---|--------|--------|
+|40| 5 | 25 | 5 |
+|50| 10 | 15 | 10 |
+|60| 5 | 10 | 15 |
+|70| 5 | 5 | 25 |
+
+# Contoh Soal
+Diketahui tekanan darah sistolik pasien di rumah sakit sebagai berikut:
+\begin{examplebox}
+Tekanan darah sistolik (mmHg): 120, 130, 110, 140, 150, 160, 170, 180, 190, 200, 125, 135, 115, 145, 155, 165, 175, 185, 195, 205.
+\end{examplebox}
+
+Buatlah tabel distribusi frekuensi untuk data tekanan darah sistolik pasien tersebut. Tentukan frekuensi absolut dan frekuensi relatif untuk setiap kelas interval.
+
+**Langkah 1: Tentukan Rentang Data**
+
+Rentang data dapat dihitung dengan mengurangi nilai maksimum dengan nilai minimum dalam dataset. Dalam hal ini, nilai maksimum adalah 205 mmHg dan nilai minimum adalah 110 mmHg. Sehingga rentang data adalah:
+
+Rentang Data = Nilai Maksimum - Nilai Minimum
+
+Rentang Data = 205 - 110
+
+Rentang Data = 95 mmHg
+
+**Langkah 2: Tentukan Jumlah Kelas Interval**
+Jumlah kelas interval yang diinginkan dapat dihitung dengan menggunakan rumus:
+$$K = 1 + 3.322 \log_{10} n$$
+Dimana $n$ adalah jumlah data dalam dataset. Dalam hal ini, jumlah data adalah 20. Sehingga jumlah kelas interval yang diinginkan adalah:
+$$K = 1 + 3.322 \log_{10} 20$$
+$$K = 1 + 3.322 \times 1.301$$
+$$K = 1 + 4.32$$
+$$K \approx 5.32$$
+Jadi, jumlah kelas interval yang diinginkan untuk dataset ini adalah sekitar 6 kelas interval.
+
+**Langkah 3: Tentukan Panjang Interval Kelas**
+
+Panjang interval kelas dapat dihitung dengan menggunakan rumus:
+$$Panjang\ Interval\ Kelas = \frac{Rentang\ Data}{Jumlah\ Kelas\ Interval}$$
+$$Panjang\ Interval\ Kelas = \frac{95}{6}$$
+$$Panjang\ Interval\ Kelas \approx 15.83$$
+Jadi, panjang interval kelas untuk dataset ini adalah sekitar 16 mmHg. Artinya, setiap kelas interval akan mencakup rentang nilai sebesar 16 mmHg, seperti 110-126 mmHg, 127-143 mmHg, dan seterusnya.
+
+Maka tabel distribusi frekuensi untuk data tekanan darah sistolik pasien tersebut dapat disusun sebagai berikut:
+
+| Tekanan Darah Sistolik (mmHg) | Frekuensi Absolut | Frekuensi Relatif (%) |
+|-------------------------------|-------------------|-----------------------|
+| 110-126 | 4 | 20% |
+| 127-143 | 2 | 10% |
+| 144-160 | 5 | 25% |
+| 161-177 | 3 | 15% |
+| 178-194 | 3 | 15% |
+| 195-211 | 3 | 15% |
+
+# Latihan Soal
+
+Diketahui data lama rawat pasien di rumah sakit sebagai berikut: 
+Lama rawat (hari): 5, 10, 7, 15, 20, 25, 30, 35, 40, 45, 8, 12, 18, 22, 28, 32, 38, 42, 48, 50, 10, 15, 5, 20, 25, 30, 35, 40, 45, 8, 12, 18, 22, 28, 32, 38, 42, 48, 50, 11, 5, 6, 9, 14, 19, 24, 29, 34, 39, 44, 49, 26, 31, 36, 41, 46, 51, 12, 17, 22, 27, 32, 37, 42, 47, 52, 13, 18, 23, 28, 33, 38, 43, 48, 53.
+
+Buatlah tabel distribusi frekuensi untuk data lama rawat pasien tersebut. Tentukan frekuensi absolut dan frekuensi relatif untuk setiap kelas interval.
+
+# Kesimpulan
+Distribusi frekuensi adalah suatu cara untuk menyajikan data dalam bentuk tabel yang menunjukkan frekuensi atau jumlah kejadian dari setiap nilai atau kelompok nilai dalam suatu dataset. Tabel distribusi frekuensi membantu kita memahami bagaimana data tersebar dan memberikan gambaran tentang pola atau tren dalam data tersebut. Dalam biostatistik, distribusi frekuensi sering digunakan untuk menganalisis data kesehatan, seperti data pasien, hasil tes laboratorium, atau data epidemiologi.
+
+# Daftar Pustaka
+Setyawan, D.A. et.al (2021). *Buku Ajar Statistika*. Penerbit Adab : Indramayu.

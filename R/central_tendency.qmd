@@ -48,7 +48,9 @@ Secara umum terdapat tiga ukuran pemusatan data yang paling sering digunakan dal
 ## Definisi Central Tendency
 
 \begin{defbox}
-Central tendency adalah ukuran statistik yang digunakan untuk menggambarkan nilai pusat atau nilai representatif dari suatu kumpulan data.
+Central tendency adalah ukuran statistik yang digunakan untuk menggambarkan nilai pusat atau nilai representatif dari suatu kumpulan data. 
+Ukuran pemusatan atau nilai pusat dapat mewakili
+data secara keseluruhan dan merupakan rata-rata (average), karena nilai rata-ratanya dihitung dari keseluruhan nilai yang terdapat dalam data tersebut
 \end{defbox}
 
 Ukuran pemusatan data digunakan untuk:
@@ -86,8 +88,16 @@ Dalam praktik biostatistik, ukuran pemusatan yang paling sering digunakan adalah
 ## Definisi
 
 \begin{defbox}
-Mean atau rata-rata adalah jumlah seluruh nilai data dibagi dengan banyaknya observasi dalam suatu kumpulan data.
+Mean atau rata-rata adalah jumlah seluruh nilai data dibagi dengan banyaknya observasi dalam suatu kumpulan data. Nilai rata-rata (Mean) merupakan nilai rata-rata dari keseluruhan data yang ada dan merupakan ukuran yang paling stabil untuk data kontinyu atau data numerik
 \end{defbox}
+
+**Fungsi/Kegunaan:**
+
+- Mengetahui rata-rata suatu variabel (misalnya rata-rata lama rawat inap)
+
+- Membandingkan kelompok data
+
+- Sebagai dasar analisis statistik lanjutan
 
 ## Rumus Mean
 
@@ -98,39 +108,63 @@ $$
 $$
 
 Keterangan:
+
 - $(\bar{x})$ = rata-rata (mean)
 - $(x_i)$ = nilai data ke-i
 - $(n)$ = jumlah data
 
-### Cara Menghitung Mean
+#### Cara Menghitung Mean data tunggal
 
 Langkah-langkah:
 
 1. Menjumlahkan seluruh nilai data
 2. Membagi jumlah tersebut dengan banyaknya data
 
-### Contoh dalam Rekam Medis
+#### Contoh : 1. Lama rawat inap pasien (hari)
 
 \begin{examplebox}
 Data lama rawat inap pasien (hari): 3, 4, 5, 6, 7
 \end{examplebox}
 
 Langkah perhitungan:
-
-$$
-   \bar{x} = \frac{3 + 4 + 5 + 6 + 7}{5}
-$$
-
-$$
-   \bar{x} = \frac{25}{5} = 5
-$$
-
+$$ \bar{x} = \frac{3 + 4 + 5 + 6 + 7}{5} $$
+$$ \bar{x} = \frac{25}{5} = 5 $$
 Rata-rata lama rawat pasien adalah **5 hari**.
 
+#### Contoh : 2. Lama rawat inap pasien (hari)
+
+\begin{examplebox}
+Data lama rawat inap pasien (hari)
+\end{examplebox}
+
+| Lama Rawat (hari) | Frekuensi (pasien) |
+|---|---|
+| 5 | 1 |
+| 6 | 3 |
+| 7 | 10 |
+| 8 | 30 |
+| 9 | 20 |
+| 10 | 6 |
+
+Langkah pertama hitung jumlah seluruh nilai data
+
+| Lama Rawat (hari) | Frekuensi (pasien) | Lama Rawat x Frekuensi (Fxi) |
+|---|---|---|
+| 5 | 1 | 5 |
+| 6 | 3 | 18 |
+| 7 | 10 | 70 |
+| 8 | 30 | 240 |
+| 9 | 20 | 180 |
+| 10 | 6 | 60 |
+|  | $$ \sum f_i = 70 $$ | $$ \sum f_i x_i = 573 $$ |
+
+Jumlah Frekuensi : $$ \sum f_i = 70 $$
+Jumlah Nilai (Lama Rawat x Frekuensi) : $$ \sum f_i x_i = 573 $$
+Hitung nilai rata-rata: $$ \bar{x} = \frac{573}{70} = 8.2 $$
+Rata-rata lama rawat pasien adalah **8.2 hari**.
+
 ### Untuk data berkelompok:
-$$
-   \bar{x} = \frac{\sum f_i x_i}{\sum f_i}
-$$
+$$ \bar{x} = \frac{\sum f_i x_i}{\sum f_i} $$
 
 Keterangan:
 
@@ -139,23 +173,18 @@ Keterangan:
 - $x_i$ = titik tengah kelas  
 - $\sum f_i$ = jumlah seluruh frekuensi 
 
-### Cara Menghitung Mean Data Berkelompok
+#### Cara Menghitung Mean Data Berkelompok
 
 Langkah-langkah perhitungan:
 
 1. Menentukan **titik tengah kelas**
-
-$$
-   x_i = \frac{batas\ atas + batas\ bawah}{2}
-$$
+$$ x_i = \frac{batas\ atas + batas\ bawah}{2} $$
 
 2. Mengalikan titik tengah kelas dengan frekuensi ($f_i x_i$)
-
 3. Menjumlahkan seluruh nilai $f_i x_i$
-
 4. Membagi dengan jumlah seluruh frekuensi
 
-### Contoh dalam Rekam Medis
+#### Contoh dalam Rekam Medis
 
 \begin{examplebox}
 Distribusi lama rawat inap pasien di suatu rumah sakit
@@ -177,25 +206,18 @@ Langkah pertama menentukan **titik tengah kelas**.
 | 7–9 | 3 | 8 | 24 |
 | 10–12 | 2 | 11 | 22 |
 
-Jumlah frekuensi:
-
-$$
-\sum f = 15
-$$
-
-Jumlah hasil perkalian:
-
-$$
-\sum f_i x_i = 84
-$$
-
-Mean:
-
-$$
-\bar{x} = \frac{84}{15} = 5.6
-$$
-
+Jumlah frekuensi: $$ \sum f = 15 $$
+Jumlah hasil perkalian: $$ \sum f_i x_i = 84 $$
+Mean: $$ \bar{x} = \frac{84}{15} = 5.6 $$
 Rata-rata lama rawat pasien adalah **5.6 hari**.
+
+\begin{notebox}
+Mean dapat digunakan untuk data yang memiliki distribusi simetris karena mean memberikan gambaran yang lebih akurat tentang pusat distribusi data dalam kondisi tersebut.
+
+Tetapi Mean sangat sensitif terhadap nilai ekstrem (outlier) sehingga tidak selalu menjadi ukuran pemusatan yang terbaik untuk data yang memiliki distribusi tidak normal atau memiliki nilai ekstrem.
+
+Mean juga lebih cocok digunakan untuk data interval atau rasio karena mean menggunakan seluruh nilai data dalam perhitungannya, sehingga memberikan gambaran yang lebih representatif tentang pusat distribusi data.
+\end{notebox}
 
 ---
 
@@ -207,60 +229,111 @@ Rata-rata lama rawat pasien adalah **5.6 hari**.
 Median adalah nilai tengah dari suatu kumpulan data yang telah diurutkan dari nilai terkecil hingga terbesar. Median membagi data menjadi dua bagian yang sama besar.
 \end{defbox}
 
+**Fungsi/Kegunaan:**
+
+- Digunakan ketika data memiliki pencilan
+- Menunjukkan titik tengah distribusi
+- Cocok untuk data yang tidak terdistribusi normal
+
+
 ## Rumus Median
 
 ### Untuk data tunggal:
 
-Jika jumlah data ganjil:
-$$
-Median = \frac{n+1}{2}
-$$
+Jika jumlah data ganjil: 
+$$ Med = X\frac{n+1}{2} $$
+Jika jumlah data genap: 
+$$ Med = \frac{X\frac{n}{2} + X\frac{n+2}{2} }{2}$$
 
-Jika jumlah data genap:
-Median = rata-rata dua nilai tengah.
-
-### Cara Menghitung Median
+#### Cara Menghitung Median data tunggal
 
 Langkah-langkah:
 
 1. Mengurutkan data dari kecil ke besar
 2. Menentukan posisi nilai tengah
 
-### Contoh dalam Rekam Medis
+#### Contoh : 1.1 Usia pasien (jumlah data ganjil)
 
 \begin{examplebox}
 Data usia pasien: 25, 30, 35, 40, 45
 \end{examplebox}
+Langkah perhitungan :
 
-Data sudah terurut sehingga nilai tengah adalah **35**.
+Jumlah data: $n = 5$ (ganjil)
 
+Posisi median: $$Med = X\frac{5+1}{2} = X3$$
 Maka median usia pasien adalah **35 tahun**.
 
+#### Contoh : 1.2 Usia pasien (jumlah data ganjil)
+| Umur | frekuensi |
+|---|---|
+| 30 | 1 |
+| 40 | 1 |
+| 50 | 1 |
+| 60 | 1 |
+| 70 | 1 |
+| 80 | 1 |
+| 90 | 1 |
+
+Langkah pertama hitung nilai n (jumlah data) : $n = 7$
+
+Posisi median: $$Med = X\frac{7+1}{2} = X4$$
+Maka median usia pasien adalah **60 tahun**.
+
+
+#### Contoh : 2.1 Usia pasien (jumlah data genap)
+\begin{examplebox}
+Data usia pasien: 22, 25, 30, 35
+\end{examplebox}
+
+Langkah perhitungan:
+
+Jumlah data: $n = 4$ (genap)
+
+Posisi median: $$Med = \frac{X\frac{4}{2} + X\frac{4+2}{2} }{2} = \frac{X2 + X3}{2}$$
+Median usia pasien : $$\frac{25 + 30}{2} = 27.5$$
+Maka median usia pasien adalah **27.5 tahun**.
+
+#### Contoh : 2.2 Usia pasien (jumlah data genap)
+| Umur | frekuensi |
+|---|---|
+| 30 | 1 |
+| 40 | 1 |
+| 50 | 1 |
+| 60 | 1 |
+| 70 | 1 |
+| 80 | 1 |
+| 90 | 1 |
+| 100 | 1 |
+
+Langkah pertama hitung nilai n (jumlah data) : $n = 8$
+
+Posisi median: $$Med = \frac{X\frac{8}{2} + X\frac{8+2}{2} }{2} = \frac{X4 + X5}{2}$$
+Median usia pasien : $$\frac{60 + 70}{2} = 65$$
+Maka median usia pasien adalah **65 tahun**.
+
 ### Untuk data berkelompok:
-$$
-Median = L + \left( \frac{\frac{n}{2} - F}{
-f} \right) \times c
-$$
+$$Med = L + \left( \frac{\frac{n}{2} - F}{f} \right) \times c $$
 
 Keterangan:
 
-- $L$ = batas bawah kelas median
+- $L$ = batas bawah kelas median (dimana Median akan terletak)
 
-- $n$ = jumlah seluruh frekuensi
+- $n$ = jumlah seluruh frekuensi/ukuran sampel/banyaknya data
 
 - $F$ = jumlah frekuensi sebelum kelas median
 
-- $f$ = frekuensi kelas median
+- $f$ = frekuensi kelas median (diambil berdasarkan frekuensi terbanyak)
 
-- $c$ = panjang kelas
+- $c$ = panjang kelas median
 
-### Langkah Menghitung Median
+#### Langkah Menghitung Median
 
 1. Menghitung nilai $\frac{n}{2}$
 2. Menentukan **kelas median**
 3. Menggunakan rumus median untuk menghitung nilai median
 
-### Contoh dalam Rekam Medis
+#### Contoh dalam Rekam Medis
 \begin{examplebox}
 Distribusi usia pasien di suatu rumah sakit
 \end{examplebox}
@@ -270,41 +343,34 @@ Distribusi usia pasien di suatu rumah sakit
 | 30–39 | 10 |
 | 40–49 | 8 |
 | 50–59 | 2 |
-Jumlah frekuensi:
-$$
-n = 25
-$$
+Jumlah frekuensi: $n = 25$
 
-Kelas median adalah kelas ke-2 (30–39) karena $n/2 = 12.5$.
+Kelas median adalah kelas ke-2 (30–39) karena $n/2 = 12.5$
 
-Batas bawah kelas median:
-$$
-L = 30
-$$
+Batas bawah kelas median: $L = 30$
 
-Jumlah frekuensi sebelum kelas median:
-$$
-F = 5
-$$
+Frekuensi kelas median: $f = 10$
 
-Frekuensi kelas median:
-$$
-f = 10
-$$
+Jumlah frekuensi sebelum kelas median: $F = 5$
 
-Panjang kelas:
-$$
-c = 10
-$$
+Panjang kelas: $c =\frac{59-20}{4} = 9.75 \approx 10$
 
 Median:
-$$
-Median = 30 + \left( \frac{12.5 - 5}{10} \right) \times 10 = 30 + 7.5 = 37.5
-$$
-
+$$Med = L + \left( \frac{\frac{n}{2} - F}{f} \right) \times c $$
+$$Med = 30 + \left( \frac{12.5 - 5}{10} \right) \times 10 = 30 + 7.5 = 37.5$$
 Median usia pasien adalah **37.5 tahun**.
 
-Median digunakan ketika distribusi data **tidak simetris atau memiliki nilai ekstrem (outlier)**.
+\begin{notebox}
+Median digunakan ketika distribusi data tidak simetris atau memiliki nilai ekstrem (outlier). 
+
+Median memberikan gambaran yang lebih representatif tentang nilai tengah data dibandingkan dengan mean dalam kondisi tersebut.
+
+Median juga lebih cocok digunakan untuk data ordinal atau data yang tidak memiliki distribusi normal.
+
+Median tidak terpengaruh oleh nilai ekstrem sehingga memberikan gambaran yang lebih stabil tentang pusat distribusi data.
+
+Median dapat digunakan untuk data yang memiliki distribusi skewed (tidak simetris) karena median lebih tahan terhadap nilai ekstrem dibandingkan dengan mean.
+\end{notebox}
 
 ---
 
@@ -313,22 +379,27 @@ Median digunakan ketika distribusi data **tidak simetris atau memiliki nilai eks
 ## Definisi
 
 \begin{defbox}
-Modus adalah nilai yang paling sering muncul dalam suatu kumpulan data. Modus sangat berguna untuk data kategorik atau nominal.
+Modus adalah nilai yang paling sering muncul dalam suatu kumpulan data. Modus dapat digunakan untuk data kategorik, ordinal, interval, atau rasio. Modus memberikan informasi tentang nilai yang paling umum atau paling sering terjadi dalam suatu distribusi data.
 \end{defbox}
+
+**Fungsi/Kegunaan:**
+
+- Mengetahui nilai yang dominan
+- Cocok untuk data kategori
 
 ## Rumus Modus
 
 ### Untuk data tunggal:
-Modus = nilai yang paling sering muncul
+Mod = nilai yang paling sering muncul
 
-### Cara Menghitung Modus
+#### Cara Menghitung Modus
 Langkah-langkah:
 
 1. Mengamati frekuensi kemunculan setiap nilai
 
 2. Menentukan nilai yang paling sering muncul
 
-### Contoh dalam Rekam Medis
+#### Contoh : 1.1 Data diagnosis pasien
 \begin{examplebox}
 Data diagnosis pasien: Hipertensi, Diabetes, Hipertensi, Stroke, Hipertensi
 \end{examplebox}
@@ -343,6 +414,15 @@ Frekuensi diagnosis:
 
 Maka **modus diagnosis pasien adalah Hipertensi**.
 
+#### Contoh : 1.2 Data umur pasien
+| Usia (tahun) | Frekuensi |
+|---|---|
+| 50 | 5 |
+| 60 | 8 |
+| 70 | 10 |
+| 80 | 2 |
+Berdasarkan data tersebut, maka Modusnya adalah 70 (Berdasarkan data yang mempunyai Frekuensi terbanyak, yaitu 10 adalah Nilai 70). Jadi Mo = 70.
+
 ### Untuk data berkelompok:
 Jika data berkelompok memiliki satu modus:
 $$
@@ -351,14 +431,14 @@ $$
 
 Keterangan:
 
-- $L$ = batas bawah kelas modus  
-- $d_1$ = selisih frekuensi kelas modus dengan kelas sebelumnya  
-- $d_2$ = selisih frekuensi kelas modus dengan kelas sesudahnya  
-- $c$ = lebar kelas 
+- $L$ = batas bawah kelas modus (yaitu: kelas dimana MODUS akan terletak) 
+- $d_1$ = selisih frekuensi kelas modus dengan kelas sebelumnya/ frekuensi kelas Modus DIKURANGI frekuensi kelas interval yang mempunyai tanda kelas lebih kecil (**SEBELUM**) kelas Modus 
+- $d_2$ = selisih frekuensi kelas modus dengan kelas sesudahnya/ frekuensi kelas Modus DIKURANGI frekuensi kelas interval yang mempunyai tanda kelas lebih besar (**SESUDAH**) kelas Modus 
+- $c$ = panjang kelas 
 
 Jika data berkelompok memiliki dua modus atau lebih, maka data tersebut disebut **multimodal**.
 
-### Contoh Perhitungan Modus Data Berkelompok
+#### Contoh Perhitungan Modus Data Berkelompok
 
 \begin{examplebox}
 Distribusi lama rawat inap pasien di suatu rumah sakit selama satu bulan.
@@ -374,18 +454,13 @@ Distribusi lama rawat inap pasien di suatu rumah sakit selama satu bulan.
 
 #### Langkah 1: Menentukan Kelas Modus
 
-Kelas modus adalah **kelas dengan frekuensi terbesar**.
-
-Pada tabel di atas frekuensi terbesar adalah **10**, sehingga kelas modus adalah : **7–9**
+Kelas modus adalah **kelas dengan frekuensi terbesar**. Pada tabel di atas frekuensi terbesar adalah **10**, sehingga kelas modus adalah : **7–9**
 
 #### Langkah 2: Menentukan Komponen Rumus
 
 Rumus modus data berkelompok:
 
-$$
-Mo = L + \left(\frac{d_1}{d_1 + d_2}\right) \times c
-$$
-
+$$Mo = L + \left(\frac{d_1}{d_1 + d_2}\right) \times c$$
 Keterangan:
 
 - $L$ = batas bawah kelas modus  
@@ -400,7 +475,7 @@ Kelas modus = **7–9**
 Frekuensi:
 
 - kelas sebelumnya = 7  
-- kelas modus = 10  
+- kelas modus ($d$) = 10  
 - kelas sesudahnya = 6  
 
 Maka:
@@ -409,7 +484,7 @@ $d_1 = 10 - 7 = 3$
 
 $d_2 = 10 - 6 = 4$
 
-Batas bawah kelas modus = **6.5** (penyesuaian batas kelas)
+Batas bawah kelas modus ($L$)= **6.5** (penyesuaian batas kelas)
 
 Lebar kelas: $c = 3$
 
@@ -423,9 +498,11 @@ $Mo = 6.5 + 1.29$
 
 $Mo \approx 7.79$
 
-#### Interpretasi
+Maka, nilai modus lama rawat pasien adalah sekitar **7.79 hari**. Artinya, **lama rawat yang paling sering terjadi pada pasien berada di sekitar 7–8 hari**.
 
-Nilai modus lama rawat pasien adalah sekitar **7.79 hari**. Artinya, **lama rawat yang paling sering terjadi pada pasien berada di sekitar 7–8 hari**.
+\begin{notebox}
+Modus memberikan informasi tentang nilai yang paling sering muncul dalam suatu distribusi data. Modus dapat digunakan untuk data kategorik, ordinal, interval, atau rasio. Modus memberikan gambaran tentang nilai yang paling umum atau paling sering terjadi dalam suatu distribusi data. Modus dapat digunakan untuk data yang memiliki distribusi multimodal (memiliki lebih dari satu modus) karena modus dapat memberikan informasi tentang nilai yang paling sering muncul dalam setiap kelompok data.
+\end{notebox}
 
 ---
 
@@ -495,8 +572,8 @@ Hitung **mean usia pasien**.
 Tentukan:
 
 - Mean
-- Kelas median
-- Kelas modus
+- Median
+- Modus
 
 ---
 

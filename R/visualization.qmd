@@ -1,0 +1,480 @@
+---
+title: "Biostatistik"
+subtitle: "Visualisasi Data"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-08"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+Dalam analisis statistik, **visualisasi data** merupakan salah satu aspek penting yang membantu dalam memahami pola, tren, dan hubungan antar variabel dalam suatu dataset. Visualisasi data memungkinkan peneliti untuk menyajikan informasi secara grafis sehingga lebih mudah dipahami dan diinterpretasikan. Dalam konteks biostatistik, visualisasi data sangat berguna untuk menggambarkan hasil penelitian kesehatan, seperti distribusi penyakit, efektivitas pengobatan, atau faktor risiko kesehatan. Dengan menggunakan berbagai jenis grafik, seperti **histogram, boxplot, scatter plot, dan bar chart**, peneliti dapat menyampaikan informasi secara lebih efektif kepada audiens, termasuk tenaga kesehatan, pembuat kebijakan, dan masyarakat umum.
+
+Menurut Tufte (2001), visualisasi data yang efektif harus memenuhi prinsip-prinsip seperti **kejelasan, kesederhanaan, dan keakuratan**. Visualisasi yang baik dapat membantu dalam mengidentifikasi pola yang mungkin tidak terlihat dalam tabel data mentah, serta memudahkan dalam menyampaikan pesan yang ingin disampaikan. Oleh karena itu, pemilihan jenis grafik yang tepat sangat penting untuk memastikan bahwa informasi yang disajikan dapat dipahami dengan benar oleh audiens. Dalam bidang kesehatan, visualisasi data dapat digunakan untuk menggambarkan berbagai aspek, seperti **prevalensi penyakit, distribusi usia pasien, atau hubungan antara faktor risiko dan hasil kesehatan**. Dengan demikian, visualisasi data merupakan alat yang sangat berharga dalam biostatistik untuk meningkatkan pemahaman dan komunikasi informasi kesehatan.
+
+---
+
+# Jenis Visualisasi Data
+Dalam biostatistik, terdapat berbagai jenis visualisasi data yang dapat digunakan untuk menggambarkan informasi kesehatan. Beberapa jenis visualisasi data yang umum digunakan dalam biostatistik antara lain:
+
+## Histogram
+\begin{defbox}
+Histogram adalah jenis grafik yang digunakan untuk menggambarkan distribusi frekuensi dari suatu variabel numerik. Histogram terdiri dari batang-batang yang mewakili interval nilai dan tinggi batang menunjukkan frekuensi atau jumlah data dalam interval tersebut.
+\end{defbox}
+
+Karakteristik histogram:
+
+- Digunakan untuk data numerik kontinu
+
+- Menunjukkan distribusi frekuensi data
+
+- Tidak memiliki ruang antar batang
+
+- Dapat digunakan untuk mengidentifikasi pola distribusi, seperti normal, skewed, atau bimodal
+
+\begin{examplebox}
+Contoh penggunaan histogram dalam rekam medis:
+
+- Distribusi usia pasien yang dirawat di rumah sakit
+
+- Distribusi lama rawat inap pasien
+
+- Distribusi kadar gula darah pasien
+\end{examplebox}
+
+### Tips untuk membuat histogram yang efektif:
+
+- Pilih interval nilai yang sesuai untuk batang histogram agar distribusi data dapat terlihat dengan jelas.
+
+- Gunakan warna yang kontras untuk batang histogram agar mudah dibedakan.
+
+- Sertakan label pada sumbu x dan y untuk menjelaskan variabel yang digambarkan.
+
+- Tambahkan judul yang informatif untuk memberikan konteks kepada audiens.
+
+### Contoh histogram:
+```{r, fig.align="center", echo=FALSE}
+# Contoh data usia pasien
+set.seed(123)  # agar hasil reproducible
+usia <- round(rnorm(100, mean = 45, sd = 12))
+# Membuat histogram
+hist(usia, breaks=5, col="grey", main="Distribusi Usia Pasien", xlab="Usia", ylab="Frekuensi")
+```
+
+## Boxplot
+\begin{defbox}
+Boxplot adalah jenis grafik yang digunakan untuk menggambarkan distribusi data numerik dengan menunjukkan median, kuartil, dan outlier. Boxplot terdiri dari sebuah kotak yang mewakili interkuartil range (IQR) dan garis yang menunjukkan median serta whisker yang menunjukkan rentang data.
+\end{defbox}
+
+Karakteristik boxplot:
+
+- Digunakan untuk data numerik kontinu
+
+- Menunjukkan distribusi data, median, dan outlier
+
+- Memudahkan dalam membandingkan distribusi antar kelompok
+
+\begin{examplebox}
+Contoh penggunaan boxplot dalam rekam medis:
+
+- Perbandingan distribusi usia pasien antara kelompok laki-laki dan perempuan
+
+- Perbandingan distribusi lama rawat inap antara pasien dengan diagnosis berbeda
+
+- Perbandingan distribusi kadar gula darah antara pasien dengan dan tanpa diabetes
+\end{examplebox}
+
+### Anatomi boxplot:
+
+- **Kotak**: Menunjukkan interkuartil range (IQR) yang mencakup 50% data tengah. Bagian bawah kotak menunjukkan kuartil pertama (Q1) dan bagian atas kotak menunjukkan kuartil ketiga (Q3). IQR dihitung sebagai selisih antara Q3 dan Q1, dan memberikan informasi tentang sebaran data di sekitar median. IQR juga digunakan untuk mengidentifikasi outlier, yaitu data yang berada di luar rentang 1.5 kali IQR dari Q1 dan Q3.
+
+- **Median**: Garis horizontal di dalam kotak yang menunjukkan nilai tengah dari data. Median membagi data menjadi dua bagian yang sama, dengan 50% data berada di bawah median dan 50% data berada di atas median. Median memberikan informasi tentang pusat distribusi data dan dapat digunakan untuk mengidentifikasi skewness dalam distribusi data. Jika median berada di tengah kotak, maka distribusi data cenderung simetris. Namun, jika median berada lebih dekat ke salah satu sisi kotak, maka distribusi data cenderung skewed ke arah tersebut.
+
+- **Whisker**: Garis yang memanjang dari kotak ke nilai minimum dan maksimum data, Whisker juga menunjukkan rentang data yang tidak termasuk outlier. Whisker biasanya diperpanjang hingga 1.5 kali IQR dari kuartil pertama dan ketiga. Jika ada data yang berada di luar whisker, maka data tersebut dianggap sebagai outlier. 
+
+- **Outlier**: Titik-titik yang berada di luar whisker, menunjukkan nilai yang jauh dari distribusi data utama. Outlier dapat menunjukkan adanya variasi yang signifikan dalam data atau kesalahan pengukuran. Outlier perlu diperhatikan dalam analisis data karena dapat mempengaruhi hasil analisis statistik dan interpretasi data. Outlier dapat diidentifikasi dengan menggunakan boxplot, dan peneliti perlu melakukan analisis lebih lanjut terhadap outlier untuk menentukan apakah outlier merupakan bagian dari distribusi data yang valid atau merupakan kesalahan pengukuran yang perlu dihapus dari analisis.
+
+#### Formula untuk menghitung IQR dan outlier:
+
+- IQR = Q3 - Q1
+
+- Batas bawah untuk outlier = Q1 - 1.5 * IQR
+
+- Batas atas untuk outlier = Q3 + 1.5 * IQR
+
+#### Contoh nilai outlier dalam boxplot:
+Misalnya, jika 
+$$ Q1 = 10, Q3 = 20, maka IQR = 20 - 10 = 10$$
+
+Batas bawah untuk outlier adalah 10 - 1.5 * 10 = -5, 
+
+Batas atas untuk outlier adalah 20 + 1.5 * 10 = 35. 
+
+Oleh karena itu, data yang berada di bawah -5 atau di atas 35 dianggap sebagai outlier dalam boxplot tersebut. 
+
+### Tips untuk membuat boxplot yang efektif:
+
+- Gunakan warna yang berbeda untuk setiap kelompok agar mudah dibedakan.
+
+- Sertakan label pada sumbu x dan y untuk menjelaskan variabel yang digambarkan.
+
+- Tambahkan judul yang informatif untuk memberikan konteks kepada audiens.
+
+### Contoh boxplot:
+```{r, fig.align="center", echo=FALSE}
+# Contoh data lama rawat inap pasien
+set.seed(123)  # agar hasil reproducible
+lama_rawat <- round(rnorm(100, mean = 5, sd = 2))
+# Membuat boxplot
+boxplot(lama_rawat, main="Distribusi Lama Rawat Inap Pasien", ylab="Lama Rawat Inap (hari)", col="lightblue")
+```
+
+### Contoh boxplot per kelompok:
+```{r, fig.align="center", echo=FALSE}
+# Contoh data lama rawat inap pasien berdasarkan jenis kelamin
+set.seed(123)  # agar hasil reproducible
+jenis_kelamin <- sample(c("Laki-laki", "Perempuan"), 100, replace = TRUE)
+lama_rawat <- round(rnorm(100, mean = 5, sd = 2))
+# Membuat boxplot per kelompok
+boxplot(lama_rawat ~ jenis_kelamin, main="Distribusi Lama Rawat Inap Pasien berdasarkan Jenis Kelamin", xlab="Jenis Kelamin", ylab="Lama Rawat Inap (hari)", col=c("lightblue", "lightpink"))
+```
+
+### Tips untuk menginterpretasikan boxplot:
+
+- Perhatikan posisi median dalam kotak untuk mengidentifikasi skewness dalam distribusi data.
+
+- Perhatikan panjang whisker untuk mengidentifikasi sebaran data dan potensi outlier.
+
+- Bandingkan boxplot antar kelompok untuk mengidentifikasi perbedaan distribusi data antara kelompok.
+
+
+## Scatter Plot
+\begin{defbox}
+Scatter plot adalah jenis grafik yang digunakan untuk menggambarkan hubungan antara dua variabel numerik. Scatter plot terdiri dari titik-titik yang mewakili pasangan nilai dari kedua variabel, dengan sumbu x dan y yang menunjukkan nilai masing-masing variabel.
+\end{defbox}
+
+Karakteristik scatter plot:
+
+- Digunakan untuk data numerik kontinu
+
+- Menunjukkan hubungan atau korelasi antara dua variabel
+
+- Dapat digunakan untuk mengidentifikasi pola hubungan, seperti linear, non-linear, atau tidak ada hubungan
+
+\begin{examplebox}
+Contoh penggunaan scatter plot dalam rekam medis:
+
+- Hubungan antara usia pasien dan lama rawat inap
+
+- Hubungan antara kadar gula darah dan tekanan darah pasien
+
+- Hubungan antara berat badan dan kadar kolesterol pasien
+\end{examplebox}
+
+### Tips untuk membuat scatter plot yang efektif:
+
+- Gunakan warna yang berbeda untuk setiap kelompok agar mudah dibedakan.
+
+- Sertakan label pada sumbu x dan y untuk menjelaskan variabel yang digambarkan.
+
+- Tambahkan judul yang informatif untuk memberikan konteks kepada audiens.
+
+### Contoh scatter plot:
+```{r, fig.align="center", echo=FALSE}
+# Contoh data usia pasien dan lama rawat inap
+set.seed(123)  # agar hasil reproducible
+usia <- round(rnorm(100, mean = 45, sd = 12))
+lama_rawat <- round(rnorm(100, mean = 5, sd = 2))
+# Membuat scatter plot
+plot(usia, lama_rawat, main="Hubungan antara Usia Pasien dan Lama Rawat Inap", xlab="Usia", ylab="Lama Rawat Inap (hari)", col="blue", pch=16)
+```
+
+## Bar Chart
+\begin{defbox}
+Bar chart adalah jenis grafik yang digunakan untuk menggambarkan frekuensi atau jumlah data dalam kategori tertentu. Bar chart terdiri dari batang-batang yang mewakili kategori dan tinggi batang menunjukkan frekuensi atau jumlah data dalam kategori tersebut.
+\end{defbox}
+
+Karakteristik bar chart:
+
+- Digunakan untuk data kategorikal
+
+- Menunjukkan frekuensi atau jumlah data dalam kategori
+
+- Memiliki ruang antar batang
+
+- Dapat digunakan untuk membandingkan frekuensi antar kategori
+
+\begin{examplebox}
+Contoh penggunaan bar chart dalam rekam medis:
+
+- Frekuensi jenis kelamin pasien (laki-laki vs perempuan)
+
+- Frekuensi golongan darah pasien (A, B, AB, O)
+
+- Frekuensi diagnosis penyakit tertentu dalam suatu populasi
+\end{examplebox}
+
+### Tips untuk membuat bar chart yang efektif:
+
+- Gunakan warna yang berbeda untuk setiap kategori agar mudah dibedakan.
+
+- Sertakan label pada sumbu x dan y untuk menjelaskan variabel yang digambarkan.
+
+- Tambahkan judul yang informatif untuk memberikan konteks kepada audiens.
+
+### Contoh bar chart:
+```{r, fig.align="center", echo=FALSE}
+# Contoh data jenis kelamin pasien
+set.seed(123)  # agar hasil reproducible
+jenis_kelamin <- sample(c("Laki-laki", "Perempuan"), 100, replace = TRUE)
+# Membuat bar chart
+barplot(table(jenis_kelamin), main="Frekuensi Jenis Kelamin Pasien", xlab="Jenis Kelamin", ylab="Frekuensi", col=c("lightblue", "lightpink"))
+```
+
+## Pie Chart
+\begin{defbox}
+Pie chart adalah jenis grafik yang digunakan untuk menggambarkan proporsi atau persentase data dalam kategori tertentu. Pie chart terdiri dari sebuah lingkaran yang dibagi menjadi irisan-irisan yang mewakili kategori, dengan ukuran irisan menunjukkan proporsi atau persentase data dalam kategori tersebut.
+\end{defbox}
+
+Karakteristik pie chart:
+
+- Digunakan untuk data kategorikal
+
+- Menunjukkan proporsi atau persentase data dalam kategori
+
+- Tidak memiliki ruang antar irisan
+
+\begin{examplebox}
+Contoh penggunaan pie chart dalam rekam medis:
+
+- Proporsi jenis kelamin pasien dalam suatu populasi
+
+- Proporsi golongan darah pasien dalam suatu populasi
+
+- Proporsi diagnosis penyakit tertentu dalam suatu populasi
+\end{examplebox}
+
+### Tips untuk membuat pie chart yang efektif:
+
+- Gunakan warna yang berbeda untuk setiap kategori agar mudah dibedakan.
+
+- Sertakan label pada setiap irisan untuk menjelaskan kategori yang digambarkan.
+
+- Tambahkan judul yang informatif untuk memberikan konteks kepada audiens.
+
+### Contoh pie chart:
+```{r, fig.align="center", echo=FALSE}
+# Contoh data jenis kelamin pasien
+set.seed(123)  # agar hasil reproducible
+jenis_kelamin <- sample(c("Laki-laki", "Perempuan"), 100, replace = TRUE)
+# Membuat pie chart
+pie(table(jenis_kelamin), main="Proporsi Jenis Kelamin Pasien", col=c("lightblue", "lightpink"), labels=c("Laki-laki", "Perempuan"))
+```
+
+## Line Graph
+\begin{defbox}
+Line graph adalah jenis grafik yang digunakan untuk menggambarkan perubahan nilai suatu variabel numerik dari waktu ke waktu. Line graph terdiri dari titik-titik yang mewakili nilai variabel pada waktu tertentu, dengan garis yang menghubungkan titik-titik tersebut untuk menunjukkan tren atau pola perubahan.
+\end{defbox}
+
+Karakteristik line graph:
+
+- Digunakan untuk data numerik kontinu
+
+- Menunjukkan perubahan nilai dari waktu ke waktu
+
+- Dapat digunakan untuk mengidentifikasi tren atau pola perubahan
+
+\begin{examplebox}
+Contoh penggunaan line graph dalam rekam medis:
+
+- Perubahan jumlah pasien yang dirawat di rumah sakit dari waktu ke waktu
+
+- Perubahan kadar gula darah pasien dari waktu ke waktu
+
+- Perubahan tekanan darah pasien dari waktu ke waktu
+\end{examplebox}
+
+### Tips untuk membuat line graph yang efektif:
+
+- Gunakan warna yang berbeda untuk setiap kelompok agar mudah dibedakan.
+
+- Sertakan label pada sumbu x dan y untuk menjelaskan variabel yang digambarkan.
+
+- Tambahkan judul yang informatif untuk memberikan konteks kepada audiens.
+
+### Contoh line graph:
+```{r, fig.align="center", echo=FALSE}
+# Contoh data jumlah pasien dari waktu ke waktu
+set.seed(123)  # agar hasil reproducible
+waktu <- 1:12  # bulan
+jumlah_pasien <- round(rnorm(12, mean = 50, sd = 10))
+# Membuat line graph
+plot(waktu, jumlah_pasien, type="o", main="Perubahan Jumlah Pasien dari Waktu ke Waktu", xlab="Bulan", ylab="Jumlah Pasien", col="blue")
+```
+
+## Steam and Leaf Plot
+\begin{defbox}
+Steam and leaf plot adalah jenis grafik yang digunakan untuk menggambarkan distribusi data numerik dengan menunjukkan nilai-nilai data dalam bentuk batang dan daun. Steam and leaf plot terdiri dari sebuah batang yang mewakili nilai-nilai data dan daun yang menunjukkan frekuensi atau jumlah data dalam setiap nilai.
+\end{defbox}
+
+Karakteristik steam and leaf plot:
+
+- Digunakan untuk data numerik kontinu
+
+- Menunjukkan distribusi data dan frekuensi dalam setiap nilai
+
+- Memudahkan dalam mengidentifikasi pola distribusi dan outlier
+
+\begin{examplebox}
+Contoh penggunaan steam and leaf plot dalam rekam medis:
+
+- Distribusi usia pasien yang dirawat di rumah sakit
+
+- Distribusi lama rawat inap pasien
+
+- Distribusi kadar gula darah pasien
+\end{examplebox}
+
+### Tips untuk membuat steam and leaf plot yang efektif:
+
+- Gunakan warna yang kontras untuk batang dan daun agar mudah dibedakan.
+
+- Sertakan label pada sumbu x dan y untuk menjelaskan variabel yang digambarkan.
+
+- Tambahkan judul yang informatif untuk memberikan konteks kepada audiens.
+
+### Contoh steam and leaf plot:
+```{r, fig.align="center", echo=FALSE}
+# Contoh data usia pasien
+set.seed(123)  # agar hasil reproducible
+usia <- round(rnorm(100, mean = 45, sd = 12))
+# Membuat steam and leaf plot
+stem(usia, scale = 2)
+```
+
+#### Tips untuk menginterpretasikan steam and leaf plot:
+
+- Perhatikan pola distribusi data untuk mengidentifikasi apakah data cenderung normal, skewed, atau bimodal.
+
+- Perhatikan frekuensi data dalam setiap nilai untuk mengidentifikasi nilai yang sering muncul atau nilai yang jarang muncul.
+
+## Heatmap
+\begin{defbox}
+Heatmap adalah jenis grafik yang digunakan untuk menggambarkan hubungan antara dua variabel kategorikal atau numerik dengan menggunakan warna. Heatmap terdiri dari sebuah matriks yang menunjukkan nilai-nilai data dalam bentuk warna, dengan sumbu x dan y yang menunjukkan kategori atau nilai dari kedua variabel.
+\end{defbox}
+
+Karakteristik heatmap:
+
+- Digunakan untuk data kategorikal atau numerik
+
+- Menunjukkan hubungan antara dua variabel dengan menggunakan warna
+
+- Dapat digunakan untuk mengidentifikasi pola hubungan atau korelasi antara dua variabel
+
+\begin{examplebox}
+Contoh penggunaan heatmap dalam rekam medis:
+
+- Hubungan antara jenis kelamin pasien dan diagnosis penyakit tertentu
+
+- Hubungan antara golongan darah pasien dan tingkat keparahan penyakit
+
+- Hubungan antara usia pasien dan lama rawat inap
+\end{examplebox}
+
+### Tips untuk membuat heatmap yang efektif:
+
+- Gunakan warna yang kontras untuk menunjukkan perbedaan antara nilai-nilai data.
+
+- Sertakan label pada sumbu x dan y untuk menjelaskan variabel yang digambarkan.
+
+- Tambahkan judul yang informatif untuk memberikan konteks kepada audiens.
+
+### Contoh heatmap:
+```{r, fig.align="center", echo=FALSE}
+# Contoh data jenis kelamin pasien dan diagnosis penyakit
+set.seed(123)  # agar hasil reproducible
+jenis_kelamin <- sample(c("Laki-laki", "Perempuan"), 100, replace = TRUE)
+diagnosis <- sample(c("Penyakit A", "Penyakit B", "Penyakit C"), 100, replace = TRUE)
+# Membuat matriks frekuensi
+data_matrix <- table(jenis_kelamin, diagnosis)
+# Membuat heatmap
+library(ggplot2)
+
+# Ubah ke data frame
+df <- as.data.frame(data_matrix)
+
+# Plot heatmap dengan ggplot2
+library(ggplot2)
+ggplot(df, aes(x = diagnosis, y = jenis_kelamin, fill = Freq)) +
+  geom_tile(color = "white") +
+  geom_text(aes(label = Freq), size = 5) +
+  scale_fill_gradient(low = "yellow", high = "red") +
+  labs(
+    title = "Hubungan antara Jenis Kelamin dan Diagnosis Penyakit",
+    x = "Diagnosis Penyakit",
+    y = "Jenis Kelamin"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
+
+```
+
+#### Tips untuk menginterpretasikan heatmap:
+
+- Perhatikan pola warna dalam heatmap untuk mengidentifikasi hubungan atau korelasi antara dua variabel.
+
+- Perhatikan nilai-nilai data yang ditunjukkan oleh warna untuk mengidentifikasi kategori atau nilai yang sering muncul atau jarang muncul.
+
+# Latihan Soal
+1. Jelaskan apa itu visualisasi data dan mengapa penting dalam biostatistik.
+
+2. Sebutkan dan jelaskan jenis-jenis visualisasi data yang umum digunakan dalam biostatistik.
+
+3. Berikan contoh penggunaan histogram dalam konteks rekam medis.
+
+4. Jelaskan anatomi boxplot dan bagaimana cara menginterpretasikannya.
+
+5. Berikan contoh penggunaan scatter plot dalam konteks rekam medis.
+
+6. Jelaskan perbedaan antara bar chart dan pie chart serta berikan contoh penggunaannya dalam konteks rekam medis.
+
+7. Jelaskan apa itu line graph dan berikan contoh penggunaannya dalam konteks rekam medis.
+
+8. Jelaskan apa itu steam and leaf plot dan berikan contoh penggunaannya dalam konteks rekam medis.
+
+9. Jelaskan apa itu heatmap dan berikan contoh penggunaannya dalam konteks rekam medis.
+
+10. Buatlah sebuah visualisasi data menggunakan **histogram, boxplot, steam & leaf plot** untuk menggambarkan distribusi usia pasien yang dirawat di rumah sakit. Gunakan data simulasi dengan 100 pasien dan distribusi usia yang normal dengan rata-rata 45 tahun dan standar deviasi 12 tahun. Berikut data simulasi yang dapat digunakan: 
+```{r, echo = FALSE}
+set.seed(123)  # agar hasil reproducible
+usia <- round(rnorm(100, mean = 45, sd = 12))
+usia
+```
+
+# Kesimpulan
+Visualisasi data merupakan alat yang sangat penting dalam biostatistik untuk membantu dalam memahami pola, tren, dan hubungan antar variabel dalam suatu dataset. Dengan menggunakan berbagai jenis grafik, seperti histogram, boxplot, scatter plot, dan bar chart, peneliti dapat menyampaikan informasi secara lebih efektif kepada audiens. Pemilihan jenis grafik yang tepat sangat penting untuk memastikan bahwa informasi yang disajikan dapat dipahami dengan benar oleh audiens. 
+
+Dalam bidang kesehatan, visualisasi data dapat digunakan untuk menggambarkan berbagai aspek, seperti prevalensi penyakit, distribusi usia pasien, atau hubungan antara faktor risiko dan hasil kesehatan. **Oleh karena itu**, visualisasi data merupakan alat yang sangat berharga dalam biostatistik untuk meningkatkan pemahaman dan komunikasi informasi kesehatan.
+
+---
+
+# Daftar Pustaka
+
+- Tufte, E. R. (2001). The visual display of quantitative information. Graphics Press.
+

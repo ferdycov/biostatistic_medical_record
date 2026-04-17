@@ -1,0 +1,277 @@
+---
+title: "Biostatistik"
+subtitle: "Dispersion (Ukuran Persebaran Data)"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-08"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+
+Dalam analisis statistik, data yang dikumpulkan dari suatu populasi atau sampel perlu diringkas agar lebih mudah dipahami dan diinterpretasikan. Salah satu cara untuk merangkum data adalah dengan menggunakan statistik deskriptif, yang terdiri dari ukuran pemusatan (central tendency) dan ukuran penyebaran (dispersion).
+
+Jika ukuran pemusatan menggambarkan nilai pusat suatu distribusi data, maka ukuran penyebaran digunakan untuk mengetahui **seberapa jauh nilai-nilai dalam suatu dataset menyebar dari nilai pusat tersebut**. Dua kumpulan data dapat memiliki nilai rata-rata yang sama, tetapi memiliki variasi yang sangat berbeda.
+
+Dalam bidang kesehatan dan rekam medis, ukuran penyebaran sangat penting untuk memahami variasi karakteristik pasien, seperti variasi usia pasien, variasi lama rawat inap, atau variasi nilai laboratorium pasien.
+
+Menurut Rosner (2015), ukuran penyebaran merupakan komponen penting dalam statistik deskriptif karena memberikan informasi mengenai **tingkat variabilitas data dalam suatu populasi atau sampel**.
+
+---
+
+# Definisi Dispersion
+
+Dispersion adalah ukuran statistik yang digunakan untuk menggambarkan **tingkat penyebaran atau variasi nilai data terhadap nilai pusat distribusi**.
+
+Dengan mengetahui ukuran penyebaran, peneliti dapat memahami:
+
+- tingkat homogenitas data
+- tingkat variasi data
+- adanya nilai ekstrem (outlier)
+
+Ukuran penyebaran yang paling umum digunakan dalam biostatistik adalah:
+
+- Range  
+- Varians  
+- Standar Deviasi  
+- Interquartile Range (IQR)
+
+---
+
+# Jenis dan Kegunaan Ukuran Dispersion
+
+## Range
+
+Range adalah ukuran penyebaran yang menunjukkan **selisih antara nilai maksimum dan nilai minimum dalam suatu dataset**.
+
+### Kegunaan
+
+- Memberikan gambaran awal tentang rentang data
+- Mudah dihitung dan dipahami
+- Digunakan untuk melihat variasi data secara sederhana
+
+### Rumus
+
+$$
+Range = X_{max} - X_{min}
+$$
+
+### Contoh Rekam Medis
+
+Data lama rawat pasien:
+
+3, 4, 5, 7, 9
+
+$$
+Range = 9 - 3 = 6
+$$
+
+---
+
+## Varians
+
+Varians adalah ukuran penyebaran yang menunjukkan **rata-rata kuadrat penyimpangan nilai data terhadap rata-ratanya**.
+
+### Kegunaan
+
+- Mengukur tingkat variasi data secara matematis
+- Digunakan dalam analisis statistik lanjutan seperti regresi dan ANOVA
+
+### Rumus Varians (Data Tunggal)
+
+$$
+s^2 = \frac{\sum (x_i - \bar{x})^2}{n-1}
+$$
+
+---
+
+## Standar Deviasi
+
+Standar deviasi merupakan **akar kuadrat dari varians** yang menunjukkan jarak rata-rata data terhadap nilai mean.
+
+### Kegunaan
+
+- Mengukur tingkat variasi data secara lebih mudah diinterpretasikan
+- Banyak digunakan dalam analisis data kesehatan
+
+### Rumus
+
+$$
+s = \sqrt{s^2}
+$$
+
+---
+
+## Interquartile Range (IQR)
+
+Interquartile Range adalah ukuran penyebaran yang menunjukkan **rentang antara kuartil pertama (Q1) dan kuartil ketiga (Q3)**.
+
+### Kegunaan
+
+- Menggambarkan penyebaran 50% data tengah
+- Tidak sensitif terhadap outlier
+- Digunakan dalam boxplot
+
+### Rumus
+
+$$
+IQR = Q3 - Q1
+$$
+
+---
+
+# Perbedaan Ukuran Dispersion
+
+| Ukuran | Definisi | Kelebihan | Kelemahan |
+|------|------|------|------|
+| Range | Selisih nilai maksimum dan minimum | Mudah dihitung | Dipengaruhi outlier |
+| Varians | Rata-rata kuadrat penyimpangan dari mean | Menggunakan seluruh data | Sulit diinterpretasi |
+| Standar Deviasi | Akar dari varians | Mudah dipahami | Sensitif terhadap outlier |
+| IQR | Rentang kuartil | Stabil terhadap outlier | Tidak menggunakan seluruh data |
+
+---
+
+# Formula Perhitungan Dispersion
+
+## Data Tunggal
+
+### Range
+
+$$
+Range = X_{max} - X_{min}
+$$
+
+### Varians
+
+$$
+s^2 = \frac{\sum (x_i - \bar{x})^2}{n-1}
+$$
+
+### Standar Deviasi
+
+$$
+s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}}
+$$
+
+---
+
+## Data Berkelompok
+
+Pada data berkelompok, perhitungan menggunakan **titik tengah kelas ($x_i$)** dan frekuensi ($f_i$).
+
+### Varians Data Berkelompok
+
+$$
+s^2 = \frac{\sum f_i (x_i - \bar{x})^2}{n-1}
+$$
+
+### Standar Deviasi Data Berkelompok
+
+$$
+s = \sqrt{\frac{\sum f_i (x_i - \bar{x})^2}{n-1}}
+$$
+
+Dimana:
+
+- $x_i$ = titik tengah kelas
+- $f_i$ = frekuensi
+- $n$ = jumlah data
+
+---
+
+# Contoh Data Berkelompok
+
+Distribusi lama rawat pasien.
+
+| Lama Rawat (hari) | Frekuensi |
+|---|---|
+| 1–3 | 4 |
+| 4–6 | 6 |
+| 7–9 | 3 |
+| 10–12 | 2 |
+
+Langkah analisis:
+
+1. Menentukan titik tengah kelas
+2. Menghitung mean
+3. Menghitung varians
+4. Menghitung standar deviasi
+
+---
+
+# Latihan Soal
+
+1. Hitung **range** dari data berikut:
+
+   5, 6, 7, 8, 10
+
+---
+
+2. Hitung **varians dan standar deviasi** dari data berikut:
+
+   4, 6, 8, 10, 12
+
+---
+
+3. Tentukan **IQR** dari data berikut:
+
+   15, 18, 20, 22, 25, 28, 30
+
+---
+
+4. Berikut distribusi lama rawat pasien.
+
+| Lama Rawat | Frekuensi |
+|---|---|
+| 1–3 | 5 |
+| 4–6 | 7 |
+| 7–9 | 4 |
+| 10–12 | 2 |
+
+Hitung:
+
+- mean
+- varians
+- standar deviasi
+
+---
+
+5. Mengapa ukuran penyebaran penting dalam analisis data kesehatan?
+
+---
+
+# Kesimpulan
+
+Ukuran penyebaran data merupakan komponen penting dalam statistik deskriptif yang digunakan untuk memahami tingkat variasi dalam suatu dataset. Beberapa ukuran penyebaran yang umum digunakan adalah range, varians, standar deviasi, dan interquartile range.
+
+Setiap ukuran penyebaran memiliki karakteristik dan kegunaan yang berbeda. Range memberikan gambaran rentang data secara sederhana, varians dan standar deviasi menggambarkan variasi data secara matematis, sedangkan IQR memberikan gambaran penyebaran data yang lebih stabil terhadap outlier.
+
+Dalam bidang rekam medis dan informasi kesehatan, ukuran penyebaran membantu peneliti dan praktisi kesehatan memahami variasi karakteristik pasien sehingga dapat mendukung pengambilan keputusan berbasis data.
+
+---
+
+# Daftar Pustaka
+
+Daniel, W. W., & Cross, C. L. (2018). *Biostatistics: A Foundation for Analysis in the Health Sciences*. Wiley.
+
+Pagano, M., & Gauvreau, K. (2018). *Principles of Biostatistics*. CRC Press.
+
+Rosner, B. (2015). *Fundamentals of Biostatistics*. Cengage Learning.
+
+Altman, D. G. (1991). *Practical Statistics for Medical Research*. Chapman & Hall.

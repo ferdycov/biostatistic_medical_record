@@ -1,0 +1,54 @@
+---
+title: "Biostatistik"
+subtitle: "Peluang"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-08"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+Peluang adalah cabang matematika yang mempelajari kemungkinan terjadinya suatu peristiwa. Dalam biostatistik, konsep peluang sangat penting untuk memahami dan menganalisis data kesehatan. Peluang digunakan untuk mengukur ketidakpastian dan membuat prediksi berdasarkan data yang tersedia.
+
+# Definisi Peluang
+\begin{defbox}
+Peluang suatu peristiwa A, yang dilambangkan dengan P(A), adalah ukuran numerik dari kemungkinan terjadinya peristiwa tersebut. Nilai peluang selalu berada dalam rentang 0 hingga 1, di mana 0 berarti peristiwa tidak mungkin terjadi dan 1 berarti peristiwa pasti terjadi.
+\end{defbox}
+
+# Contoh Peluang
+\begin{examplebox}
+Misalkan kita memiliki sebuah dadu standar dengan 6 sisi. Peluang untuk mendapatkan angka 3 saat melempar dadu adalah:
+\[P(3) = \frac{1}{6} \approx 0.1667\]
+Ini berarti bahwa ada sekitar 16.67% kemungkinan untuk mendapatkan angka 3 saat melempar dadu.
+\end{examplebox}
+
+# Hukum Peluang
+\begin{defbox}
+Hukum peluang menyatakan bahwa untuk setiap peristiwa A, berlaku:
+
+1. \(0 \leq P(A) \leq 1\)
+
+2. \(P(S) = 1\), di mana S adalah ruang sampel (semua kemungkinan hasil)
+
+3. Jika A dan B adalah peristiwa yang saling lepas, maka \(P(A \cup B) = P(A) + P(B)\)
+\end{defbox}
+
+# Kesimpulan
+Peluang adalah konsep fundamental dalam biostatistik yang membantu kita memahami dan mengukur ketidakpastian dalam data kesehatan. Dengan memahami peluang, kita dapat membuat prediksi yang lebih baik dan mengambil keputusan yang lebih informasional dalam konteks kesehatan.
+

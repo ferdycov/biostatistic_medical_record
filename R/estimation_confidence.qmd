@@ -1,0 +1,107 @@
+---
+title: "Biostatistik"
+subtitle: "Estimasti dan Tingkat Kepercayaan"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-08"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+Dalam biostatistik, estimasi dan tingkat kepercayaan adalah konsep penting yang digunakan untuk membuat inferensi tentang populasi berdasarkan data sampel. Estimasi adalah proses mengukur atau menghitung nilai dari suatu parameter populasi berdasarkan data sampel, sedangkan tingkat kepercayaan adalah ukuran seberapa yakin kita bahwa estimasi tersebut mencakup nilai sebenarnya dari parameter populasi. Dalam topik ini, kita akan membahas berbagai metode estimasi, seperti estimasi titik dan interval, serta bagaimana menghitung dan menginterpretasikan tingkat kepercayaan.
+
+# Estimasi Titik dan Interval
+## Estimasi Titik
+Estimasi titik adalah nilai tunggal yang digunakan untuk memperkirakan parameter populasi. Estimasi titik hanya memberikan satu nilai sebagai perkiraan, tanpa memberikan informasi tentang ketidakpastian atau variabilitas dari estimasi tersebut. Oleh karena itu, meskipun estimasi titik dapat memberikan gambaran tentang nilai parameter populasi, kita tidak dapat mengetahui seberapa dekat estimasi tersebut dengan nilai sebenarnya dari parameter populasi.
+
+\begin{examplebox}
+Contohnya, rata-rata sampel digunakan sebagai estimasi titik untuk rata-rata populasi. Namun, estimasi titik tidak memberikan informasi tentang seberapa akurat atau dapat diandalkannya estimasi tersebut.
+\end{examplebox}
+
+### Formula Estimasi Titik
+Rumus untuk estimasi titik dapat bervariasi tergantung pada parameter yang ingin kita estimasi. Misalnya, untuk rata-rata populasi, estimasi titik dapat dihitung dengan rumus:
+$$\hat{\mu} = \frac{1}{n} \sum_{i=1}^{n} x_i$$
+di mana $\hat{\mu}$ adalah estimasi titik untuk rata-rata populasi, $n$ adalah ukuran sampel, dan $x_i$ adalah nilai-nilai dalam sampel.
+
+### Contoh Soal Estimasi Titik
+Misalkan kita memiliki sampel data berikut: 5, 7, 8, 6, dan 9. Hitunglah estimasi titik untuk rata-rata populasi berdasarkan data sampel ini.
+\begin{examplebox}
+Rata-rata sampel dapat dihitung dengan rumus:
+$$\hat{\mu} = \frac{1}{n} \sum_{i=1}^{n} x_i = \frac{5 + 7 + 8 + 6 + 9}{5} = \frac{35}{5} = 7$$
+Jadi, estimasi titik untuk rata-rata populasi adalah 7.
+\end{examplebox}
+
+## Estimasi Interval
+Estimasi interval memberikan rentang nilai yang kemungkinan mencakup parameter populasi. Contohnya, interval kepercayaan 95% untuk rata-rata populasi memberikan rentang nilai di mana kita yakin 95% bahwa rata-rata populasi sebenarnya berada dalam rentang tersebut. Interval kepercayaan memberikan informasi tentang ketidakpastian estimasi dan membantu kita membuat inferensi yang lebih informatif tentang populasi.
+
+Perbedaan utama antara estimasi titik dan interval adalah bahwa estimasi titik hanya memberikan satu nilai sebagai perkiraan, sedangkan estimasi interval memberikan rentang nilai yang mencakup parameter populasi dengan tingkat kepercayaan tertentu. Estimasi interval lebih informatif karena memberikan gambaran tentang ketidakpastian dari estimasi tersebut. Sehingga, dalam banyak kasus, estimasi interval lebih disukai daripada estimasi titik karena memberikan informasi yang lebih lengkap tentang parameter populasi.
+
+### Formulas Estimasi Interval
+Rumus untuk estimasi interval dapat bervariasi tergantung pada parameter yang ingin kita estimasi dan jenis distribusi data. Misalnya, untuk rata-rata populasi dengan distribusi normal, rumusnya adalah:
+$$\hat{\mu} \pm Z_{\alpha/2} \times \frac{\sigma}{\sqrt{n}}$$
+di mana $\hat{\mu}$ adalah estimasi titik untuk rata-rata populasi, $Z_{\alpha/2}$ adalah nilai kritis dari distribusi normal untuk tingkat kepercayaan tertentu, $\sigma$ adalah standar deviasi populasi, dan $n$ adalah ukuran sampel.
+
+### Contoh Soal Estimasi Interval
+Misalkan kita memiliki sampel data berikut: 5, 7, 8, 6, dan 9, dengan standar deviasi populasi sebesar 1. Hitunglah interval kepercayaan 95% untuk rata-rata populasi berdasarkan data sampel ini.
+\begin{examplebox}
+Rata-rata sampel adalah 7, standar deviasi populasi adalah 1, dan ukuran sampel adalah 5. Nilai kritis untuk tingkat kepercayaan 95% adalah 1.96. Maka, interval kepercayaan dapat dihitung dengan rumus:
+$$7 \pm 1.96 \times \frac{1}{\sqrt{5}} = 7 \pm 1.96 \times 0.447 = 7 \pm 0.876$$
+Jadi, interval kepercayaan 95% untuk rata-rata populasi adalah (6.124, 7.876).
+\end{examplebox}
+
+# Tingkat Kepercayaan
+Tingkat kepercayaan adalah ukuran seberapa yakin kita bahwa interval kepercayaan mencakup nilai sebenarnya dari parameter populasi. Misalnya, tingkat kepercayaan 95% berarti bahwa jika kita mengambil banyak sampel dan menghitung interval kepercayaan untuk setiap sampel, sekitar 95% dari interval tersebut akan mencakup nilai sebenarnya dari parameter populasi. Tingkat kepercayaan yang lebih tinggi menunjukkan bahwa kita lebih yakin bahwa interval kepercayaan mencakup nilai sebenarnya, tetapi juga menghasilkan interval yang lebih lebar. Sebaliknya, tingkat kepercayaan yang lebih rendah menghasilkan interval yang lebih sempit tetapi dengan tingkat kepercayaan yang lebih rendah.
+
+# Contoh Soal Tingkat Kepercayaan
+Misalkan kita memiliki data sampel berikut: 5, 7, 8, 6, dan 9, dengan standar deviasi populasi sebesar 1. Hitunglah tingkat kepercayaan untuk interval kepercayaan (6.124, 7.876) yang telah kita hitung sebelumnya.
+\begin{examplebox}
+Rata-rata sampel adalah 7, standar deviasi populasi adalah 1, dan ukuran sampel adalah 5. Nilai kritis untuk tingkat kepercayaan 95% adalah 1.96. Kita dapat menghitung tingkat kepercayaan dengan menggunakan rumus:
+$$Z = \frac{\hat{\mu} - \mu}{\sigma / \sqrt{n}}$$
+di mana $\hat{\mu}$ adalah rata-rata sampel, $\mu$ adalah nilai tengah dari interval kepercayaan, $\sigma$ adalah standar deviasi populasi, dan $n$ adalah ukuran sampel. Dalam hal ini, nilai tengah dari interval kepercayaan adalah:
+$$\mu = \frac{6.124 + 7.876}{2} = 7$$
+Maka, kita dapat menghitung nilai Z:
+$$Z = \frac{7 - 7}{1 / \sqrt{5}} = 0$$
+Nilai Z sebesar 0 menunjukkan bahwa rata-rata sampel berada tepat di tengah interval kepercayaan, sehingga tingkat kepercayaan untuk interval kepercayaan (6.124, 7.876) adalah 95%.
+\end{examplebox}
+
+# Catatan
+- Estimasi titik memberikan nilai tunggal untuk memperkirakan parameter populasi, tetapi tidak memberikan informasi tentang ketidakpastian dari estimasi tersebut.
+
+- Estimasi interval memberikan rentang nilai yang mencakup parameter populasi dengan tingkat kepercayaan tertentu, sehingga memberikan informasi yang lebih lengkap tentang parameter populasi.
+
+- Tingkat kepercayaan adalah ukuran seberapa yakin kita bahwa interval kepercayaan mencakup nilai sebenarnya dari parameter populasi, dan tingkat kepercayaan yang lebih tinggi menghasilkan interval yang lebih lebar.
+
+- Estimasi dan tingkat kepercayaan adalah konsep penting dalam biostatistik yang memungkinkan kita untuk membuat inferensi tentang populasi berdasarkan data sampel, sehingga sangat penting untuk memahami konsep ini dalam melakukan analisis statistik yang akurat dan membuat keputusan yang informatif dalam penelitian biomedis.
+
+# Posisi Estimasi dan Tingkat Kepercayaan dalam Biostatistik
+Estimasi dan tingkat kepercayaan adalah konsep fundamental dalam biostatistik yang digunakan untuk membuat inferensi tentang populasi berdasarkan data sampel. Estimasi memungkinkan kita untuk memperkirakan nilai parameter populasi, sementara tingkat kepercayaan memberikan informasi tentang ketidakpastian dari estimasi tersebut. Dalam biostatistik, estimasi dan tingkat kepercayaan digunakan dalam berbagai analisis statistik, seperti uji hipotesis, regresi, dan analisis survival, untuk membantu peneliti membuat keputusan yang informatif dan akurat dalam penelitian biomedis. Estimasi dan tingkat kepercayaan juga digunakan dalam desain penelitian, seperti dalam perencanaan ukuran sampel, untuk memastikan bahwa penelitian memiliki kekuatan statistik yang cukup untuk mendeteksi efek yang diharapkan.
+
+# Latihan
+1. Hitunglah estimasi titik untuk rata-rata populasi berdasarkan data sampel berikut: 10, 12, 15, 14, dan 13.
+
+2. Hitunglah interval kepercayaan 95% untuk rata-rata populasi berdasarkan data sampel berikut: 10, 12, 15, 14, dan 13, dengan standar deviasi populasi sebesar 2.
+
+3. Hitunglah tingkat kepercayaan untuk interval kepercayaan (11.2, 14.8) berdasarkan data sampel berikut: 10, 12, 15, 14, dan 13, dengan standar deviasi populasi sebesar 2.
+
+4. Jelaskan perbedaan antara estimasi titik dan estimasi interval, serta berikan contoh situasi di mana masing-masing jenis estimasi lebih disukai.
+
+5. Jelaskan bagaimana tingkat kepercayaan mempengaruhi lebar interval kepercayaan, dan berikan contoh situasi di mana tingkat kepercayaan yang lebih tinggi atau lebih rendah mungkin lebih sesuai.
+
+# Kesimpulan
+Estimasi dan tingkat kepercayaan adalah konsep penting dalam biostatistik yang memungkinkan kita untuk membuat inferensi tentang populasi berdasarkan data sampel. Estimasi titik memberikan nilai tunggal untuk memperkirakan parameter populasi, sementara estimasi interval memberikan rentang nilai yang mencakup parameter tersebut dengan tingkat kepercayaan tertentu. Memahami konsep ini sangat penting untuk melakukan analisis statistik yang akurat dan membuat keputusan yang informatif dalam penelitian biomedis.

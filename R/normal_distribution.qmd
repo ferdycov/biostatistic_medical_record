@@ -1,0 +1,189 @@
+---
+title: "Biostatistik"
+subtitle: "Distribusi Normal"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-08"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+Distribusi normal, juga dikenal sebagai distribusi Gaussian, adalah salah satu distribusi probabilitas yang paling penting dalam statistik. Distribusi ini memiliki bentuk lonceng simetris yang menggambarkan bagaimana data tersebar di sekitar rata-rata. Dalam distribusi normal, sebagian besar nilai berada di sekitar rata-rata, dan semakin jauh dari rata-rata, semakin sedikit nilai yang ditemukan. Distribusi normal sering digunakan dalam berbagai bidang, termasuk biostatistik, untuk menganalisis data dan membuat inferensi statistik.
+
+# Definisi
+\begin{defbox}
+Distribusi normal adalah distribusi probabilitas kontinu yang ditentukan oleh dua parameter: rata-rata ($\mu$) dan standar deviasi ($\sigma$). Rata-rata menentukan pusat distribusi, sedangkan standar deviasi menentukan seberapa lebar atau sempit distribusi tersebut. Fungsi kepadatan probabilitas (Probability Density Function/PDF) untuk distribusi normal diberikan oleh rumus:
+$$f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+di mana $x$ adalah variabel acak, $\mu$ adalah rata-rata, $\sigma$ adalah standar deviasi, dan $e$ adalah bilangan Euler (sekitar 2.71828).
+\end{defbox}
+
+# Karakteristik Distribusi Normal
+Distribusi normal memiliki beberapa karakteristik penting, antara lain:
+
+1. Bentuk lonceng: Distribusi normal memiliki bentuk lonceng simetris yang menggambarkan bagaimana data tersebar di sekitar rata-rata.
+
+2. Simetris: Distribusi normal simetris di sekitar rata-rata ($\mu$).
+
+3. Rata-rata dan standar deviasi: Rata-rata ($\mu$) menentukan pusat distribusi, sedangkan standar deviasi ($\sigma$) menentukan seberapa lebar atau sempit distribusi tersebut.
+
+4. Rata-rata, median, dan modus: Dalam distribusi normal, rata-rata, median, dan modus semuanya sama dan terletak di pusat distribusi.
+
+5. Asimtotik: Distribusi normal mendekati sumbu horizontal tetapi tidak pernah benar-benar menyentuhnya, yang berarti bahwa nilai-nilai ekstrem dapat terjadi tetapi sangat jarang.
+
+6. Aturan Empiris (68–95–99.7): Dalam distribusi normal,sekitar 68% data berada dalam satu standar deviasi dari rata-rata, sekitar 95% data berada dalam dua standar deviasi, dan sekitar 99.7% data berada dalam tiga standar deviasi.
+
+# Contoh
+\begin{examplebox}
+Misalkan kita memiliki data tinggi badan dari sekelompok orang dewasa yang mengikuti distribusi normal dengan rata-rata 170 cm dan standar deviasi 10 cm. Kita ingin mengetahui berapa persen orang yang memiliki tinggi badan antara 160 cm dan 180 cm.
+
+Untuk menghitung persentase orang yang memiliki tinggi badan antara 160 cm dan 180 cm, kita dapat menggunakan aturan 68-95-99.7. Dalam hal ini, 160 cm dan 180 cm masing-masing berada satu standar deviasi di bawah dan di atas rata-rata (170 cm). Oleh karena itu, sekitar 68% orang dewasa dalam kelompok tersebut memiliki tinggi badan antara 160 cm dan 180 cm.
+\end{examplebox}
+
+# Menentukan Distribusi Normal Standar
+
+## Standarisasi (Z-Score)
+Untuk menentukan distribusi normal standar, kita dapat menggunakan proses standarisasi, yang melibatkan konversi nilai-nilai dalam distribusi normal ke dalam bentuk distribusi normal standar. Distribusi normal standar memiliki rata-rata 0 dan standar deviasi 1. Proses standarisasi dilakukan dengan menggunakan rumus berikut:
+$$Z = \frac{X - \mu}{\sigma}$$
+di mana $Z$ adalah skor Z, $X$ adalah nilai yang ingin kita standarisasi, $\mu$ adalah rata-rata distribusi normal asli, dan $\sigma$ adalah standar deviasi distribusi normal asli. Dengan menggunakan skor Z, kita dapat menentukan posisi relatif dari nilai $X$ dalam distribusi normal dan menghitung probabilitas terkait.
+
+### Contoh
+Misalkan kita memiliki nilai tinggi badan 180 cm dalam distribusi normal dengan rata-rata 170 cm dan standar deviasi 10 cm. Kita ingin mengetahui skor Z untuk nilai tinggi badan tersebut.
+Untuk menghitung skor Z, kita dapat menggunakan rumus standarisasi:
+$$Z = \frac{X - \mu}{\sigma} = \frac{180 - 170}{10} = \frac{10}{10} = 1$$
+Jadi, skor Z untuk nilai tinggi badan 180 cm adalah 1. Ini berarti bahwanilai tinggi badan 180 cm berada satu standar deviasi di atas rata-rata dalam distribusi normal tersebut.
+
+### Probabilitas untuk Skor Z
+Setelah kita memiliki skor Z, kita dapat menggunakan tabel distribusi normal standar untuk menentukan probabilitas terkait. Misalnya, jika kita ingin mengetahui probabilitas bahwa suatu nilai berada di bawah skor Z = 1, kita dapat melihat tabel distribusi normal standar dan menemukan bahwa probabilitas tersebut adalah sekitar 0.8413. Ini berarti bahwa sekitar 84.13% nilai dalam distribusi normal berada di bawah skor Z = 1.
+
+## Uji Normalitas
+Sebelum menggunakan distribusi normal untuk analisis statistik, penting untuk memeriksa apakah data mengikuti distribusi normal. Salah satu cara untuk melakukan ini adalah dengan menggunakan uji normalitas, seperti uji Shapiro-Wilk atau uji Kolmogorov-Smirnov. Uji normalitas membantu kita menentukan apakah data kita cukup mendekati distribusi normal untuk menggunakan teknik statistik yang mengasumsikan normalitas. Jika data tidak mengikuti distribusi normal, kita mungkin perlu menggunakan teknik transformasi atau metode statistik non-parametrik yang tidak mengasumsikan distribusi tertentu untuk data.
+
+### Metode Uji Normalitas
+1. Uji Shapiro-Wilk: Uji ini digunakan untuk menguji normalitas data dengan membandingkan distribusi data dengan distribusi normal. Jika nilai p dari uji ini lebih besar dari tingkat signifikansi yang ditentukan (misalnya, 0.05), maka kita gagal menolak hipotesis nol bahwa data mengikuti distribusi normal. Formulasi untuk uji Shapiro-Wilk melibatkan perhitungan statistik W, yang didasarkan pada urutan data dan koefisien yang dihitung dari distribusi normal. Berikut adalah rumus untuk statistik W dalam uji Shapiro-Wilk:
+$$W = \frac{(\sum_{i=1}^{n} a_i x_{i})^2}{\sum_{i=1}^{n} (x_i - \bar{x})^2}$$
+di mana $n$ adalah jumlah data, $x_i$ adalah nilai data yang diurutkan, $\bar{x}$ adalah rata-rata data, dan $a_i$ adalah koefisien yang dihitung dari distribusi normal. Nilai W yang lebih tinggi menunjukkan bahwa data lebih mendekati distribusi normal, sedangkan nilai W yang lebih rendah menunjukkan bahwa data lebih jauh dari distribusi normal.
+
+2. Uji Kolmogorov-Smirnov: Uji ini digunakan untuk membandingkan distribusi data dengan distribusi normal. Jika nilai p dari uji ini lebih besar dari tingkat signifikansi yang ditentukan, maka kita gagal menolak hipotesis nol bahwa data mengikuti distribusi normal. Berikut rumus untuk statistik uji Kolmogorov-Smirnov:
+$$D = \sup_x |F_n(x) - F(x)|$$
+di mana $F_n(x)$ adalah fungsi distribusi empiris dari data, $F(x)$ adalah fungsi distribusi kumulatif dari distribusi normal yang diharapkan, dan $\sup_x$ menunjukkan supremum (nilai maksimum) dari perbedaan absolut antara kedua fungsi distribusi tersebut. Nilai D yang lebih kecil menunjukkan bahwa data lebih mendekati distribusi normal, sedangkan nilai D yang lebih besar menunjukkan bahwa data lebih jauh dari distribusi normal.
+
+3. Uji Lilliefors: Uji ini digunakan untuk menguji normalitas data dengan membandingkan distribusi data dengan distribusi normal. Jika nilai p dari uji ini lebih besar dari tingkat signifikansi yang ditentukan, maka kita gagal menolak hipotesis nol bahwa data mengikuti distribusi normal. berikut rumus untuk uji Lilliefors:
+$$L = \sup_x |F_n(x) - F(x)|$$
+di mana $F_n(x)$ adalah fungsi distribusi empiris dari data, $F(x)$ adalah fungsi distribusi kumulatif dari distribusi normal yang diharapkan, dan $\sup_x$ menunjukkan supremum (nilai maksimum) dari perbedaan absolut antara kedua fungsi distribusi tersebut. Nilai D yang lebih kecil menunjukkan bahwa data lebih mendekati distribusi normal, sedangkan nilai D yang lebih besar menunjukkan bahwa data lebih jauh dari distribusi normal.
+
+### Visualisasi Distribusi Normal
+Selain menggunakan uji normalitas, kita juga dapat memvisualisasikan distribusi data untuk melihat apakah data mengikuti distribusi normal. Salah satu cara untuk melakukan ini adalah dengan menggunakan histogram, plot Q-Q (Quantile-Quantile) dan grafik lainnya. 
+
+1. Histogram: Histogram adalah grafik yang menunjukkan frekuensi atau proporsi data dalam interval tertentu. Jika data mengikuti distribusi normal, histogram akan memiliki bentuk lonceng simetris di sekitar rata-rata. Berikut gambar histogram yang menunjukkan distribusi normal:
+
+```{r, echo = FALSE, fig.width=6, fig.height=3}
+# Set seed agar hasil konsisten
+set.seed(123)
+
+# Generate data normal (contoh: Hb pasien)
+# mean = 13, sd = 1, jumlah data = 100
+data_hb <- rnorm(100, mean = 13, sd = 1)
+
+# Histogram
+hist(data_hb,
+     breaks = 10,
+     probability = TRUE,   # agar skala jadi density
+     main = "Histogram Kadar Hb Pasien",
+     xlab = "Kadar Hb (g/dL)",
+     border = "black")
+
+# Tambahkan kurva normal
+curve(dnorm(x, mean = mean(data_hb), sd = sd(data_hb)),
+      col = "blue",
+      lwd = 2,
+      add = TRUE)
+```
+
+2. Plot Q-Q: Plot Q-Q adalah grafik yang membandingkan kuantil data dengan kuantil distribusi normal. Jika data mengikuti distribusi normal, titik-titik pada plot Q-Q akan membentuk garis lurus. Berikut gambar plot Q-Q yang menunjukkan distribusi normal:
+```{r, echo = FALSE, fig.width=6, fig.height=3, fig.align='center'}
+# Q-Q Plot
+qqnorm(data_hb, main = "Q-Q Plot Kadar Hb Pasien")
+qqline(data_hb, col = "red", lwd = 2)
+```
+
+3. Boxplot: Boxplot adalah grafik yang menunjukkan distribusi data berdasarkan kuartil. Jika data mengikuti distribusi normal, boxplot akan simetris dan tidak memiliki outlier yang signifikan. Berikut gambar boxplot yang menunjukkan distribusi normal:
+```{r, echo = FALSE, fig.width=3, fig.height=4, fig.align='center'}
+# Boxplot
+boxplot(data_hb,
+        main = "Boxplot Kadar Hb Pasien",
+        ylab = "Kadar Hb (g/dL)",
+        col = "lightblue")
+```
+
+4. Density Plot: Density plot adalah grafik yang menunjukkan estimasi kepadatan probabilitas dari data. Jika data mengikuti distribusi normal, density plot akan memiliki bentuk lonceng simetris di sekitar rata-rata. Berikut gambar density plot yang menunjukkan distribusi normal:
+```{r, echo = FALSE, fig.width=6, fig.height=3, fig.align='center'}
+# Density Plot
+plot(density(data_hb),
+     main = "Density Plot Kadar Hb Pasien",
+     xlab = "Kadar Hb (g/dL)",
+     ylab = "Density",
+     col = "green",
+     lwd = 2)
+```
+
+5. Violin Plot: Violin plot adalah grafik yang menunjukkan distribusi data dengan menggabungkan boxplot dan density plot. Jika data mengikuti distribusi normal, violin plot akan simetris dan memiliki bentuk lonceng di sekitar rata-rata. Berikut gambar violin plot yang menunjukkan distribusi normal:
+```{r, echo = FALSE, fig.width=3, fig.height=3, fig.align='center'}
+# Violin Plot
+library(ggplot2)
+data_hb_df <- data.frame(Kadar_Hb = data_hb)
+ggplot(data_hb_df, aes(x = "", y = Kadar_Hb)) +
+  geom_violin(fill = "lightpink") +
+  geom_boxplot(width = 0.1) +
+  labs(title = "Violin Plot Kadar Hb Pasien", y = "Kadar Hb (g/dL)") +
+  theme_minimal()
+```
+
+
+
+
+## Mengapa Distribusi Normal Standar Penting?
+Distribusi normal standar sangat penting dalam statistik karena memungkinkan kita untuk membandingkan nilai-nilai dari distribusi normal yang berbeda dengan menggunakan skor Z. Dengan mengkonversi nilai-nilai ke dalam bentuk distribusi normal standar, kita dapat dengan mudah menghitung probabilitas dan membuat inferensi statistik yang akurat. Selain itu, banyak teknik statistik, seperti uji hipotesis dan interval kepercayaan, didasarkan pada asumsi bahwa data mengikuti distribusi normal standar.
+
+Implikasi dari distribusi normal standar juga mencakup penggunaan dalam analisis regresi, analisis varians, dan banyak metode statistik lainnya. Oleh karena itu, pemahaman yang baik tentang distribusi normal standar sangat penting bagi siapa saja yang bekerja dengan data dan ingin membuat inferensi statistik yang valid.
+
+### Bagaimana jika data tidak mengikuti distribusi normal?
+Jika data tidak mengikuti distribusi normal, kita dapat menggunakan teknik transformasi untuk mencoba membuat data lebih mendekati distribusi normal. Beberapa teknik transformasi yang umum digunakan termasuk transformasi logaritmik, transformasi akar kuadrat, dan transformasi Box-Cox. Selain itu, jika data tidak mengikuti distribusi normal, kita juga dapat menggunakan metode statistik non-parametrik yang tidak mengasumsikan distribusi tertentu untuk data.
+
+# Latihan
+1. Misalkan kita memiliki data berat badan dari sekelompok orang dewasa yang mengikuti distribusi normal dengan rata-rata 70 kg dan standar deviasi 15 kg. Hitunglah persentase orang yang memiliki berat badan antara 55 kg dan 85 kg.
+
+2. Misalkan kita memiliki nilai tinggi badan 190 cm dalam distribusi normal dengan rata-rata 170 cm dan standar deviasi 10 cm. Hitunglah skor Z untuk nilai tinggi badan tersebut.
+
+3. Jelaskan mengapa distribusi normal standar penting dalam statistik dan bagaimana kita dapat menggunakan skor Z untuk membuat inferensi statistik.
+
+4. Lakukan uji normalitas pada data berikut menggunakan uji Shapiro-Wilk dan interpretasikan hasilnya: 12, 15, 14, 10, 18, 20, 22, 25, 30, 28.
+
+5. Jelaskan apa yang terjadi jika kita menggunakan teknik statistik yang mengasumsikan distribusi normal pada data yang tidak mengikuti distribusi normal. Apa implikasi dari hal ini terhadap hasil analisis statistik?
+
+6. Berikan contoh situasi di mana data mungkin tidak mengikuti distribusi normal dan bagaimana kita dapat mengatasi masalah ini dalam analisis statistik.
+
+7. Jelaskan bagaimana aturan 68-95-99.7 dapat digunakan untuk menentukan persentase data yang berada dalam rentang tertentu di sekitar rata-rata dalam distribusi normal.
+
+8. Misalkan kita memiliki data kadar gula darah dari sekelompok pasien yang mengikuti distribusi normal dengan rata-rata 100 mg/dL dan standar deviasi 15 mg/dL. Hitunglah persentase pasien yang memiliki kadar gula darah antara 85 mg/dL dan 115 mg/dL.
+
+9. Jelaskan bagaimana kita dapat menggunakan distribusi normal untuk membuat inferensi statistik tentang populasi berdasarkan sampel data yang kita miliki.
+
+# Kesimpulan
+Distribusi normal adalah salah satu distribusi probabilitas yang paling penting dalam statistik, terutama dalam biostatistik. Memahami sifat-sifat distribusi normal dan bagaimana menggunakannya untuk menganalisis data sangat penting untuk membuat inferensi statistik yang akurat. Dengan menggunakan aturan 68-95-99.7, kita dapat dengan mudah menentukan persentase data yang berada dalam rentang tertentu di sekitar rata-rata.
+

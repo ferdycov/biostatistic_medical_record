@@ -1,0 +1,93 @@
+---
+title: "Biostatistik"
+subtitle: "Uji Beda Rata - Rata Sampel Independen"
+author: "Ferdycov Sitanggang M.P.H"
+date: "2026-03-08"
+format:
+  pdf:
+    toc: true
+    number-sections: true
+    colorlinks: true
+fontsize: 12pt
+geometry: margin=3cm
+header-includes:  
+  - \usepackage{setspace}
+  # - \onehalfspacing
+  # - \setlength{\parindent}{1.2em}
+  # - \setlength{\parskip}{0.5em}
+  - \usepackage{tcolorbox}
+  # - \usepackage{float}
+  - \newtcolorbox{defbox}{colback=blue!5!white,colframe=blue!75!black,title=Definisi}
+  - \newtcolorbox{examplebox}{colback=green!5!white,colframe=green!60!black,title=Contoh}
+  - \newtcolorbox{notebox}{colback=yellow!5!white,colframe=yellow!60!black,title=Catatan}
+
+---
+
+# Pendahuluan
+Uji beda rata-rata sampel independen digunakan untuk membandingkan rata-rata dari dua kelompok yang tidak berhubungan satu sama lain. Uji beda rata-rata sampel independen melibatkan perumusan hipotesis nol (H0) yang menyatakan bahwa tidak ada perbedaan antara kedua kelompok, dan hipotesis alternatif (H1) yang menyatakan bahwa ada perbedaan antara kedua kelompok. Setelah itu, kita akan menghitung statistik uji dan membandingkannya dengan nilai kritis untuk menentukan apakah kita menolak atau gagal menolak hipotesis nol.
+
+Untuk melakukan uji beda rata-rata sampel independen, kita perlu memastikan bahwa data yang kita miliki memenuhi beberapa asumsi, seperti normalitas dan homogenitas varians. Jika data tidak memenuhi asumsi tersebut, kita dapat menggunakan uji non-parametrik seperti **uji Mann-Whitney** U untuk membandingkan kedua kelompok.
+
+Contohnya, kita ingin membandingkan rata-rata tekanan darah antara kelompok yang menerima intervensi dan kelompok kontrol. Uji ini dapat dilakukan dengan menggunakan **uji t untuk sampel independen** jika data memenuhi asumsi normalitas dan homogenitas varians, atau dengan menggunakan uji non-parametrik jika asumsi tersebut tidak terpenuhi.
+
+# Cara uji beda rata-rata sampel independen
+## Langkah 1: Formulasi Hipotesis
+
+- Hipotesis nol (H0): Tidak ada perbedaan rata-rata antara kedua kelompok (μ1 = μ2).
+
+- Hipotesis alternatif (H1): Ada perbedaan rata-rata antara kedua kelompok (μ1 ≠ μ2).
+
+## Langkah 2: Pilih Tingkat Signifikansi
+Tingkat signifikansi (α) biasanya ditetapkan pada 0.05, yang berarti kita menerima risiko 5% untuk menolak hipotesis nol yang benar.
+
+## Langkah 3: Hitung Statistik Uji
+Statistik uji untuk uji t sampel independen dapat dihitung dengan rumus:
+$$t = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{\frac{S_1^2}{n_1} + \frac{S_2^2}{n_2}}}$$
+di mana:
+
+- $\bar{X}_1$ dan $\bar{X}_2$ adalah rata-rata dari kedua kelompok,
+
+- $S_1^2$ dan $S_2^2$ adalah varians dari kedua kelompok,
+
+- $n_1$ dan $n_2$ adalah ukuran sampel dari kedua kelompok.
+
+Jika data tidak memenuhi asumsi normalitas atau homogenitas varians, kita dapat menggunakan uji Mann-Whitney U, yang tidak memerlukan asumsi tersebut dan bekerja dengan peringkat data daripada nilai asli. Statistik uji untuk uji Mann-Whitney U dapat dihitung dengan rumus:
+$$U = n_1 n_2 + \frac{n_1(n_1 + 1)}{2} - R_1$$
+di mana:
+
+- $n_1$ dan $n_2$ adalah ukuran sampel dari kedua kelompok,
+
+- $R_1$ adalah jumlah peringkat untuk kelompok pertama.
+
+## Langkah 4: Tentukan Nilai Kritis dan Keputusan
+Nilai kritis dapat ditemukan dari tabel distribusi t dengan derajat kebebasan yang sesuai. Jika nilai statistik uji lebih besar dari nilai kritis, kita menolak hipotesis nol. Jika tidak, kita gagal menolak hipotesis nol.
+
+## Langkah 5: Interpretasi Hasil
+Jika kita menolak hipotesis nol, kita dapat menyimpulkan bahwa ada perbedaan rata-rata antara kedua kelompok. Jika kita gagal menolak hipotesis nol, kita tidak memiliki cukup bukti untuk menyimpulkan bahwa ada perbedaan rata-rata antara kedua kelompok.
+
+## Contoh Kasus
+Berikut data tekanan darah dari dua kelompok:
+| Kelompok Intervensi | Kelompok Kontrol |
+|---------------------|------------------|
+| 120                 | 130              |
+| 125                 | 135              |
+| 118                 | 128              |
+| 122                 | 132              |
+| 119                 | 129              |
+
+Kita ingin mengetahui apakah **ada perbedaan rata-rata tekanan darah antara kedua kelompok**. Kita dapat menggunakan uji t untuk sampel independen jika data memenuhi asumsi normalitas dan homogenitas varians, atau menggunakan uji Mann-Whitney U jika asumsi tersebut tidak terpenuhi.
+
+## Langkah 1. Menentukan Hipotesis
+- H0: μ1 = μ2 (tidak ada perbedaan rata-rata tekanan darah antara kelompok intervensi dan kontrol)
+- H1: μ1 ≠ μ2 (ada perbedaan rata-rata tekanan darah antara kelompok intervensi dan kontrol)
+
+## Langkah 2. Memilih Tingkat Signifikansi
+Kita menetapkan tingkat signifikansi pada α = 0.05.
+
+## Langkah 3. Menghitung Statistik Uji
+### Jika data memenuhi asumsi normalitas dan homogenitas varians, kita dapat menghitung statistik uji t. Jika tidak, kita akan menggunakan uji Mann-Whitney U.
+### Uji t untuk sampel independen
+Kita menghitung rata-rata, varians, dan ukuran sampel untuk kedua kelompok, kemudian menggunakan rumus statistik uji t untuk menghitung nilai t.    
+
+
+
